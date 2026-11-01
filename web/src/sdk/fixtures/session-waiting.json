@@ -1,0 +1,48 @@
+{
+  "data": {
+    "id": "sdk_p1",
+    "subject_id": "sub_p",
+    "cwd": "/work/p",
+    "config_dir": "/cell/mp",
+    "claude_session_id": "csid-p",
+    "state": "waiting",
+    "host_pid": 4242,
+    "claude_pids": [
+      4243
+    ],
+    "turn": 0,
+    "pending": [
+      {
+        "rid": "r1",
+        "kind": "question",
+        "tool": "AskUserQuestion",
+        "input": {
+          "questions": [
+            {
+              "question": "Which fruits?",
+              "header": "Fruit",
+              "multiSelect": true,
+              "options": [
+                {
+                  "label": "Apple",
+                  "description": "a"
+                },
+                {
+                  "label": "Banana",
+                  "description": "b"
+                }
+              ]
+            }
+          ]
+        },
+        "opened_at": "2026-10-29T10:00:05Z"
+      }
+    ],
+    "live": true,
+    "started_at": "2026-10-29T10:00:00Z"
+  },
+  "meta": {
+    "request_id": "req_fixture"
+  }
+}
+

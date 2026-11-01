@@ -1,0 +1,14 @@
+/* Pigtail web actions: the toast of the last action (t10 .toast6), centred in the list column (.lmain), or on the page sheet; every value comes from tokens.css. */
+@layer components {
+  .toast6 { position: absolute; left: 50%; bottom: calc(var(--size-kbdbar) + var(--sp-4)); transform: translateX(-50%); z-index: 6; display: flex; align-items: center; gap: var(--sp-4); width: max-content; max-width: calc(100% - var(--sp-9)); padding: var(--sp-4) var(--sp-6); border-radius: var(--radius-2); background: var(--text); color: var(--bg); font-size: var(--fs-12); box-shadow: var(--shadow-pop); }
+  /* the list keeps its last rows reachable above the toast (t10 .ll6.has-toast) */
+  .lmain.has-toast .ll6 { padding-bottom: calc(var(--toast-h, var(--size-touch)) + var(--sp-8)); }
+  .toast6 .toast-t { min-width: 0; overflow-wrap: anywhere; }
+  .toast6 kbd { background: transparent; color: inherit; border-color: currentColor; }
+  .toast-undo { display: inline-flex; flex: none; align-items: center; gap: var(--sp-2); min-height: var(--size-target); padding: var(--sp-0) var(--sp-4); border: var(--size-bw) solid currentColor; border-radius: var(--radius-2); background: transparent; color: inherit; font: inherit; white-space: nowrap; cursor: pointer; }
+  /* phone: no shortcut bar, the toast sits at the foot of the screen; « annuler » is a touch target */
+  .phone .toast6 { bottom: calc(var(--sp-6) + env(safe-area-inset-bottom, 0px)); }
+  .phone .toast-undo { min-height: var(--size-touch); }
+  /* phone: the toast stands its offset above the foot (and the safe area): the list reserves that too */
+  .phone .lmain.has-toast .ll6 { padding-bottom: calc(var(--toast-h, var(--size-touch)) + var(--sp-6) + env(safe-area-inset-bottom, 0px) + var(--sp-8)); }
+}

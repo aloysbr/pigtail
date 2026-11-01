@@ -1,0 +1,23 @@
+[
+  {
+    "id" : "6A73C8EF-1392-4C1C-9EFD-0C91EAD493E5",
+    "index" : 0,
+    "key" : false,
+    "selected_workspace_id" : "6549A787-BD31-41C8-8604-5B041602677A",
+    "workspace_count" : 26
+  },
+  {
+    "id" : "3F188B47-0EE4-4FC4-8371-32F6A12790E6",
+    "index" : 1,
+    "key" : false,
+    "selected_workspace_id" : "9C8881D4-5743-46D7-AAFA-F66C4F09AC4B",
+    "workspace_count" : 2
+  },
+  {
+    "id" : "105C441D-459B-499D-B985-BA1CB65B30A4",
+    "index" : 2,
+    "key" : false,
+    "selected_workspace_id" : "7415DBBD-9C9F-4A01-9D71-1C72C076C703",
+    "workspace_count" : 2
+  }
+]

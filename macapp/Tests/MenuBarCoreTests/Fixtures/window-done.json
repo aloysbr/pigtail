@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "state": "done",
+  "started": 1792663200,
+  "updated": 1792667760,
+  "until": null,
+  "serving": null,
+  "queue": [],
+  "served": [
+    {"label": "Re-index the project", "need_min": 42, "took_s": 2380, "interrupted": false},
+    {"label": "Scheduled backups", "need_min": 20, "took_s": 1190, "interrupted": false},
+    {"label": "Index sync", "need_min": 15, "took_s": 930, "interrupted": false}
+  ],
+  "total_min": 77,
+  "passage": {"from": "Scheduled backups", "to": "Index sync", "at": 1792666830},
+  "ended": 1792667760,
+  "ended_by": "queue-empty",
+  "warnings": [],
+  "failure": null,
+  "prior": {"lid": "off", "lid_until": null, "autoraise": true}
+}

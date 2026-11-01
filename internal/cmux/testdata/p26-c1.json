@@ -1,0 +1,708 @@
+{
+  "workspaces": {
+    "window_ref": "window:1000030012",
+    "workspaces": [
+      {
+        "current_directory": "/Users/ada",
+        "custom_color": null,
+        "custom_title": "Home",
+        "description": null,
+        "has_custom_title": true,
+        "id": "C3405F19-2CA3-479D-9F2F-7F39B53FC15A",
+        "index": 0,
+        "latest_conversation_message": null,
+        "latest_submitted_at": null,
+        "latest_submitted_message": null,
+        "listening_ports": [],
+        "pinned": false,
+        "ref": "workspace:1000030058",
+        "remote": {
+          "active_terminal_sessions": 0,
+          "cloud_vm_base": null,
+          "cloud_vm_id": null,
+          "cloud_vm_transport": null,
+          "conflicted_ports": [],
+          "connected": false,
+          "daemon": {
+            "capabilities": [],
+            "detail": null,
+            "name": null,
+            "remote_path": null,
+            "state": "unavailable",
+            "version": null
+          },
+          "destination": null,
+          "detail": null,
+          "detected_ports": [],
+          "enabled": false,
+          "forwarded_ports": [],
+          "has_identity_file": false,
+          "has_ssh_options": false,
+          "heartbeat": {
+            "age_seconds": null,
+            "count": 0,
+            "last_seen_at": null
+          },
+          "local_proxy_port": null,
+          "persistent_daemon_slot": null,
+          "port": null,
+          "proxy": {
+            "error_code": null,
+            "host": null,
+            "port": null,
+            "schemes": [
+              "socks5",
+              "http_connect"
+            ],
+            "state": "unavailable",
+            "url": null
+          },
+          "state": "disconnected",
+          "terminal_profile": null,
+          "terminal_tmux_session": null,
+          "terminal_transport": null,
+          "transport": null
+        },
+        "selected": false,
+        "title": "Home"
+      },
+      {
+        "current_directory": "/Users/ada",
+        "custom_color": null,
+        "custom_title": "pt-X",
+        "description": null,
+        "has_custom_title": true,
+        "id": "7C44A922-4C9A-4A92-8C10-852F5CDA6A73",
+        "index": 1,
+        "latest_conversation_message": null,
+        "latest_submitted_at": null,
+        "latest_submitted_message": null,
+        "listening_ports": [],
+        "pinned": false,
+        "ref": "workspace:1000030068",
+        "remote": {
+          "active_terminal_sessions": 0,
+          "cloud_vm_base": null,
+          "cloud_vm_id": null,
+          "cloud_vm_transport": null,
+          "conflicted_ports": [],
+          "connected": false,
+          "daemon": {
+            "capabilities": [],
+            "detail": null,
+            "name": null,
+            "remote_path": null,
+            "state": "unavailable",
+            "version": null
+          },
+          "destination": null,
+          "detail": null,
+          "detected_ports": [],
+          "enabled": false,
+          "forwarded_ports": [],
+          "has_identity_file": false,
+          "has_ssh_options": false,
+          "heartbeat": {
+            "age_seconds": null,
+            "count": 0,
+            "last_seen_at": null
+          },
+          "local_proxy_port": null,
+          "persistent_daemon_slot": null,
+          "port": null,
+          "proxy": {
+            "error_code": null,
+            "host": null,
+            "port": null,
+            "schemes": [
+              "socks5",
+              "http_connect"
+            ],
+            "state": "unavailable",
+            "url": null
+          },
+          "state": "disconnected",
+          "terminal_profile": null,
+          "terminal_tmux_session": null,
+          "terminal_transport": null,
+          "transport": null
+        },
+        "selected": false,
+        "title": "pt-X"
+      },
+      {
+        "current_directory": "/Users/ada",
+        "custom_color": null,
+        "custom_title": "pt-x1",
+        "description": null,
+        "has_custom_title": true,
+        "id": "84FAC920-32DB-46D4-A527-A6D2D015954C",
+        "index": 2,
+        "latest_conversation_message": null,
+        "latest_submitted_at": null,
+        "latest_submitted_message": null,
+        "listening_ports": [],
+        "pinned": false,
+        "ref": "workspace:1000030062",
+        "remote": {
+          "active_terminal_sessions": 0,
+          "cloud_vm_base": null,
+          "cloud_vm_id": null,
+          "cloud_vm_transport": null,
+          "conflicted_ports": [],
+          "connected": false,
+          "daemon": {
+            "capabilities": [],
+            "detail": null,
+            "name": null,
+            "remote_path": null,
+            "state": "unavailable",
+            "version": null
+          },
+          "destination": null,
+          "detail": null,
+          "detected_ports": [],
+          "enabled": false,
+          "forwarded_ports": [],
+          "has_identity_file": false,
+          "has_ssh_options": false,
+          "heartbeat": {
+            "age_seconds": null,
+            "count": 0,
+            "last_seen_at": null
+          },
+          "local_proxy_port": null,
+          "persistent_daemon_slot": null,
+          "port": null,
+          "proxy": {
+            "error_code": null,
+            "host": null,
+            "port": null,
+            "schemes": [
+              "socks5",
+              "http_connect"
+            ],
+            "state": "unavailable",
+            "url": null
+          },
+          "state": "disconnected",
+          "terminal_profile": null,
+          "terminal_tmux_session": null,
+          "terminal_transport": null,
+          "transport": null
+        },
+        "selected": false,
+        "title": "pt-x1"
+      },
+      {
+        "current_directory": "/Users/ada",
+        "custom_color": null,
+        "custom_title": "pt-x2",
+        "description": null,
+        "has_custom_title": true,
+        "id": "90B90787-E5D0-4618-A9C3-F8F2F5EA8E32",
+        "index": 3,
+        "latest_conversation_message": null,
+        "latest_submitted_at": null,
+        "latest_submitted_message": null,
+        "listening_ports": [],
+        "pinned": false,
+        "ref": "workspace:1000030063",
+        "remote": {
+          "active_terminal_sessions": 0,
+          "cloud_vm_base": null,
+          "cloud_vm_id": null,
+          "cloud_vm_transport": null,
+          "conflicted_ports": [],
+          "connected": false,
+          "daemon": {
+            "capabilities": [],
+            "detail": null,
+            "name": null,
+            "remote_path": null,
+            "state": "unavailable",
+            "version": null
+          },
+          "destination": null,
+          "detail": null,
+          "detected_ports": [],
+          "enabled": false,
+          "forwarded_ports": [],
+          "has_identity_file": false,
+          "has_ssh_options": false,
+          "heartbeat": {
+            "age_seconds": null,
+            "count": 0,
+            "last_seen_at": null
+          },
+          "local_proxy_port": null,
+          "persistent_daemon_slot": null,
+          "port": null,
+          "proxy": {
+            "error_code": null,
+            "host": null,
+            "port": null,
+            "schemes": [
+              "socks5",
+              "http_connect"
+            ],
+            "state": "unavailable",
+            "url": null
+          },
+          "state": "disconnected",
+          "terminal_profile": null,
+          "terminal_tmux_session": null,
+          "terminal_transport": null,
+          "transport": null
+        },
+        "selected": false,
+        "title": "pt-x2"
+      },
+      {
+        "current_directory": "/Users/ada",
+        "custom_color": null,
+        "custom_title": "pt-x3",
+        "description": null,
+        "has_custom_title": true,
+        "id": "7117658A-DF6B-4137-90AE-D4E83D442B32",
+        "index": 4,
+        "latest_conversation_message": null,
+        "latest_submitted_at": null,
+        "latest_submitted_message": null,
+        "listening_ports": [],
+        "pinned": false,
+        "ref": "workspace:1000030064",
+        "remote": {
+          "active_terminal_sessions": 0,
+          "cloud_vm_base": null,
+          "cloud_vm_id": null,
+          "cloud_vm_transport": null,
+          "conflicted_ports": [],
+          "connected": false,
+          "daemon": {
+            "capabilities": [],
+            "detail": null,
+            "name": null,
+            "remote_path": null,
+            "state": "unavailable",
+            "version": null
+          },
+          "destination": null,
+          "detail": null,
+          "detected_ports": [],
+          "enabled": false,
+          "forwarded_ports": [],
+          "has_identity_file": false,
+          "has_ssh_options": false,
+          "heartbeat": {
+            "age_seconds": null,
+            "count": 0,
+            "last_seen_at": null
+          },
+          "local_proxy_port": null,
+          "persistent_daemon_slot": null,
+          "port": null,
+          "proxy": {
+            "error_code": null,
+            "host": null,
+            "port": null,
+            "schemes": [
+              "socks5",
+              "http_connect"
+            ],
+            "state": "unavailable",
+            "url": null
+          },
+          "state": "disconnected",
+          "terminal_profile": null,
+          "terminal_tmux_session": null,
+          "terminal_transport": null,
+          "transport": null
+        },
+        "selected": false,
+        "title": "pt-x3"
+      },
+      {
+        "current_directory": "/Users/ada",
+        "custom_color": null,
+        "custom_title": "pt-Y",
+        "description": null,
+        "has_custom_title": true,
+        "id": "51DC6CB2-63FD-4C14-8BC2-521DF08D1257",
+        "index": 5,
+        "latest_conversation_message": null,
+        "latest_submitted_at": null,
+        "latest_submitted_message": null,
+        "listening_ports": [],
+        "pinned": false,
+        "ref": "workspace:1000030069",
+        "remote": {
+          "active_terminal_sessions": 0,
+          "cloud_vm_base": null,
+          "cloud_vm_id": null,
+          "cloud_vm_transport": null,
+          "conflicted_ports": [],
+          "connected": false,
+          "daemon": {
+            "capabilities": [],
+            "detail": null,
+            "name": null,
+            "remote_path": null,
+            "state": "unavailable",
+            "version": null
+          },
+          "destination": null,
+          "detail": null,
+          "detected_ports": [],
+          "enabled": false,
+          "forwarded_ports": [],
+          "has_identity_file": false,
+          "has_ssh_options": false,
+          "heartbeat": {
+            "age_seconds": null,
+            "count": 0,
+            "last_seen_at": null
+          },
+          "local_proxy_port": null,
+          "persistent_daemon_slot": null,
+          "port": null,
+          "proxy": {
+            "error_code": null,
+            "host": null,
+            "port": null,
+            "schemes": [
+              "socks5",
+              "http_connect"
+            ],
+            "state": "unavailable",
+            "url": null
+          },
+          "state": "disconnected",
+          "terminal_profile": null,
+          "terminal_tmux_session": null,
+          "terminal_transport": null,
+          "transport": null
+        },
+        "selected": false,
+        "title": "pt-Y"
+      },
+      {
+        "current_directory": "/Users/ada",
+        "custom_color": null,
+        "custom_title": "pt-y1",
+        "description": null,
+        "has_custom_title": true,
+        "id": "62D86979-1F92-4650-A9D1-C135D47E30BB",
+        "index": 6,
+        "latest_conversation_message": null,
+        "latest_submitted_at": null,
+        "latest_submitted_message": null,
+        "listening_ports": [],
+        "pinned": true,
+        "ref": "workspace:1000030065",
+        "remote": {
+          "active_terminal_sessions": 0,
+          "cloud_vm_base": null,
+          "cloud_vm_id": null,
+          "cloud_vm_transport": null,
+          "conflicted_ports": [],
+          "connected": false,
+          "daemon": {
+            "capabilities": [],
+            "detail": null,
+            "name": null,
+            "remote_path": null,
+            "state": "unavailable",
+            "version": null
+          },
+          "destination": null,
+          "detail": null,
+          "detected_ports": [],
+          "enabled": false,
+          "forwarded_ports": [],
+          "has_identity_file": false,
+          "has_ssh_options": false,
+          "heartbeat": {
+            "age_seconds": null,
+            "count": 0,
+            "last_seen_at": null
+          },
+          "local_proxy_port": null,
+          "persistent_daemon_slot": null,
+          "port": null,
+          "proxy": {
+            "error_code": null,
+            "host": null,
+            "port": null,
+            "schemes": [
+              "socks5",
+              "http_connect"
+            ],
+            "state": "unavailable",
+            "url": null
+          },
+          "state": "disconnected",
+          "terminal_profile": null,
+          "terminal_tmux_session": null,
+          "terminal_transport": null,
+          "transport": null
+        },
+        "selected": false,
+        "title": "pt-y1"
+      },
+      {
+        "current_directory": "/Users/ada",
+        "custom_color": null,
+        "custom_title": "pt-y3",
+        "description": null,
+        "has_custom_title": true,
+        "id": "2751A540-A7CB-448F-BD2E-E88857600F92",
+        "index": 7,
+        "latest_conversation_message": null,
+        "latest_submitted_at": null,
+        "latest_submitted_message": null,
+        "listening_ports": [],
+        "pinned": false,
+        "ref": "workspace:1000030067",
+        "remote": {
+          "active_terminal_sessions": 0,
+          "cloud_vm_base": null,
+          "cloud_vm_id": null,
+          "cloud_vm_transport": null,
+          "conflicted_ports": [],
+          "connected": false,
+          "daemon": {
+            "capabilities": [],
+            "detail": null,
+            "name": null,
+            "remote_path": null,
+            "state": "unavailable",
+            "version": null
+          },
+          "destination": null,
+          "detail": null,
+          "detected_ports": [],
+          "enabled": false,
+          "forwarded_ports": [],
+          "has_identity_file": false,
+          "has_ssh_options": false,
+          "heartbeat": {
+            "age_seconds": null,
+            "count": 0,
+            "last_seen_at": null
+          },
+          "local_proxy_port": null,
+          "persistent_daemon_slot": null,
+          "port": null,
+          "proxy": {
+            "error_code": null,
+            "host": null,
+            "port": null,
+            "schemes": [
+              "socks5",
+              "http_connect"
+            ],
+            "state": "unavailable",
+            "url": null
+          },
+          "state": "disconnected",
+          "terminal_profile": null,
+          "terminal_tmux_session": null,
+          "terminal_transport": null,
+          "transport": null
+        },
+        "selected": false,
+        "title": "pt-y3"
+      },
+      {
+        "current_directory": "/Users/ada",
+        "custom_color": null,
+        "custom_title": "pt-y2",
+        "description": null,
+        "has_custom_title": true,
+        "id": "BB18C438-AC27-47DD-8110-817F9C887EEA",
+        "index": 8,
+        "latest_conversation_message": null,
+        "latest_submitted_at": null,
+        "latest_submitted_message": null,
+        "listening_ports": [],
+        "pinned": false,
+        "ref": "workspace:1000030066",
+        "remote": {
+          "active_terminal_sessions": 0,
+          "cloud_vm_base": null,
+          "cloud_vm_id": null,
+          "cloud_vm_transport": null,
+          "conflicted_ports": [],
+          "connected": false,
+          "daemon": {
+            "capabilities": [],
+            "detail": null,
+            "name": null,
+            "remote_path": null,
+            "state": "unavailable",
+            "version": null
+          },
+          "destination": null,
+          "detail": null,
+          "detected_ports": [],
+          "enabled": false,
+          "forwarded_ports": [],
+          "has_identity_file": false,
+          "has_ssh_options": false,
+          "heartbeat": {
+            "age_seconds": null,
+            "count": 0,
+            "last_seen_at": null
+          },
+          "local_proxy_port": null,
+          "persistent_daemon_slot": null,
+          "port": null,
+          "proxy": {
+            "error_code": null,
+            "host": null,
+            "port": null,
+            "schemes": [
+              "socks5",
+              "http_connect"
+            ],
+            "state": "unavailable",
+            "url": null
+          },
+          "state": "disconnected",
+          "terminal_profile": null,
+          "terminal_tmux_session": null,
+          "terminal_transport": null,
+          "transport": null
+        },
+        "selected": false,
+        "title": "pt-y2"
+      },
+      {
+        "current_directory": "/Users/ada",
+        "custom_color": null,
+        "custom_title": null,
+        "description": null,
+        "has_custom_title": false,
+        "id": "6EA3CA91-FCB7-4721-A157-DE922C4FA07F",
+        "index": 9,
+        "latest_conversation_message": null,
+        "latest_submitted_at": null,
+        "latest_submitted_message": null,
+        "listening_ports": [],
+        "pinned": false,
+        "ref": "workspace:1000030059",
+        "remote": {
+          "active_terminal_sessions": 0,
+          "cloud_vm_base": null,
+          "cloud_vm_id": null,
+          "cloud_vm_transport": null,
+          "conflicted_ports": [],
+          "connected": false,
+          "daemon": {
+            "capabilities": [],
+            "detail": null,
+            "name": null,
+            "remote_path": null,
+            "state": "unavailable",
+            "version": null
+          },
+          "destination": null,
+          "detail": null,
+          "detected_ports": [],
+          "enabled": false,
+          "forwarded_ports": [],
+          "has_identity_file": false,
+          "has_ssh_options": false,
+          "heartbeat": {
+            "age_seconds": null,
+            "count": 0,
+            "last_seen_at": null
+          },
+          "local_proxy_port": null,
+          "persistent_daemon_slot": null,
+          "port": null,
+          "proxy": {
+            "error_code": null,
+            "host": null,
+            "port": null,
+            "schemes": [
+              "socks5",
+              "http_connect"
+            ],
+            "state": "unavailable",
+            "url": null
+          },
+          "state": "disconnected",
+          "terminal_profile": null,
+          "terminal_tmux_session": null,
+          "terminal_transport": null,
+          "transport": null
+        },
+        "selected": true,
+        "title": "ada@MacBook-Pro:~"
+      }
+    ]
+  },
+  "groups": {
+    "groups": [
+      {
+        "anchor_workspace_is_generated": false,
+        "anchor_workspace_provenance": "user",
+        "anchor_workspace_ref": "workspace:1000030058",
+        "custom_color": null,
+        "external_id": "cmux.chief.home",
+        "icon_symbol": "house",
+        "idempotency_key": "cmux.chief.home",
+        "is_collapsed": false,
+        "is_empty": false,
+        "is_pinned": true,
+        "member_count": 1,
+        "member_workspace_refs": [
+          "workspace:1000030058"
+        ],
+        "name": "Home",
+        "ref": "workspace_group:1000030025"
+      },
+      {
+        "anchor_workspace_is_generated": true,
+        "anchor_workspace_provenance": "generated",
+        "anchor_workspace_ref": "workspace:1000030068",
+        "custom_color": null,
+        "icon_symbol": null,
+        "is_collapsed": false,
+        "is_empty": false,
+        "is_pinned": false,
+        "member_count": 4,
+        "member_workspace_refs": [
+          "workspace:1000030068",
+          "workspace:1000030062",
+          "workspace:1000030063",
+          "workspace:1000030064"
+        ],
+        "name": "pt-X",
+        "ref": "workspace_group:1000030027"
+      },
+      {
+        "anchor_workspace_is_generated": true,
+        "anchor_workspace_provenance": "generated",
+        "anchor_workspace_ref": "workspace:1000030069",
+        "custom_color": null,
+        "icon_symbol": null,
+        "is_collapsed": false,
+        "is_empty": false,
+        "is_pinned": false,
+        "member_count": 4,
+        "member_workspace_refs": [
+          "workspace:1000030069",
+          "workspace:1000030065",
+          "workspace:1000030067",
+          "workspace:1000030066"
+        ],
+        "name": "pt-Y",
+        "ref": "workspace_group:1000030028"
+      }
+    ],
+    "window_ref": "window:1000030012"
+  }
+}

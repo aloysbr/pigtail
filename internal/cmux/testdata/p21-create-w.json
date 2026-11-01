@@ -1,0 +1,24 @@
+{
+  "created" : true,
+  "group" : {
+    "anchor_workspace_id" : "D5E744CA-4A8B-4C00-B4CB-4503E88006CE",
+    "anchor_workspace_is_generated" : true,
+    "anchor_workspace_provenance" : "generated",
+    "anchor_workspace_ref" : "workspace:405",
+    "custom_color" : null,
+    "icon_symbol" : null,
+    "id" : "78277CC7-007C-429E-9EE4-E17DCE9B54F1",
+    "is_collapsed" : false,
+    "is_empty" : false,
+    "is_pinned" : false,
+    "member_count" : 1,
+    "member_workspace_ids" : [
+      "D5E744CA-4A8B-4C00-B4CB-4503E88006CE"
+    ],
+    "member_workspace_refs" : [
+      "workspace:405"
+    ],
+    "name" : "PT Same",
+    "ref" : "workspace_group:97"
+  }
+}

@@ -1,0 +1,76 @@
+/* Pigtail web lot 3: the sheet's three modes (t10 pmode), the ⌘K palette, the daemon banner; every value comes from tokens.css. */
+@layer components {
+  /* side: the wide breakpoint gives the sheet its wide width (t10 .bp-wide .lmain.split) */
+  .app.bp-wide.pm-side { grid-template-columns: var(--size-sidebar) minmax(0, 1fr) var(--size-panel-xl); }
+  .app.bp-wide.pm-side.nodock { grid-template-columns: minmax(0, 1fr) var(--size-panel-xl); }
+
+  /* G9: the sheet comes in over 120 ms */
+  .pwrap { animation: pwrap-in var(--dur-fast) var(--ease-out); }
+  @keyframes pwrap-in { from { opacity: 0; transform: translateX(var(--sp-6)); } to { opacity: 1; transform: none; } }
+
+  /* over: under 400 px of list left, the sheet lies over the list (t10 .pover), its sticky header included (D3).
+     Stack: list header 5 < sheet over 6 < separators 7 < side scrim 8 < floating sidebar, palette scrim 9 < palette 10 (layout-css.test.ts) */
+  .app.pm-over > .pwrap { position: absolute; top: var(--sp-0); right: var(--sp-0); bottom: var(--sp-0); z-index: 6; width: var(--size-panel); max-width: 100%; box-shadow: var(--shadow-pop); }
+
+  /* page: under 800 px the sheet is the page; the list stays mounted (scroll and folds kept) but hidden */
+  .app.pm-page > .lmain { display: none; }
+  .app.pm-page > .pwrap { border-left: none; }
+  .app.pm-page .lpanel { padding-inline: var(--sp-6); }
+
+  /* the ⌘K palette (t10 .scrim, .palette, .pal-*), fixed so it stays put over a scrolled list */
+  .scrim { position: fixed; inset: var(--sp-0); z-index: 9; background: var(--overlay-soft); }
+  .palette { position: fixed; top: calc(var(--size-frame-h) * 0.16); left: 50%; transform: translateX(-50%); z-index: 10; width: var(--size-palette); max-width: calc(100vw - 2 * var(--sp-6)); background: var(--surface); border: var(--size-bw) solid var(--border); border-radius: var(--radius-3); box-shadow: var(--shadow-pop); overflow: hidden; display: flex; flex-direction: column; max-height: calc(100dvh - var(--size-frame-h) * 0.16 - var(--sp-6)); }
+  /* the list takes the height the palette has left (whole rows scroll, no half row under the footer on a tall screen) */
+  .palette > [cmdk-root] { display: flex; flex-direction: column; min-height: 0; }
+  .pal-in { display: flex; align-items: center; gap: var(--sp-4); min-height: var(--size-row-2); padding: var(--sp-0) var(--sp-6); border-bottom: var(--size-bw) solid var(--border); font-size: var(--fs-15); }
+  .pal-in svg { width: var(--size-icon); height: var(--size-icon); flex: none; color: var(--text-2); }
+  .pal-input { flex: 1; min-width: 0; border: none; outline: none; background: none; color: var(--text); font: inherit; }
+  .pal-list { display: flex; flex-direction: column; flex: 1 1 auto; min-height: 0; overflow-y: auto; padding: var(--sp-2); }
+  .pal-list [cmdk-group-heading] { padding: var(--sp-3) var(--sp-4) var(--sp-1); color: var(--text-2); font-size: var(--fs-11); font-weight: var(--fw-semibold); }
+  .pal-i { display: flex; align-items: center; justify-content: space-between; gap: var(--sp-5); min-height: var(--size-row); padding: var(--sp-0) var(--sp-4); border-radius: var(--radius-2); font-size: var(--fs-13); cursor: pointer; }
+  .pal-i[data-selected="true"] { background: var(--bg-active-pal); }
+  .pal-none { cursor: default; }
+  .pal-l { display: inline-flex; align-items: center; gap: var(--sp-4); min-width: 0; white-space: nowrap; overflow: hidden; }
+  .pal-t { min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+  .pal-l > svg { width: var(--size-icon); height: var(--size-icon); flex: none; color: var(--text-2); }
+  .pal-l .muted { flex: none; font-size: var(--fs-12); }
+  .pal-keys { display: inline-flex; align-items: center; gap: var(--sp-2); margin-left: auto; flex: none; }
+  .pal-hint { display: flex; flex-wrap: wrap; align-items: center; gap: var(--sp-2) var(--sp-6); padding: var(--sp-3) var(--sp-6); border-top: var(--size-bw) solid var(--border); color: var(--text-2); font-size: var(--fs-11); }
+  .phone .pal-hint { display: none; }
+
+  /* D2: the separators of the sidebar and the sheet (t1 mock.css Q1); the grab area is centred on the boundary, the line is 2 px */
+  .split-h { position: absolute; top: var(--sp-0); bottom: var(--sp-0); z-index: 7; width: var(--size-split-hit); cursor: col-resize; touch-action: none; }
+  .sp-side { left: calc(var(--size-sidebar) - var(--size-split-hit) / 2); }
+  .sp-panel { right: calc(var(--size-panel) - var(--size-split-hit) / 2); }
+  .split-h::after { content: ''; position: absolute; top: var(--sp-0); bottom: var(--sp-0); left: calc(50% - var(--size-focus) / 2); width: var(--size-focus); background: transparent; transition: background-color var(--dur-fast) var(--ease-out); }
+  .split-h:hover::after { background: var(--focus); }
+  .split-h:focus-visible::after { background: var(--focus); }
+  .split-h.drag::after { background: var(--focus); }
+  /* the focus shows as the ink line itself */
+  .split-h:focus-visible { outline: none; }
+  /* the bubble (R3): at the foot of the line, over its own panel (the sidebar left of its line, the sheet right of its line), never over the list's header nor its footer; it wraps rather than being cut */
+  .split-tip { position: absolute; bottom: var(--sp-3); display: inline-flex; align-items: center; gap: var(--sp-3); max-width: var(--size-split-tip); padding: var(--sp-2) var(--sp-4); border-radius: var(--radius-2); background: var(--text); color: var(--bg); font-size: var(--fs-11); white-space: normal; width: max-content; box-shadow: var(--shadow-pop); pointer-events: none; opacity: 0; transition: opacity var(--dur) var(--ease-out); }
+  .sp-side .split-tip { right: calc(100% + var(--sp-3)); }
+  .sp-panel .split-tip { left: calc(100% + var(--sp-3)); }
+  .split-h:hover .split-tip { opacity: 1; transition-delay: var(--dur); }
+  .split-h:focus-visible .split-tip { opacity: 1; }
+  .app.resizing .split-tip { opacity: 0; }
+  .split-tip kbd { flex: none; background: transparent; color: inherit; border-color: currentColor; }
+  .app.resizing { cursor: col-resize; user-select: none; }
+  .app.resizing * { cursor: inherit; }
+
+  /* G3: the daemon banner, a thin amber strip across the bottom of the sticky header */
+  .d-banner { flex: 1 0 100%; margin: var(--sp-0) calc(-1 * var(--sp-6)) calc(-1 * var(--sp-2)); padding: var(--sp-2) var(--sp-6); border-top: var(--size-bw) solid var(--border); background: var(--bg-3); color: var(--text); font-size: var(--fs-12); display: flex; align-items: center; gap: var(--sp-3); }
+  .d-banner-ico { flex: none; width: 14px; height: 14px; color: var(--status-late); }
+  .d-banner-retry { margin-left: auto; flex: none; padding: var(--sp-1) var(--sp-3); border: var(--size-bw) solid var(--border); border-radius: var(--radius-1); background: var(--surface); color: var(--text); font: inherit; cursor: pointer; }
+  .d-banner-retry:disabled { opacity: 0.5; cursor: default; }
+
+  /* the title always keeps the header's 56 px row (padding included): when the tools or the banner wrap onto a row below, its y does not move.
+     Level 2 (.h2l) puts its h1 inside .h-l1, so it is not a direct child and keeps its two fixed lines. */
+  .d-head > h1 { display: flex; align-items: center; min-height: calc(var(--head-h) - 2 * var(--sp-2)); }
+
+  @media (prefers-reduced-motion: reduce) {
+    .pwrap { animation: none; }
+    .split-h::after, .split-tip { transition: none; }
+  }
+}

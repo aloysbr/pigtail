@@ -1,0 +1,19 @@
+title = "pigtail"
+
+[extend]
+useDefault = true
+
+# Synthetic decoys of redaction tests only (audit § 4); never real tokens.
+[allowlist]
+description = "synthetic redaction-test decoys"
+paths = [
+  '''internal/relay/policy_test\.go''',
+  '''internal/waitdetail/.*_test\.go''',
+  '''internal/daemon/handlers/waits_.*_test\.go''',
+  '''cmd/pigtail/hook_test\.go''',
+  '''internal/heavycmd/unparsed_test\.go''',
+  # found by the 2026-10-29 dry run: fake bearer in respawn tests, session-key fixtures
+  '''cmd/pigtail/session_respawn_worker_test\.go''',
+  '''internal/daemon/handlers/relay_respawn_test\.go''',
+  '''macapp/Tests/MenuBarCoreTests/Fixtures/window-.*\.json''',
+]

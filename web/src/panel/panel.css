@@ -1,0 +1,98 @@
+/* Pigtail web lot 3: the subject sheet, t10 classes (app.css .lpanel, .lp-*, .links) and t4 .hv-*; every value comes from tokens.css. */
+@layer components {
+  /* the sheet beside the list: a third grid column */
+  .app.pm-side { grid-template-columns: var(--size-sidebar) minmax(0, 1fr) var(--size-panel); }
+  .app.pm-side.nodock { grid-template-columns: minmax(0, 1fr) var(--size-panel); }
+  .pwrap { display: flex; flex-direction: column; min-width: 0; min-height: 0; background: var(--surface); border-left: var(--size-bw) solid var(--line); }
+  .pwrap .lpanel { flex: 1; }
+
+  .lpanel { min-height: 0; overflow-y: auto; display: flex; flex-direction: column; gap: var(--sp-5); padding: var(--sp-5) var(--sp-8) var(--sp-8); }
+  .lp-h { display: flex; align-items: center; gap: var(--sp-4); min-height: var(--size-control); font-size: var(--fs-12); }
+  .lp-h .ghost { margin-right: var(--sp-3); }
+  .lp-h .kb kbd { margin: var(--sp-0); }
+  .lp-h .ib[aria-disabled="true"], .lp-h .ib[aria-disabled="true"]:hover { color: var(--text-disabled); background: none; cursor: default; }
+  .lp-h .ib.x-l { margin-left: calc((var(--size-icon) - var(--size-control)) / 2); }
+  .lp-trail { min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .lp-ttl { display: flex; align-items: flex-start; gap: var(--sp-4); }
+  /* the status icon sits on the title's first line, centred on it, however long the title */
+  .lp-ttl > .si { margin-top: calc((var(--fs-page-title) * var(--lh-tight) - var(--size-icon)) / 2); }
+  .lp-t { min-width: 0; font-family: var(--font-title); font-size: var(--fs-page-title); font-weight: var(--fw-page-title); letter-spacing: var(--ls-title); line-height: var(--lh-tight); overflow-wrap: anywhere; }
+  .lp-sub { color: var(--text-2); overflow-wrap: anywhere; }
+  .lp-props { display: grid; grid-template-columns: var(--size-col-num) minmax(0, 1fr); gap: var(--sp-3) var(--sp-5); font-size: var(--fs-12); align-items: center; }
+  .lp-props dt { color: var(--text-2); }
+  .lp-props dd { display: flex; align-items: center; gap: var(--sp-4); min-width: 0; flex-wrap: wrap; }
+  .lp-props dd.st-dd { gap: var(--sp-3); }
+  .st-main { display: inline-flex; align-items: center; gap: var(--sp-3); }
+  .dsep { color: var(--text-2); }
+  .step-i { display: inline-flex; align-items: center; gap: var(--sp-3); color: var(--text-2); }
+  .lp-acts { display: flex; flex-wrap: wrap; gap: var(--sp-4); }
+  .lp-acts:empty { display: none; }
+  .lp-sec { display: flex; flex-direction: column; gap: var(--sp-3); }
+  .lp-h3 { font-size: var(--fs-12); font-weight: var(--fw-semibold); color: var(--text-2); }
+  /* t4 (Ada): no rule between the links, it weighs the list down */
+  .links li { display: flex; align-items: center; gap: var(--sp-4); min-height: var(--size-row); font-size: var(--fs-12); min-width: 0; }
+  /* the digit closes the line, in its own column */
+  .links .lk-k { flex: none; margin-left: auto; }
+  /* one line per deliverable group (D2): its name ellipsed, its round count beside it (tokens only) */
+  .links li.lk-g .lnk-b { align-self: auto; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-weight: var(--fw-medium); }
+  .lk-n { flex: none; color: var(--text-2); font-size: var(--fs-11); font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .lp-h3:has(.lp-hint) { display: flex; align-items: baseline; gap: var(--sp-4); }
+  .lp-hint { margin-left: auto; display: inline-flex; align-items: center; gap: var(--sp-1); color: var(--text-2); font-size: var(--fs-11); font-weight: var(--fw-regular); }
+  .phone .lp-hint { display: none; }
+  .links .chip { flex: none; }
+  .lnk { min-width: 0; color: var(--link); text-decoration: underline; text-underline-offset: var(--sp-1); overflow-wrap: anywhere; }
+  .lnk-t { min-width: 0; overflow-wrap: anywhere; }
+  .lnk-b { align-self: flex-start; padding: var(--sp-0); border: none; background: none; color: var(--link); font: inherit; font-size: var(--fs-12); text-decoration: underline; text-underline-offset: var(--sp-1); cursor: pointer; }
+  /* « Historique » (t4 app.css .hv-*): day › workflow step (light header, rounds, span) › typed events, newest first */
+  .hv { gap: var(--sp-4); }
+  .hv-dayb { display: flex; flex-direction: column; gap: var(--sp-3); }
+  .hv-day { display: flex; align-items: baseline; gap: var(--sp-3); margin: var(--sp-0); font-size: var(--fs-12); font-weight: var(--fw-regular); color: var(--text-2); }
+  .hv-day b { color: var(--text); font-size: var(--fs-13); font-weight: var(--fw-semibold); }
+  .hv-sp { flex: 1; }
+  .hv-step { display: flex; flex-direction: column; gap: var(--sp-1); }
+  .hv-st { display: flex; align-items: center; gap: var(--sp-3); min-height: var(--size-target); margin: var(--sp-0); font-size: var(--fs-12); font-weight: var(--fw-regular); color: var(--text-2); }
+  .hv-sn { color: var(--text-1); font-weight: var(--fw-semibold); }
+  .hv-cur { color: var(--text); font-weight: var(--fw-semibold); }
+  .hv-cur::before { content: "·"; margin-right: var(--sp-3); color: var(--text-2); font-weight: var(--fw-regular); }
+  .hv-rule { flex: 1; height: 0; border-top: var(--size-bw) solid var(--line); }
+  .hv-sr { font-variant-numeric: tabular-nums; }
+  .hv-evs, .hv-fold { position: relative; display: flex; flex-direction: column; }
+  /* the thread: a light vertical line through the icons */
+  .hv-evs::before { content: ""; position: absolute; left: calc(var(--size-icon) / 2); top: var(--sp-5); bottom: var(--sp-5); border-left: var(--size-bw) solid var(--border-strong); }
+  .hv-ev { position: relative; display: grid; grid-template-columns: var(--size-icon) var(--size-hv-type) minmax(0, 1fr) var(--size-hv-time); column-gap: var(--sp-4); align-items: baseline; padding: var(--sp-2) var(--sp-0); font-size: var(--fs-12); }
+  .hv-ic { position: relative; align-self: start; width: var(--size-icon); height: var(--size-icon); margin-top: var(--sp-1); color: var(--text-2); background: var(--surface); box-shadow: 0 0 0 var(--sp-1) var(--surface); }
+  .hv-ty { color: var(--text-1); font-weight: var(--fw-semibold); font-size: var(--fs-11); white-space: nowrap; }
+  .hv-tx { min-width: 0; color: var(--text); overflow-wrap: anywhere; white-space: pre-line; }
+  /* the round chip hangs before the text: a wrapped line starts under the text, not under the chip */
+  .hv-tx-r { display: flex; align-items: baseline; gap: var(--sp-3); }
+  .hv-m { min-width: 0; flex: 1 1 0; overflow-wrap: anywhere; }
+  .hv-r { flex: none; display: inline-flex; align-items: center; height: var(--size-kbd); padding: var(--sp-0) var(--sp-2); border-radius: var(--radius-1); background: var(--chip-bg); color: var(--chip-text); font-size: var(--fs-11); font-weight: var(--fw-medium); font-variant-numeric: tabular-nums; }
+  .hv-t { justify-self: end; color: var(--text-2); font-variant-numeric: tabular-nums; }
+  .hv-d, .hv-more, .hv-fold { grid-column: 3 / 5; min-width: 0; }
+  .hv-d { color: var(--text-2); overflow-wrap: anywhere; }
+  .hv-fold { grid-column: 1 / 5; }
+  .hv-more { justify-self: start; display: inline-flex; align-items: center; gap: var(--sp-2); min-height: var(--size-kbd); margin-left: calc(-1 * var(--sp-2)); padding: var(--sp-0) var(--sp-2); border: none; border-radius: var(--radius-1); background: none; color: var(--text-2); font: inherit; font-size: var(--fs-11); cursor: pointer; }
+  .hv-more:hover { background: var(--bg-hover); color: var(--text); }
+  .hv-chev { width: var(--size-icon-sm); height: var(--size-icon-sm); transform: rotate(-90deg); }
+  .hv-more[aria-expanded="true"] .hv-chev { transform: none; }
+
+  /* « Cycle de vie » (t10 app.css .cycle, .cy, .cy-sw): Capture → Ouvert → [En cours | Standby] → Done, the switch in the third box */
+  .cycle { display: grid; grid-template-columns: auto var(--size-icon) auto var(--size-icon) auto var(--size-icon) auto; justify-content: start; align-items: center; gap: var(--sp-2) var(--sp-3); }
+  .cy { display: inline-flex; align-items: center; gap: var(--sp-2); min-height: var(--size-target); padding: var(--sp-0) var(--sp-4) var(--sp-0) var(--sp-3); border: var(--size-bw) solid var(--border); border-radius: var(--radius-pill); color: var(--text-2); font-size: var(--fs-12); white-space: nowrap; }
+  .cy.cur { border-color: var(--text); background: var(--bg-selected); color: var(--text); font-weight: var(--fw-semibold); }
+  .cy-i { display: inline-flex; }
+  /* the icon box is the icon itself: a 16 px .si around a 12 px glyph set it 2 px high */
+  .cy-i .si { width: var(--size-icon-sm); height: var(--size-icon-sm); }
+  .cy-i > svg, .cy-a svg, .cy-sw svg { width: var(--size-icon-sm); height: var(--size-icon-sm); }
+  .cy-i .si-done .ck { stroke: var(--bg); }
+  .cy-a { display: inline-flex; justify-content: center; color: var(--text-2); }
+  .cy.cy-mid { padding-right: var(--sp-2); }
+  .cy-sw { position: relative; display: inline-flex; align-items: center; gap: var(--sp-1); margin-left: var(--sp-2); min-height: var(--size-cy-sw); padding: var(--sp-0) var(--sp-2); border: var(--size-bw) solid var(--border); border-radius: var(--radius-pill); background: var(--surface); color: var(--text-2); font: inherit; cursor: pointer; }
+  .cy-sw:hover { color: var(--text); border-color: var(--text-2); }
+  /* phone: t10's tighter gaps, plus arrow columns at the arrow's own size and tighter chips, so the row fits 358 px */
+  .phone .cycle { grid-template-columns: auto var(--size-icon-sm) auto var(--size-icon-sm) auto var(--size-icon-sm) auto; gap: var(--sp-2) var(--sp-1); }
+  .phone .cy { gap: var(--sp-1); padding: var(--sp-0) var(--sp-3) var(--sp-0) var(--sp-2); border-radius: var(--radius-chip-m); }
+  .phone .cy-sw { margin-left: var(--sp-1); }
+  /* phone: a 44 px hit area around the switch, the chip keeps the row's height (no outgrown outline) */
+  .phone .cy-sw::before { content: ""; position: absolute; top: 50%; left: 50%; width: max(100%, var(--size-touch)); height: var(--size-touch); transform: translate(-50%, -50%); }
+}

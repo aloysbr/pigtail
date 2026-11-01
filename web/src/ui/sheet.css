@@ -1,0 +1,32 @@
+/* Pigtail web actions: the « Capture › » mode of the palette (t10 .pfx, .pal-sec, .pal-why) and its phone version, the bottom sheet (t10 .msheet); every value comes from tokens.css. */
+@layer components {
+  /* the mode's prefix in the field line */
+  .pfx { display: inline-flex; align-items: center; flex: none; min-height: var(--size-target); padding: var(--sp-0) var(--sp-3); border-radius: var(--radius-1); background: var(--chip-bg); color: var(--text); font-size: var(--fs-13); font-weight: var(--fw-semibold); white-space: nowrap; }
+  .palette > .pal-sec { padding: var(--sp-4) var(--sp-6) var(--sp-0); color: var(--text-2); font-size: var(--fs-11); font-weight: var(--fw-semibold); }
+  .cap-list { list-style: none; margin: 0; }
+  .cap-list .pal-i[aria-selected="true"] { background: var(--bg-active-pal); }
+  .pal-r { display: inline-flex; align-items: center; gap: var(--sp-4); margin-left: auto; flex: none; }
+  .pal-why { color: var(--text-2); font-size: var(--fs-11); white-space: nowrap; }
+  /* the active theme or appearance in ⌘K: a check and written text in ink (R9), not a .badge (t3 app.js:384) */
+  .pal-cur { display: inline-flex; align-items: center; gap: var(--sp-2); flex: none; margin-left: auto; padding-left: var(--sp-4); color: var(--text-1); font-size: var(--fs-12); font-weight: var(--fw-semibold); }
+  .pal-cur + .pal-keys { margin-left: var(--sp-2); }
+  .pal-i .pal-cur svg { width: var(--size-icon-sm); height: var(--size-icon-sm); color: var(--text); }
+  .pal-empty { padding: var(--sp-4) var(--sp-6); color: var(--text-2); }
+
+  /* the bottom sheet: fixed at the foot of the screen, over the scrim, above the toast (the toast never covers it) */
+  .msheet { position: fixed; left: var(--sp-0); right: var(--sp-0); bottom: var(--sp-0); z-index: 9; display: flex; flex-direction: column; gap: var(--sp-4); max-height: calc(100dvh - var(--size-touch)); overflow-y: auto; padding: var(--sp-5) var(--sp-6) calc(var(--sp-8) + env(safe-area-inset-bottom, 0px)); background: var(--surface); border-radius: var(--radius-4) var(--radius-4) var(--sp-0) var(--sp-0); box-shadow: var(--shadow-pop); }
+  .ms-h { display: flex; align-items: center; }
+  .ms-x { width: var(--size-touch); height: var(--size-touch); }
+  .ms-in { width: 100%; padding: var(--sp-4) var(--sp-5); border: var(--size-bw) solid var(--border-strong); border-radius: var(--radius-2); background: var(--bg); color: var(--text); font: inherit; font-size: var(--fs-17); resize: none; }
+  .ms-in:focus-visible { outline: var(--size-focus) solid var(--focus); outline-offset: calc(-1 * var(--size-bw)); border-color: transparent; }
+  .pchips { display: flex; flex-wrap: wrap; gap: var(--sp-3); }
+  .msheet .pill { min-height: var(--size-touch); padding: var(--sp-0) var(--sp-5) var(--sp-0) var(--sp-4); font-size: var(--fs-13); }
+  .ms-why { font-size: var(--fs-12); }
+  .mbtn { display: inline-flex; align-items: center; justify-content: center; gap: var(--sp-4); width: 100%; min-height: var(--size-touch); padding: var(--sp-0) var(--sp-6); border: var(--size-bw) solid var(--border-strong); border-radius: var(--radius-2); background: var(--bg); color: var(--text); font: inherit; font-size: var(--fs-15); font-weight: var(--fw-semibold); cursor: pointer; }
+  .mbtn.primary { background: var(--btn-fill); color: var(--btn-on); border-color: var(--btn-fill); }
+  .mbtn[disabled] { color: var(--text-disabled); border-color: var(--border); background: var(--bg-2); cursor: not-allowed; }
+
+  /* the phone's « + » (Capturer) at the end of the header: a touch target */
+  .cap-add { margin-left: auto; }
+  .phone .cap-add { width: var(--size-touch); height: var(--size-touch); }
+}

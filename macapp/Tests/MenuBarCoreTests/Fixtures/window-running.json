@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "state": "running",
+  "started": 1792663200,
+  "updated": 1792664100,
+  "until": null,
+  "serving": {"key": "7f3a9c2e-reindex", "label": "Re-index the project", "since": 1792663260, "until": 1792665780, "need_min": 42},
+  "queue": [
+    {"key": "b81d04aa-backups", "label": "Scheduled backups", "need_min": 20},
+    {"key": "c5e2f913-index-sync", "label": "Index sync", "need_min": 15}
+  ],
+  "served": [],
+  "total_min": 77,
+  "passage": null,
+  "ended": null,
+  "ended_by": null,
+  "warnings": [],
+  "failure": null,
+  "prior": {"lid": "off", "lid_until": null, "autoraise": true}
+}

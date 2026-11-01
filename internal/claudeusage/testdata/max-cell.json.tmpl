@@ -1,0 +1,27 @@
+{
+  "numStartups": 412,
+  "oauthAccount": {
+    "accountUuid": "{{UUID}}",
+    "organizationType": "claude_max",
+    "organizationRateLimitTier": "{{ORG_TIER}}",
+    "userRateLimitTier": {{USER_TIER}}
+  },
+  "cachedUsageUtilization": {
+    "fetchedAtMs": {{FETCHED_MS}},
+    "accountUuid": "{{CACHE_UUID}}",
+    "utilization": {
+      "five_hour": {"utilization": {{P5}}, "resets_at": "{{R5}}", "limit_dollars": null, "used_dollars": null, "remaining_dollars": null, "locked_reason": null},
+      "seven_day": {"utilization": {{P7}}, "resets_at": "{{R7}}", "limit_dollars": null, "used_dollars": null, "remaining_dollars": null, "locked_reason": null},
+      "seven_day_opus": null,
+      "seven_day_sonnet": null,
+      "extra_usage": {"is_enabled": false, "monthly_limit": null, "used_credits": null, "utilization": null, "currency": null, "decimal_places": null, "disabled_reason": null, "user_disabled": false, "spend_limit_reached": false, "credits_ever_enabled": false, "daily": null, "weekly": null},
+      "limits": [
+        {"kind": "session", "group": "session", "percent": {{P5}}, "severity": "normal", "resets_at": "{{R5}}", "scope": null, "is_active": false},
+        {"kind": "weekly_all", "group": "weekly", "percent": {{P7}}, "severity": "critical", "resets_at": "{{R7}}", "scope": null, "is_active": true},
+        {"kind": "weekly_scoped", "group": "weekly", "percent": 0, "severity": "normal", "resets_at": "{{R7}}", "scope": {"model": {"id": null, "display_name": "Fable"}, "surface": null}, "is_active": false}
+      ],
+      "spend": {"used": {"amount_minor": 0, "currency": "USD", "exponent": 2}, "limit": null, "percent": 0, "severity": "normal", "enabled": false, "disabled_reason": null, "cap": null, "balance": null, "auto_reload": null, "can_purchase_credits": false, "can_toggle": false}
+    }
+  },
+  "cachedExtraUsageDisabledReason": "org_level_disabled"
+}

@@ -1,0 +1,51 @@
+/* Finger targets (D3, D11): the one and only pointer: coarse block of the web front (pointer.test.ts). Values from the t1 mockup, § Q5. */
+@layer components {
+  @media (pointer: coarse) {
+    .lr6, .gbtn, .sline, .more, .nav-i, .gmenu button, .pal-i, .links li, .thcard, .segd button, .ql-nav, .hv-more, .ql-z, .srow { min-height: var(--size-touch); }
+    /* the preview's round ← → grow to 44 x 44, still centred on the stage's middle */
+    .ql-nav { width: var(--size-touch); height: var(--size-touch); margin-top: calc(var(--size-touch) / -2); }
+    /* the sidebar foot button is a .ghost: listed after it so the 44 px wins at equal specificity */
+    .ghost.sf-set { min-height: var(--size-touch); }
+    .d-head { min-height: calc(var(--size-touch) + 2 * var(--sp-2)); }
+    .lp-h { min-height: var(--size-touch); }
+
+    /* a button narrower than 44 px grows itself: a hit area spilling sideways would cover its neighbour.
+       The ::after sits on the padding box: the inset gives back the 1 px border, so the zone is the border box widthwise and 44 high. */
+    .ghost, .fadd, .pill, .btnl { position: relative; min-height: var(--size-row); min-width: var(--size-touch); }
+    .fchip { position: relative; min-height: var(--size-row); }
+    .fsearch { position: relative; z-index: 0; min-height: var(--size-row); min-width: var(--size-touch); }
+    .ghost::after, .fadd::after, .pill::after, .btnl::after { content: ''; position: absolute; inset: calc((var(--size-row) - 2 * var(--size-bw) - var(--size-touch)) / 2) calc(-1 * var(--size-bw)); }
+    /* behind the input: the enlarged area must not cover the field it belongs to */
+    .fsearch::after { content: ''; position: absolute; z-index: -1; inset: calc((var(--size-row) - 2 * var(--size-bw) - var(--size-touch)) / 2) calc(-1 * var(--size-bw)); }
+    /* the × stays as small as the base chip (mock.css:83-84); only its zone grows: up and down freely, sideways over its own chip's label
+       and no further right than the chip's edge (border + padding), so it never covers another control */
+    .fx { position: relative; }
+    .fx::after { content: ''; position: absolute; inset: calc((var(--size-target) - var(--size-touch)) / 2) calc(-1 * (var(--sp-1) + var(--size-bw))) calc((var(--size-target) - var(--size-touch)) / 2) calc(var(--size-target) - var(--size-touch) + var(--sp-1) + var(--size-bw)); }
+    /* a wrapped header: rows far enough apart that a 44 px zone never covers the next row's controls: the zones' overhang above and below
+       (the x's included) plus a little for sub-pixel rounding (2 * --sp-1). Level 2's two lines (.d-head.h2l, which beats .d-head) and a
+       wrapped line 1 or 2 keep the same gap. */
+    .d-head, .d-head.h2l, .h-l1, .h-l2 { row-gap: calc(var(--size-touch) - var(--size-row) + 2 * var(--sp-1)); }
+    /* a sheet link: its zone is the whole 44 px row (the row's bottom rule is inside it) */
+    .links li { position: relative; }
+    /* the session panel's « Ouvrir le sujet »: its own 44 px row holds the link's zone (else it would reach up to the panel) */
+    .lp-link { position: relative; display: flex; align-items: center; min-height: var(--size-touch); }
+    .lnk::after { content: ''; position: absolute; inset: var(--sp-0) var(--sp-0) calc(-1 * var(--size-bw)) var(--sp-0); }
+    .ib { flex: none; width: var(--size-touch); height: var(--size-touch); }
+    /* the session panel's link is itself 44 high (its zone above was only the ::after) */
+    .spanel .lnk { display: inline-flex; align-items: center; min-height: var(--size-touch); }
+    /* the Sessions header's pills and filter are 44 high themselves at a phone width; the 32 px button's enlarged ::after would reach 58 */
+    .s-head .pill, .s-head .fsearch { min-height: var(--size-touch); }
+    .s-head .pill::after, .s-head .fsearch::after { content: none; }
+    .lp-h .ib.x-l { margin-left: calc((var(--size-icon) - var(--size-touch)) / 2); }
+
+    /* a separator: 24 px to grab (the line stays 2 px); the token, not the width, so the zone stays centred on the line (sp-side/sp-panel offsets) */
+    .split-h { --size-split-hit: var(--size-target); }
+    .split-tip { display: none; }
+
+    kbd, .kbdbar, .kbhint { display: none; }
+    /* a key inside a sentence is part of it (the Réglages footer: « aussi dans ⌘K « thème » ») */
+    .pop-foot kbd { display: inline-flex; }
+    /* the popover sits one gap above the foot button: its offset follows the button's height (24 px fine, 44 px coarse) */
+    .pop { bottom: calc(var(--size-touch) + var(--sp-5) + var(--sp-6)); }
+  }
+}

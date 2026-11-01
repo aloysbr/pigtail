@@ -1,0 +1,21 @@
+{
+  "data": {
+    "id": "sdk_p2",
+    "subject_id": "sub_p",
+    "cwd": "/work/p",
+    "config_dir": "/cell/mp",
+    "claude_session_id": "csid-p2",
+    "state": "ended",
+    "resume_command": "cd /work/p \u0026\u0026 CLAUDE_CONFIG_DIR=/cell/mp claude --resume csid-p2",
+    "host_pid": 0,
+    "claude_pids": [],
+    "turn": 0,
+    "pending": [],
+    "live": false,
+    "started_at": "2026-10-29T09:00:00Z"
+  },
+  "meta": {
+    "request_id": "req_fixture"
+  }
+}
+

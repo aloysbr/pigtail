@@ -1,0 +1,25 @@
+{
+  "numStartups": 10,
+  "oauthAccount": {
+    "accountUuid": "44444444-4444-4444-8444-444444444444",
+    "organizationType": "team",
+    "organizationRateLimitTier": "default_raven",
+    "userRateLimitTier": "default_claude_max_5x"
+  },
+  "cachedUsageUtilization": {
+    "fetchedAtMs": 1791192360000,
+    "accountUuid": "44444444-4444-4444-8444-444444444444",
+    "utilization": {
+      "five_hour": {"utilization": 0, "resets_at": "2026-10-05T14:20:00.324313+00:00", "limit_dollars": null, "used_dollars": null, "remaining_dollars": null, "locked_reason": null},
+      "seven_day": {"utilization": 69, "resets_at": "2026-10-10T19:00:00.324333+00:00", "limit_dollars": null, "used_dollars": null, "remaining_dollars": null, "locked_reason": null},
+      "extra_usage": {"is_enabled": true, "monthly_limit": 10000, "used_credits": 10500, "utilization": 100, "currency": "USD", "decimal_places": 2, "disabled_reason": null, "user_disabled": false, "spend_limit_reached": false, "credits_ever_enabled": true, "daily": null, "weekly": null},
+      "limits": [
+        {"kind": "session", "group": "session", "percent": 0, "severity": "normal", "resets_at": "2026-10-05T14:20:00.324313+00:00", "scope": null, "is_active": false},
+        {"kind": "weekly_all", "group": "weekly", "percent": 69, "severity": "normal", "resets_at": "2026-10-10T19:00:00.324333+00:00", "scope": null, "is_active": true},
+        {"kind": "weekly_scoped", "group": "weekly", "percent": 0, "severity": "normal", "resets_at": "2026-10-10T19:00:00+00:00", "scope": {"model": {"id": null, "display_name": "Fable"}, "surface": null}, "is_active": false}
+      ],
+      "spend": {"used": {"amount_minor": 10500, "currency": "USD", "exponent": 2}, "limit": {"amount_minor": 10000, "currency": "USD", "exponent": 2}, "percent": 100, "severity": "critical", "enabled": true, "disabled_reason": null, "cap": {"money": {"amount_minor": 10000, "currency": "USD", "exponent": 2}, "credits": null}, "balance": null, "auto_reload": null, "can_purchase_credits": false, "can_toggle": false}
+    }
+  },
+  "cachedExtraUsageDisabledReason": "org_spend_cap_reached"
+}

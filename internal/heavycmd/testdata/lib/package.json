@@ -1,0 +1,5 @@
+{
+  "name": "fixture-monorepo",
+  "workspaces": ["packages/*"],
+  "scripts": { "lint": "eslint", "graph": "nx graph" }
+}

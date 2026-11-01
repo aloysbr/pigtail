@@ -1,0 +1,3 @@
+  workspace:1 B4773701-DCB2-4B51-A17A-47A181B369AF  Group 2
+  workspace:4 F8290864-F5B5-4B3F-9B93-0B027295DECC  ✳ Garden bouton création visiteur
+* workspace:105 29664DF9-67B9-4AAF-9419-B1FD8E3A8994  ◑ Agents avec playwright en environnement virtuel  [selected]

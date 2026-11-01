@@ -1,0 +1,4 @@
+Last login: Thu Oct  8 13:24:05 on ttys041
+~/w/a % cmux restore claude sid-a
+Error: Session sid-a is already running in process 48213.
+~/w/a % 

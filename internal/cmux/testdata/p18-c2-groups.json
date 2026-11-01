@@ -1,0 +1,52 @@
+{
+  "groups" : [
+    {
+      "anchor_workspace_id" : "8157BC3F-B881-43BB-8EC6-3A46DF393546",
+      "anchor_workspace_is_generated" : true,
+      "anchor_workspace_provenance" : "generated",
+      "anchor_workspace_ref" : "workspace:182",
+      "custom_color" : null,
+      "icon_symbol" : null,
+      "id" : "327A6658-FD0B-41DE-BAF8-BAC37A08E9C3",
+      "is_collapsed" : true,
+      "is_empty" : false,
+      "is_pinned" : false,
+      "member_count" : 2,
+      "member_workspace_ids" : [
+        "8157BC3F-B881-43BB-8EC6-3A46DF393546",
+        "2B7C5DC7-11A0-43A1-946A-F112BFB66513"
+      ],
+      "member_workspace_refs" : [
+        "workspace:182",
+        "workspace:180"
+      ],
+      "name" : "H",
+      "ref" : "workspace_group:44"
+    },
+    {
+      "anchor_workspace_id" : "E4B3B3F8-FF0A-4EC8-B14D-851C8EF21393",
+      "anchor_workspace_is_generated" : true,
+      "anchor_workspace_provenance" : "generated",
+      "anchor_workspace_ref" : "workspace:181",
+      "custom_color" : null,
+      "icon_symbol" : null,
+      "id" : "9FD46AD4-FF13-4650-977E-2F19E03BA40E",
+      "is_collapsed" : false,
+      "is_empty" : false,
+      "is_pinned" : false,
+      "member_count" : 2,
+      "member_workspace_ids" : [
+        "E4B3B3F8-FF0A-4EC8-B14D-851C8EF21393",
+        "C566B18B-565B-4335-8B23-93A562CC68EE"
+      ],
+      "member_workspace_refs" : [
+        "workspace:181",
+        "workspace:179"
+      ],
+      "name" : "G",
+      "ref" : "workspace_group:43"
+    }
+  ],
+  "window_id" : "88A6B717-8C2E-4429-9044-FEE96BBD2BE5",
+  "window_ref" : "window:9"
+}

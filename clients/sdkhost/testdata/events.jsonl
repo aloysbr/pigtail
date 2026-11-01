@@ -1,0 +1,5 @@
+{"seq":1,"at":"2026-10-29T10:00:01Z","kind":"init","data":{"session_id":"1da9ff5f-4306-4adf-aa01-d368f0e3e006"}}
+{"seq":2,"at":"2026-10-29T10:00:02Z","kind":"state","data":{"state":"running"}}
+{"seq":3,"at":"2026-10-29T10:00:04Z","kind":"tool_use","data":{"name":"AskUserQuestion"}}
+{"seq":4,"at":"2026-10-29T10:00:05Z","kind":"request_opened","data":{"rid":"r1","kind":"question","tool":"AskUserQuestion"}}
+{"seq":5,"at":"2026-10-29T10:00:05Z","kind":"state","data":{"state":"waiting"}}

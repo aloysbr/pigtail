@@ -1,0 +1,202 @@
+{
+  "active" : {
+    "is_browser_surface" : false,
+    "pane_id" : "3F7E0702-61B3-4EC5-BC77-AC3A5F5141EB",
+    "pane_ref" : "pane:168",
+    "surface_id" : "ECC3DA84-E0A3-48D5-8A25-5DD8DFF93815",
+    "surface_ref" : "surface:212",
+    "surface_type" : "terminal",
+    "tab_id" : "ECC3DA84-E0A3-48D5-8A25-5DD8DFF93815",
+    "tab_ref" : "tab:212",
+    "window_id" : "40C258CD-5747-431E-A2AB-B678D301718F",
+    "window_ref" : "window:12",
+    "workspace_id" : "038F8191-1FB7-460C-8A6C-694537CBCD15",
+    "workspace_ref" : "workspace:165"
+  },
+  "caller" : {
+    "is_browser_surface" : false,
+    "pane_id" : "A4E0D0D5-1052-4659-9BB7-CC4CA94D50CB",
+    "pane_ref" : "pane:137",
+    "surface_id" : "1CB1379A-BEE3-4951-BE2C-6A5B0F98FBBC",
+    "surface_ref" : "surface:176",
+    "surface_type" : "terminal",
+    "tab_id" : "1CB1379A-BEE3-4951-BE2C-6A5B0F98FBBC",
+    "tab_ref" : "tab:176",
+    "window_id" : "6A73C8EF-1392-4C1C-9EFD-0C91EAD493E5",
+    "window_ref" : "window:1",
+    "workspace_id" : "DF719240-A47C-4F3F-94C5-D555227B4020",
+    "workspace_ref" : "workspace:135"
+  },
+  "windows" : [
+    {
+      "active" : true,
+      "current" : true,
+      "id" : "40C258CD-5747-431E-A2AB-B678D301718F",
+      "index" : 1,
+      "key" : true,
+      "ref" : "window:12",
+      "selected_workspace_id" : "038F8191-1FB7-460C-8A6C-694537CBCD15",
+      "selected_workspace_ref" : "workspace:165",
+      "visible" : true,
+      "workspace_count" : 2,
+      "workspaces" : [
+        {
+          "active" : true,
+          "description" : null,
+          "id" : "038F8191-1FB7-460C-8A6C-694537CBCD15",
+          "index" : 0,
+          "layout" : {
+            "children" : [
+              {
+                "pane" : {
+                  "id" : "3F7E0702-61B3-4EC5-BC77-AC3A5F5141EB",
+                  "ref" : "pane:168"
+                }
+              },
+              {
+                "pane" : {
+                  "id" : "F123F3DE-854B-4544-8D8C-9685760B5F1A",
+                  "ref" : "pane:169"
+                }
+              }
+            ],
+            "direction" : "horizontal",
+            "split" : 0.5
+          },
+          "panes" : [
+            {
+              "active" : true,
+              "focused" : true,
+              "id" : "3F7E0702-61B3-4EC5-BC77-AC3A5F5141EB",
+              "index" : 0,
+              "ref" : "pane:168",
+              "selected_surface_id" : "ECC3DA84-E0A3-48D5-8A25-5DD8DFF93815",
+              "selected_surface_ref" : "surface:212",
+              "surface_count" : 1,
+              "surface_ids" : [
+                "ECC3DA84-E0A3-48D5-8A25-5DD8DFF93815"
+              ],
+              "surface_refs" : [
+                "surface:212"
+              ],
+              "surfaces" : [
+                {
+                  "active" : true,
+                  "focused" : true,
+                  "here" : false,
+                  "id" : "ECC3DA84-E0A3-48D5-8A25-5DD8DFF93815",
+                  "index" : 0,
+                  "index_in_pane" : 0,
+                  "pane_id" : "3F7E0702-61B3-4EC5-BC77-AC3A5F5141EB",
+                  "pane_ref" : "pane:168",
+                  "ref" : "surface:212",
+                  "render_health" : "rendering",
+                  "selected" : true,
+                  "selected_in_pane" : true,
+                  "title" : "ada@MacBook-Pro:~",
+                  "tty" : null,
+                  "type" : "terminal",
+                  "url" : null
+                }
+              ]
+            },
+            {
+              "active" : false,
+              "focused" : false,
+              "id" : "F123F3DE-854B-4544-8D8C-9685760B5F1A",
+              "index" : 1,
+              "ref" : "pane:169",
+              "selected_surface_id" : "D88F7C3A-D946-4B07-95D1-5386FD868CDC",
+              "selected_surface_ref" : "surface:213",
+              "surface_count" : 1,
+              "surface_ids" : [
+                "D88F7C3A-D946-4B07-95D1-5386FD868CDC"
+              ],
+              "surface_refs" : [
+                "surface:213"
+              ],
+              "surfaces" : [
+                {
+                  "active" : false,
+                  "focused" : false,
+                  "here" : false,
+                  "id" : "D88F7C3A-D946-4B07-95D1-5386FD868CDC",
+                  "index" : 1,
+                  "index_in_pane" : 0,
+                  "pane_id" : "F123F3DE-854B-4544-8D8C-9685760B5F1A",
+                  "pane_ref" : "pane:169",
+                  "ref" : "surface:213",
+                  "render_health" : "rendering",
+                  "selected" : true,
+                  "selected_in_pane" : true,
+                  "title" : "Terminal",
+                  "tty" : null,
+                  "type" : "terminal",
+                  "url" : null
+                }
+              ]
+            }
+          ],
+          "pinned" : false,
+          "ref" : "workspace:165",
+          "selected" : true,
+          "title" : "ada@MacBook-Pro:~"
+        },
+        {
+          "active" : false,
+          "description" : null,
+          "id" : "C3561DB5-8BAD-4884-BA28-1E13AADDAB76",
+          "index" : 1,
+          "layout" : {
+            "pane" : {
+              "id" : "189B5183-4F82-4C8C-B9EB-DE9E0577BBF7",
+              "ref" : "pane:170"
+            }
+          },
+          "panes" : [
+            {
+              "active" : false,
+              "focused" : true,
+              "id" : "189B5183-4F82-4C8C-B9EB-DE9E0577BBF7",
+              "index" : 0,
+              "ref" : "pane:170",
+              "selected_surface_id" : "EE057537-E422-4E17-8A6C-A96369A747BA",
+              "selected_surface_ref" : "surface:214",
+              "surface_count" : 1,
+              "surface_ids" : [
+                "EE057537-E422-4E17-8A6C-A96369A747BA"
+              ],
+              "surface_refs" : [
+                "surface:214"
+              ],
+              "surfaces" : [
+                {
+                  "active" : false,
+                  "focused" : true,
+                  "here" : false,
+                  "id" : "EE057537-E422-4E17-8A6C-A96369A747BA",
+                  "index" : 0,
+                  "index_in_pane" : 0,
+                  "pane_id" : "189B5183-4F82-4C8C-B9EB-DE9E0577BBF7",
+                  "pane_ref" : "pane:170",
+                  "ref" : "surface:214",
+                  "render_health" : "not_started",
+                  "selected" : true,
+                  "selected_in_pane" : true,
+                  "title" : "Terminal",
+                  "tty" : null,
+                  "type" : "terminal",
+                  "url" : null
+                }
+              ]
+            }
+          ],
+          "pinned" : false,
+          "ref" : "workspace:166",
+          "selected" : false,
+          "title" : "Terminal"
+        }
+      ]
+    }
+  ]
+}

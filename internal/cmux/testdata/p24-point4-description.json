@@ -1,0 +1,9 @@
+{
+  "note": "Probe P24 point 4, same pass: a workspace bound to a subject (status building, rank 3, phase implement active, theme PT Theme) shows its description",
+  "workspace": {
+    "id": "671CE493-E624-464A-9AB1-FC4F7E54D5EA",
+    "ref": "workspace:40",
+    "custom_title": "PT four",
+    "description": "PT Theme · building · #3"
+  }
+}

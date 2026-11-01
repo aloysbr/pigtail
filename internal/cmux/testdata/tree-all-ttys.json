@@ -1,0 +1,234 @@
+{
+  "windows": [
+    {
+      "active": true,
+      "current": true,
+      "id": "6A73C8EF-1392-4C1C-9EFD-0C91EAD493E5",
+      "index": 0,
+      "key": false,
+      "ref": "window:1",
+      "selected_workspace_id": "B2FC70AD-8013-4D88-870D-C5F74C70CAA6",
+      "selected_workspace_ref": "workspace:13",
+      "visible": true,
+      "workspace_count": 4,
+      "workspaces": [
+        {
+          "active": false,
+          "description": null,
+          "id": "64F9131B-F905-4859-A0DC-8103E1FC3154",
+          "index": 4,
+          "layout": {
+            "pane": {
+              "id": "FEA5ADF3-723C-47F8-927F-10E6039C950A",
+              "ref": "pane:5"
+            }
+          },
+          "panes": [
+            {
+              "active": false,
+              "focused": true,
+              "id": "FEA5ADF3-723C-47F8-927F-10E6039C950A",
+              "index": 0,
+              "ref": "pane:5",
+              "selected_surface_id": "A3506517-1A00-47C7-9D6A-BDA2A748A9E2",
+              "selected_surface_ref": "surface:5",
+              "surface_count": 1,
+              "surface_ids": [
+                "A3506517-1A00-47C7-9D6A-BDA2A748A9E2"
+              ],
+              "surface_refs": [
+                "surface:5"
+              ],
+              "surfaces": [
+                {
+                  "active": false,
+                  "focused": true,
+                  "here": false,
+                  "id": "A3506517-1A00-47C7-9D6A-BDA2A748A9E2",
+                  "index": 0,
+                  "index_in_pane": 0,
+                  "pane_id": "FEA5ADF3-723C-47F8-927F-10E6039C950A",
+                  "pane_ref": "pane:5",
+                  "ref": "surface:5",
+                  "render_health": "not_started",
+                  "selected": true,
+                  "selected_in_pane": true,
+                  "title": "pane",
+                  "tty": "ttys034",
+                  "type": "terminal",
+                  "url": null
+                }
+              ]
+            }
+          ],
+          "pinned": false,
+          "ref": "workspace:5",
+          "selected": false,
+          "title": "workspace 0"
+        },
+        {
+          "active": false,
+          "description": null,
+          "id": "745C5B86-5B5A-4CC0-BEE1-DC7DA26A19DC",
+          "index": 7,
+          "layout": {
+            "pane": {
+              "id": "CB87ED0A-16D2-4CC2-BCB3-69E9C1584F82",
+              "ref": "pane:8"
+            }
+          },
+          "panes": [
+            {
+              "active": false,
+              "focused": true,
+              "id": "CB87ED0A-16D2-4CC2-BCB3-69E9C1584F82",
+              "index": 0,
+              "ref": "pane:8",
+              "selected_surface_id": "05153769-6402-4B24-A818-FB21C6EE07A6",
+              "selected_surface_ref": "surface:8",
+              "surface_count": 1,
+              "surface_ids": [
+                "05153769-6402-4B24-A818-FB21C6EE07A6"
+              ],
+              "surface_refs": [
+                "surface:8"
+              ],
+              "surfaces": [
+                {
+                  "active": false,
+                  "focused": true,
+                  "here": false,
+                  "id": "05153769-6402-4B24-A818-FB21C6EE07A6",
+                  "index": 0,
+                  "index_in_pane": 0,
+                  "pane_id": "CB87ED0A-16D2-4CC2-BCB3-69E9C1584F82",
+                  "pane_ref": "pane:8",
+                  "ref": "surface:8",
+                  "render_health": "not_started",
+                  "selected": true,
+                  "selected_in_pane": true,
+                  "title": "pane",
+                  "tty": "ttys027",
+                  "type": "terminal",
+                  "url": null
+                }
+              ]
+            }
+          ],
+          "pinned": false,
+          "ref": "workspace:8",
+          "selected": false,
+          "title": "workspace 1"
+        },
+        {
+          "active": false,
+          "description": null,
+          "id": "7F7FC895-4060-4A63-B4BC-2CE27AC0C01A",
+          "index": 16,
+          "layout": {
+            "pane": {
+              "id": "DCC883A1-BF48-4885-A763-9C24F7B58FED",
+              "ref": "pane:15"
+            }
+          },
+          "panes": [
+            {
+              "active": false,
+              "focused": true,
+              "id": "DCC883A1-BF48-4885-A763-9C24F7B58FED",
+              "index": 0,
+              "ref": "pane:15",
+              "selected_surface_id": "5F788D65-E302-4FE2-97B8-4B3340B81EB1",
+              "selected_surface_ref": "surface:15",
+              "surface_count": 1,
+              "surface_ids": [
+                "5F788D65-E302-4FE2-97B8-4B3340B81EB1"
+              ],
+              "surface_refs": [
+                "surface:15"
+              ],
+              "surfaces": [
+                {
+                  "active": false,
+                  "focused": true,
+                  "here": false,
+                  "id": "5F788D65-E302-4FE2-97B8-4B3340B81EB1",
+                  "index": 0,
+                  "index_in_pane": 0,
+                  "pane_id": "DCC883A1-BF48-4885-A763-9C24F7B58FED",
+                  "pane_ref": "pane:15",
+                  "ref": "surface:15",
+                  "render_health": "not_started",
+                  "selected": true,
+                  "selected_in_pane": true,
+                  "title": "pane",
+                  "tty": "ttys034",
+                  "type": "terminal",
+                  "url": null
+                }
+              ]
+            }
+          ],
+          "pinned": false,
+          "ref": "workspace:15",
+          "selected": false,
+          "title": "workspace 2"
+        },
+        {
+          "active": false,
+          "description": null,
+          "id": "9A811582-7049-4D4B-83D2-B57426CD16A0",
+          "index": 28,
+          "layout": {
+            "pane": {
+              "id": "8FE0FE8E-5EB5-4D82-B9B0-D51D72D97A78",
+              "ref": "pane:27"
+            }
+          },
+          "panes": [
+            {
+              "active": false,
+              "focused": true,
+              "id": "8FE0FE8E-5EB5-4D82-B9B0-D51D72D97A78",
+              "index": 0,
+              "ref": "pane:27",
+              "selected_surface_id": "09E98A30-FCEB-4788-A0CE-E61905388572",
+              "selected_surface_ref": "surface:28",
+              "surface_count": 1,
+              "surface_ids": [
+                "09E98A30-FCEB-4788-A0CE-E61905388572"
+              ],
+              "surface_refs": [
+                "surface:28"
+              ],
+              "surfaces": [
+                {
+                  "active": false,
+                  "focused": true,
+                  "here": false,
+                  "id": "09E98A30-FCEB-4788-A0CE-E61905388572",
+                  "index": 0,
+                  "index_in_pane": 0,
+                  "pane_id": "8FE0FE8E-5EB5-4D82-B9B0-D51D72D97A78",
+                  "pane_ref": "pane:27",
+                  "ref": "surface:28",
+                  "render_health": "not_started",
+                  "selected": true,
+                  "selected_in_pane": true,
+                  "title": "pane",
+                  "tty": null,
+                  "type": "terminal",
+                  "url": null
+                }
+              ]
+            }
+          ],
+          "pinned": false,
+          "ref": "workspace:27",
+          "selected": false,
+          "title": "workspace 3"
+        }
+      ]
+    }
+  ]
+}

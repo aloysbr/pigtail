@@ -1,0 +1,12 @@
+ ⚠ This folder pre-approves 7 tool permissions in .claude/settings.json.
+   Only trust folders whose settings you know.
+
+   No, exit
+ ❯ Yes, I trust this folder
+
+ Enter to confirm · Esc to cancel
+
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────
+❯ cmux restore claude sid-a
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  ⏵⏵ auto mode on (shift+tab to cycle)

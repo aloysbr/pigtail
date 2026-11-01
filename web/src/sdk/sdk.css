@@ -1,0 +1,36 @@
+/* The SDK session block of the subject sheet: state chip, thread, request card slots, reply, resume command. DS tokens only. */
+@layer components {
+  .sdk-blk { gap: var(--sp-5); }
+  .sdk-s { display: flex; flex-direction: column; gap: var(--sp-4); min-width: 0; }
+  .sdk-h { display: flex; align-items: center; gap: var(--sp-4); }
+  /* the label carries the state; the colour only accompanies it. Only « waiting » takes the accent reserved for a wait. */
+  .sdk-st { display: inline-flex; align-items: center; height: var(--size-sdot); padding: 0 var(--sp-3); border-radius: var(--radius-1); background: var(--bg-2); color: var(--text-1); font-size: var(--fs-11); font-weight: var(--fw-semibold); }
+  .sdk-st[data-state="waiting"] { background: var(--accent-attn-tint); color: var(--accent-attn-text); }
+  .sdk-st[data-state="failed"] { color: var(--status-late); }
+  .sdk-why { margin: 0; font-size: var(--fs-12); color: var(--text-2); overflow-wrap: anywhere; }
+  .sdk-log { display: flex; flex-direction: column; gap: var(--sp-2); max-height: 240px; margin: 0; padding: var(--sp-3) var(--sp-4); list-style: none; overflow-y: auto; scrollbar-gutter: stable; border: var(--size-bw) solid var(--line); border-radius: var(--radius-2); background: var(--bg); }
+  .sdk-log li { display: flex; gap: var(--sp-4); min-width: 0; font-size: var(--fs-12); color: var(--text-1); }
+  .sdk-log time { flex: none; color: var(--text-2); font-variant-numeric: tabular-nums; }
+  .sdk-ev { min-width: 0; overflow-wrap: anywhere; white-space: pre-wrap; }
+  /* R32: WebKit draws its overlay scrollbar over the content; a styled ::-webkit-scrollbar is a classic one that takes its room */
+  .sdk-log::-webkit-scrollbar { width: var(--size-scrollbar-list); }
+  .sdk-log::-webkit-scrollbar-track { background: transparent; }
+  .sdk-log::-webkit-scrollbar-thumb { background: var(--scroll-thumb); border-radius: var(--radius-pill); }
+  .sdk-log::-webkit-scrollbar-thumb:hover { background: var(--text-2); }
+  @supports not selector(::-webkit-scrollbar) {
+    .sdk-log { scrollbar-width: thin; scrollbar-color: var(--scroll-thumb) transparent; }
+  }
+  .sdk-sk { display: block; width: var(--w); height: var(--sp-4); border-radius: var(--radius-pill); background: linear-gradient(90deg, var(--bg-2), var(--bg-3), var(--bg-2)); background-size: 200% 100%; animation: sdk-skel 1.4s ease-in-out infinite; }
+  @keyframes sdk-skel { to { background-position: -200% 0; } }
+  .sdk-acts { display: flex; flex-wrap: wrap; gap: var(--sp-4); }
+  .sdk-acts .btnl { white-space: normal; text-align: start; }
+  .sdk-acts .btnl[aria-expanded="true"] { background: var(--bg-2); }
+  .sdk-in { display: block; padding: var(--sp-3) var(--sp-4); border-radius: var(--radius-2); background: var(--bg-2); color: var(--text-1); font-size: var(--fs-12); overflow-wrap: anywhere; white-space: pre-wrap; }
+  .sdk-step { margin: 0; font-size: var(--fs-12); }
+  .sdk-reply { display: flex; flex-direction: column; gap: var(--sp-4); }
+  .sdk-resume { display: flex; flex-direction: column; gap: var(--sp-3); }
+  .sdk-h4 { margin: 0; font-size: var(--fs-12); font-weight: var(--fw-semibold); color: var(--text-2); }
+  .sdk-cmd { margin: 0; padding: var(--sp-4); border: var(--size-bw) solid var(--line); border-radius: var(--radius-2); background: var(--bg-2); font-size: var(--fs-12); white-space: pre-wrap; overflow-wrap: anywhere; user-select: all; }
+  .sdk-cmd code { font-family: ui-monospace, "SF Mono", Menlo, monospace; white-space: pre-wrap; overflow-wrap: anywhere; }
+  @media (prefers-reduced-motion: reduce) { .sdk-sk { animation: none; } }
+}

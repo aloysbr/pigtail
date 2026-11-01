@@ -1,0 +1,8 @@
+⏺ I am waiting for the verification agent to report.
+
+⏺ Background agent "sub_x000000000000001 verify static rows" didn't finish before the previous session ended
+
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────
+❯ 
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  ⏵⏵ auto mode on (shift+tab to cycle)

@@ -1,0 +1,12 @@
+  reads the rain gauge driver and checks the tip counter against the bench log once the PR is ready; its
+  calibration run is still going. The second worker could not be started (the bench has one free port), I
+  stay here. 3 questions for you.
+
+  → Check the new tip threshold — suggestion: keep it, the gauge now counts 0.2 mm per tip as specified
+  → Check the guard that drops an empty sample — suggestion: keep it, refusing it would stall every read
+  → Check the renamed sensor field — suggestion: keep it, the station firmware already uses the new name
+
+❯ /exit
+  ⎿  Goodbye!
+
+↻ Entrée = relancer (w1) · a=Alpha b=Beta = relancer sous ce profil · autre touche = quitter 

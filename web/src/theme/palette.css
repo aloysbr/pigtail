@@ -1,0 +1,204 @@
+/* GÉNÉRÉ par web/scripts/gen-palette.mjs depuis src/theme/palette.ref.cjs (t4/palette.js) — ne pas éditer à la main.
+   `npm run gen:palette` le réécrit ; palette-sync.test.ts échoue sur toute dérive, tokens-measure.test.ts mesure
+   contrastes et ΔE sur ces valeurs arrondies. Terra clair = :root ; chaque combinaison est aussi posable sur
+   n'importe quel élément par data-theme-palette + data-theme (aperçu d'une carte de thème). */
+
+/* Terra · clair */
+:root,
+[data-theme-palette="terra"][data-theme="light"] {
+  color-scheme: light;
+  --bg: oklch(0.982 0.0055 95);
+  --bg-2: oklch(0.966 0.0095 95);
+  --surface-side: oklch(0.966 0.0095 95);
+  --surface: oklch(1 0 95);
+  --bg-3: oklch(0.936 0.011 95);
+  --bg-hover: oklch(0.948 0.011 95);
+  --bg-hover-side: oklch(0.932 0.011 95);
+  --bg-hover-panel: oklch(0.948 0.011 95);
+  --bg-active-side: oklch(0.912 0.0125 95);
+  --bg-active-pal: oklch(0.946 0.0125 95);
+  --bg-active: oklch(0.927 0.0125 95);
+  --bg-selected: oklch(0.942 0.011 95);
+  --border: oklch(0.21 0.003 95 / 0.13);
+  --line: oklch(0.21 0.003 95 / 0.13);
+  --border-strong: oklch(0.21 0.003 95 / 0.28);
+  --text: oklch(0.191 0.002 95);
+  --text-1: oklch(0.359 0.005 95);
+  --text-2: oklch(0.52 0.0095 95);
+  --text-disabled: oklch(0.724 0.0115 95);
+  --overlay-soft: oklch(0.19 0.002 95 / 0.22);
+  --veil: oklch(0.19 0.002 95 / 0.56);
+  --chip-bg: oklch(0.948 0.011 95);
+  --chip-text: oklch(0.359 0.005 95);
+  --pill-on-line: oklch(0.359 0.005 95);
+  --pill-on-bg: oklch(0.936 0.011 95);
+  --link: oklch(0.191 0.002 95);
+  --focus: oklch(0.191 0.002 95);
+  --mark: oklch(0.191 0.002 95);
+  --btn-fill: oklch(0.191 0.002 95);
+  --btn-on: oklch(0.982 0.0055 95);
+  --s-cours: oklch(0.359 0.005 95);
+  --s-ouvert: oklch(0.52 0.0095 95);
+  --s-standby: oklch(0.724 0.0115 95);
+  --s-done: oklch(0.52 0.0095 95);
+  --wait-bg: oklch(1 0 95);
+  --accent-attn-solid: oklch(0.554 0.135 53);
+  --accent-attn-text: oklch(0.54 0.135 53);
+  --accent-attn-tint: oklch(0.952 0.0189 53);
+  --accent-attn-dot: oklch(0.666 0.1418 53);
+  --accent-attn-line: oklch(0.666 0.1418 53 / 0.45);
+  --accent-attn-on: oklch(1 0 89.9);
+  --status-late: oklch(0.49 0.195 14);
+  --status-ok: oklch(0.4917 0.0884 130.9);
+  --status-today: oklch(0.7372 0.1444 84.4);
+}
+
+/* Terra · sombre */
+:root[data-theme="dark"],
+[data-theme-palette="terra"][data-theme="dark"] {
+  color-scheme: dark;
+  --bg: oklch(0.268 0.005 95);
+  --bg-2: oklch(0.236 0.004 95);
+  --surface-side: oklch(0.236 0.004 95);
+  --surface: oklch(0.308 0.005 95);
+  --bg-3: oklch(0.345 0.007 95);
+  --bg-hover: oklch(0.3 0.006 95);
+  --bg-hover-side: oklch(0.272 0.006 95);
+  --bg-hover-panel: oklch(0.35 0.008 95);
+  --bg-active-side: oklch(0.318 0.008 95);
+  --bg-active-pal: oklch(0.35 0.008 95);
+  --bg-active: oklch(0.336 0.008 95);
+  --bg-selected: oklch(0.321 0.008 95);
+  --border: oklch(0.89 0.014 95 / 0.13);
+  --line: oklch(0.89 0.014 95 / 0.13);
+  --border-strong: oklch(0.89 0.014 95 / 0.28);
+  --text: oklch(0.982 0.0055 95);
+  --text-1: oklch(0.807 0.014 95);
+  --text-2: oklch(0.686 0.012 95);
+  --text-disabled: oklch(0.523 0.0095 95);
+  --overlay-soft: oklch(0 0 95 / 0.5);
+  --veil: oklch(0 0 95 / 0.72);
+  --chip-bg: oklch(0.345 0.007 95);
+  --chip-text: oklch(0.807 0.014 95);
+  --pill-on-line: oklch(0.807 0.014 95);
+  --pill-on-bg: oklch(0.345 0.007 95);
+  --link: oklch(0.982 0.0055 95);
+  --focus: oklch(0.982 0.0055 95);
+  --mark: oklch(0.982 0.0055 95);
+  --btn-fill: oklch(0.982 0.0055 95);
+  --btn-on: oklch(0.191 0.002 95);
+  --s-cours: oklch(0.807 0.014 95);
+  --s-ouvert: oklch(0.686 0.012 95);
+  --s-standby: oklch(0.523 0.0095 95);
+  --s-done: oklch(0.686 0.012 95);
+  --wait-bg: oklch(0.308 0.005 95);
+  --accent-attn-solid: oklch(0.554 0.135 53);
+  --accent-attn-text: oklch(0.692 0.135 53);
+  --accent-attn-tint: oklch(0.31 0.027 53);
+  --accent-attn-dot: oklch(0.584 0.1418 53);
+  --accent-attn-line: oklch(0.584 0.1418 53 / 0.5);
+  --accent-attn-on: oklch(1 0 89.9);
+  --status-late: oklch(0.702 0.192 14);
+  --status-ok: oklch(0.7142 0.1032 130.3);
+  --status-today: oklch(0.8031 0.1354 86.3);
+}
+
+/* Ocean · clair */
+:root[data-theme-palette="ocean"],
+[data-theme-palette="ocean"][data-theme="light"] {
+  color-scheme: light;
+  --bg: oklch(0.982 0 0);
+  --bg-2: oklch(0.966 0 0);
+  --surface-side: oklch(0.966 0 0);
+  --surface: oklch(1 0 0);
+  --bg-3: oklch(0.936 0 0);
+  --bg-hover: oklch(0.948 0 0);
+  --bg-hover-side: oklch(0.932 0 0);
+  --bg-hover-panel: oklch(0.948 0 0);
+  --bg-active-side: oklch(0.912 0 0);
+  --bg-active-pal: oklch(0.946 0 0);
+  --bg-active: oklch(0.927 0 0);
+  --bg-selected: oklch(0.942 0 0);
+  --border: oklch(0.21 0 0 / 0.13);
+  --line: oklch(0.21 0 0 / 0.13);
+  --border-strong: oklch(0.21 0 0 / 0.28);
+  --text: oklch(0.191 0 0);
+  --text-1: oklch(0.359 0 0);
+  --text-2: oklch(0.52 0 0);
+  --text-disabled: oklch(0.724 0 0);
+  --overlay-soft: oklch(0.19 0 0 / 0.22);
+  --veil: oklch(0.19 0 0 / 0.56);
+  --chip-bg: oklch(0.948 0 0);
+  --chip-text: oklch(0.359 0 0);
+  --pill-on-line: oklch(0.359 0 0);
+  --pill-on-bg: oklch(0.936 0 0);
+  --link: oklch(0.191 0 0);
+  --focus: oklch(0.191 0 0);
+  --mark: oklch(0.191 0 0);
+  --btn-fill: oklch(0.191 0 0);
+  --btn-on: oklch(0.982 0 0);
+  --s-cours: oklch(0.359 0 0);
+  --s-ouvert: oklch(0.52 0 0);
+  --s-standby: oklch(0.724 0 0);
+  --s-done: oklch(0.52 0 0);
+  --wait-bg: oklch(1 0 0);
+  --accent-attn-solid: oklch(0.574 0.19 275);
+  --accent-attn-text: oklch(0.542 0.19 275);
+  --accent-attn-tint: oklch(0.952 0.0228 275);
+  --accent-attn-dot: oklch(0.666 0.1779 275);
+  --accent-attn-line: oklch(0.666 0.1779 275 / 0.45);
+  --accent-attn-on: oklch(1 0 89.9);
+  --status-late: oklch(0.49 0.195 14);
+  --status-ok: oklch(0.4917 0.0884 130.9);
+  --status-today: oklch(0.7372 0.1444 84.4);
+}
+
+/* Ocean · sombre */
+:root[data-theme-palette="ocean"][data-theme="dark"],
+[data-theme-palette="ocean"][data-theme="dark"] {
+  color-scheme: dark;
+  --bg: oklch(0.268 0 0);
+  --bg-2: oklch(0.236 0 0);
+  --surface-side: oklch(0.236 0 0);
+  --surface: oklch(0.308 0 0);
+  --bg-3: oklch(0.345 0 0);
+  --bg-hover: oklch(0.3 0 0);
+  --bg-hover-side: oklch(0.272 0 0);
+  --bg-hover-panel: oklch(0.35 0 0);
+  --bg-active-side: oklch(0.318 0 0);
+  --bg-active-pal: oklch(0.35 0 0);
+  --bg-active: oklch(0.336 0 0);
+  --bg-selected: oklch(0.321 0 0);
+  --border: oklch(0.89 0 0 / 0.13);
+  --line: oklch(0.89 0 0 / 0.13);
+  --border-strong: oklch(0.89 0 0 / 0.28);
+  --text: oklch(0.982 0 0);
+  --text-1: oklch(0.807 0 0);
+  --text-2: oklch(0.686 0 0);
+  --text-disabled: oklch(0.523 0 0);
+  --overlay-soft: oklch(0 0 0 / 0.5);
+  --veil: oklch(0 0 0 / 0.72);
+  --chip-bg: oklch(0.345 0 0);
+  --chip-text: oklch(0.807 0 0);
+  --pill-on-line: oklch(0.807 0 0);
+  --pill-on-bg: oklch(0.345 0 0);
+  --link: oklch(0.982 0 0);
+  --focus: oklch(0.982 0 0);
+  --mark: oklch(0.982 0 0);
+  --btn-fill: oklch(0.982 0 0);
+  --btn-on: oklch(0.191 0 0);
+  --s-cours: oklch(0.807 0 0);
+  --s-ouvert: oklch(0.686 0 0);
+  --s-standby: oklch(0.523 0 0);
+  --s-done: oklch(0.686 0 0);
+  --wait-bg: oklch(0.308 0 0);
+  --accent-attn-solid: oklch(0.574 0.19 275);
+  --accent-attn-text: oklch(0.69 0.1636 275);
+  --accent-attn-tint: oklch(0.31 0.036 275);
+  --accent-attn-dot: oklch(0.586 0.1995 275);
+  --accent-attn-line: oklch(0.586 0.1995 275 / 0.5);
+  --accent-attn-on: oklch(1 0 89.9);
+  --status-late: oklch(0.702 0.192 14);
+  --status-ok: oklch(0.7142 0.1032 130.3);
+  --status-today: oklch(0.8031 0.1354 86.3);
+}

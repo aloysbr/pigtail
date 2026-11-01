@@ -1,0 +1,72 @@
+/* Pigtail web lot 5: the Sessions view (t3 .srow, .sd-*, .kind) and the session panel; every value comes from tokens.css / palette.css.
+   The accent (--accent-attn-*) only on what waits for an answer: .sess-wait rows, the « Attend ta réponse » count, the wait card. */
+@layer components {
+  .nav-sess .meta { margin-left: auto; }
+  .sll { padding-bottom: var(--sp-6); }
+  .sgh { display: flex; align-items: center; gap: var(--sp-4); min-height: var(--size-row); padding: 0 var(--sp-6); }
+  .sgh.g1 { border-bottom: var(--size-bw) solid var(--line); background: var(--group-bg); font-size: var(--fs-g1); font-weight: var(--fw-g1); }
+  .sgh.g2 { padding-left: calc(var(--sp-6) + var(--size-group-indent)); color: var(--c-g2); font-size: var(--fs-g2); font-weight: var(--fw-g2); }
+  .sgh .gsub { display: inline; font-weight: var(--fw-regular); }
+  .sgrp + .sgrp .sgh.g1 { margin-top: var(--g1-pt); }
+  /* the count of « Attend ta réponse »: an accent pill (t3 .badge) */
+  .grp-attn .cnt { display: inline-flex; align-items: center; justify-content: center; min-width: var(--size-sdot); height: var(--size-sdot); padding: 0 var(--sp-3); border-radius: var(--radius-pill); background: var(--accent-attn-solid); color: var(--accent-attn-on); font-size: var(--fs-11); font-weight: var(--fw-semibold); font-variant-numeric: tabular-nums; }
+  .srows { margin: 0; padding: 0; list-style: none; }
+  .empty-l { margin: 0; display: flex; align-items: center; min-height: var(--row-h); padding: 0 var(--sp-6) 0 calc(var(--sp-6) + var(--size-group-indent)); color: var(--text-2); font-size: var(--fs-12); }
+
+  /* a session row: dot · type chip + reason · state, life, cell · since */
+  .srow { position: relative; display: grid; grid-template-columns: var(--size-icon) minmax(0, 1fr) var(--size-col-sstate) var(--size-col-cell) var(--size-col-since); grid-template-areas: "i t s c d"; gap: var(--sp-4); align-items: center; min-height: var(--row-h); margin: 0 var(--row-inset); padding: 0 calc(var(--sp-6) - var(--row-inset)) 0 calc(var(--sp-6) + var(--size-group-indent) * 2 - var(--row-inset)); border-bottom: var(--size-bw) solid var(--row-line); border-radius: var(--radius-row); cursor: default; }
+  .srow:hover { background: var(--bg-hover); }
+  .srow.sel { background: var(--bg-selected); }
+  /* the selection is the rounded fill alone; a linked session (compact) is a tab stop of the sheet and keeps the ring */
+  .srow:not(.compact):focus-visible { outline: none; }
+  /* the cell stays a chip on a hover / selection fill (the chip's own colour is too close to it) */
+  .srow:hover .cell, .srow.sel .cell { background: var(--bg); }
+  .srow > .dot { grid-area: i; }
+  .srow .s-t { grid-area: t; display: flex; align-items: baseline; gap: var(--sp-4); min-width: 0; white-space: nowrap; }
+  .srow .s-t b { flex: 0 1 auto; min-width: 0; overflow: hidden; text-overflow: ellipsis; font-weight: var(--row-title-fw); }
+  .srow .s-m { display: contents; }
+  /* the state and the life in one column: « Travaille · Vivante » */
+  .srow .s-st { grid-area: s; min-width: 0; overflow: hidden; text-overflow: ellipsis; color: var(--text-2); font-size: var(--fs-12); white-space: nowrap; }
+  .srow .cell { grid-area: c; justify-self: start; }
+  .srow .cell, .spanel .cell { display: inline-flex; align-items: center; height: var(--size-sdot); padding: 0 var(--sp-3); border-radius: var(--radius-1); background: var(--chip-bg); color: var(--chip-text); font-size: var(--fs-11); font-weight: var(--fw-medium); white-space: nowrap; }
+  .srow .s-age { grid-area: d; justify-self: end; color: var(--text-2); font-size: var(--fs-12); white-space: nowrap; font-variant-numeric: tabular-nums; }
+
+  /* state marks: the state is written beside them (R9), the mark only repeats it */
+  .srow .dot, .sdot-w .dot { display: inline-flex; align-items: center; justify-content: center; width: var(--size-icon); height: var(--size-icon); }
+  .srow .dot::before, .sdot-w .dot::before { content: ""; width: var(--size-sess-dot); height: var(--size-sess-dot); border-radius: var(--radius-pill); box-sizing: border-box; }
+  .srow.sg-work .dot::before, .sdot-w.sg-work .dot::before { background: var(--text-2); }
+  .srow.sg-idle .dot::before, .sdot-w.sg-idle .dot::before { border: var(--size-focus) solid var(--text-2); }
+  .sess-wait .dot::before { background: var(--accent-attn-text); box-shadow: 0 0 0 var(--size-sess-halo) var(--accent-attn-line); }
+  /* the wait type chip (t3 .kind): tint + text */
+  .sess-wait .chip-attn { display: inline-flex; align-items: center; flex: none; height: var(--size-sdot); padding: 0 var(--sp-3); border-radius: var(--radius-1); background: var(--accent-attn-tint); color: var(--accent-attn-text); font-size: var(--fs-11); font-weight: var(--fw-semibold); }
+
+  /* the session panel (T16): the sheet's frame (.lpanel), the dot of its state, the cell chip, the worktree, « Ouvrir le sujet » */
+  .sdot-w { display: inline-flex; flex: none; }
+  .lp-ttl > .sdot-w { margin-top: calc((var(--fs-page-title) * var(--lh-tight) - var(--size-icon)) / 2); }
+  .spanel .path { min-width: 0; overflow-wrap: anywhere; }
+  .spanel .lp-link { margin: 0; font-size: var(--fs-12); }
+
+  /* the wait card, read only (t3 .wait app.css:295): hairline in the accent, its surface, a 3 px band of the dot's colour */
+  .wait { border: var(--size-bw) solid var(--accent-attn-line); border-radius: var(--radius-3); background: var(--wait-bg); box-shadow: inset var(--size-wait-band) 0 0 var(--accent-attn-dot), var(--shadow-card); overflow: hidden; }
+  .wait-h { display: flex; align-items: center; gap: var(--sp-4); min-height: var(--size-row); padding: 0 var(--sp-6) 0 calc(var(--sp-6) + var(--size-wait-band)); color: var(--accent-attn-text); font-size: var(--fs-12); font-weight: var(--fw-semibold); }
+  .wait-h .muted { font-weight: var(--fw-regular); }
+  .wait-h .kind { display: inline-flex; align-items: center; flex: none; margin-left: auto; height: var(--size-sdot); padding: 0 var(--sp-3); border-radius: var(--radius-1); background: var(--accent-attn-tint); color: var(--accent-attn-text); font-size: var(--fs-11); font-weight: var(--fw-semibold); }
+  .wait-b { padding: var(--sp-5) var(--sp-6) var(--sp-5) calc(var(--sp-6) + var(--size-wait-band)); border-top: var(--size-bw) solid var(--line); }
+  /* the action slot (WaitCard children): buttons and fields under the reason, same inset as the body */
+  .wait-f { display: flex; flex-direction: column; gap: var(--sp-4); padding: var(--sp-5) var(--sp-6) var(--sp-5) calc(var(--sp-6) + var(--size-wait-band)); border-top: var(--size-bw) solid var(--line); }
+  .wait-q { margin: 0; color: var(--text); font-size: var(--fs-13); font-weight: var(--fw-semibold); overflow-wrap: anywhere; }
+
+  /* the subject sheet's linked sessions (T17): the same row, without the subject indent, always on two lines (a sheet is narrow) */
+  .srow.compact { grid-template-columns: var(--size-icon) minmax(0, 1fr) var(--size-col-since); grid-template-areas: "i t d" ". m m"; row-gap: var(--row-meta-gap); margin: var(--sp-0); padding: var(--sp-3) var(--sp-4); }
+  .srow.compact .s-m { grid-area: m; display: flex; align-items: center; gap: var(--sp-4); min-width: 0; }
+  .srow.compact:last-child { border-bottom: none; }
+
+  /* a narrow list: two lines, dot · title · since, then state · life · cell under the title */
+  @container (max-width: 640px) {
+    .srow { grid-template-columns: var(--size-icon) minmax(0, 1fr) var(--size-col-since); grid-template-areas: "i t d" ". m m"; row-gap: var(--row-meta-gap); padding-block: var(--sp-2); padding-left: calc(var(--sp-6) + var(--size-group-indent) - var(--row-inset)); }
+    .srow .s-m { grid-area: m; display: flex; align-items: center; gap: var(--sp-4); min-width: 0; }
+    .srow .s-st { flex: 0 1 auto; min-width: 0; }
+    .srow .cell { flex: none; }
+    .srow.compact { padding: var(--sp-3) var(--sp-4); }
+  }
+}

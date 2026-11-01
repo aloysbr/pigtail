@@ -1,0 +1,19 @@
+# Built-in space table: what pigtail uses when <config dir>/spaces.yaml does
+# not exist. A space is a cmux sidebar folder for the sessions of a theme;
+# the order of the list is the folder order. « Inbox », « Maintenance » and
+# « Standby » always follow and cannot be declared here. None by default:
+# every session goes to « Inbox ».
+#
+# Each space belongs to one scope of scopes.yaml: a caller sees only its
+# scope's spaces, and a theme takes only a space of its own scope. icons:
+# the SF Symbol of a space's folder, by the space's scope; a scope without
+# one keeps cmux's default icon.
+#
+# Example:
+#   icons:
+#     personal: house.fill
+#   spaces:
+#     - {name: "Projects", scope: personal}
+#     - {name: "Admin", scope: personal}
+icons: {}
+spaces: []

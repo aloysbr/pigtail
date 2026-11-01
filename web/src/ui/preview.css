@@ -1,0 +1,39 @@
+/* The image preview (Quick Look, t4 app.css .ql-*): a veil and a window over every layer (sheet 6, Réglages 9, palette 10).
+   Colours are tokens only; it opens in a --dur-fast fade, nothing under reduced motion (G4). */
+@layer components {
+  .ql-veil { position: fixed; inset: var(--sp-0); z-index: 11; background: var(--veil); }
+  .ql { position: fixed; z-index: 12; top: var(--sp-9); bottom: var(--sp-9); left: 50%; transform: translateX(-50%); width: min(var(--size-ql-w), calc(100vw - 2 * var(--sp-4))); min-width: min(var(--size-ql-min), calc(100vw - 2 * var(--sp-4))); display: flex; flex-direction: column; overflow: hidden; border: var(--size-bw) solid var(--border-strong); border-radius: var(--radius-4); background: var(--surface); box-shadow: var(--shadow-pop); }
+  /* the window itself takes the focus on open (tabindex -1), to hold the keys: it is no control, no ring */
+  .ql:focus-visible { outline: none; }
+  .ql-ic { width: var(--size-icon); height: var(--size-icon); flex: none; }
+  .ql-h { flex: none; display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: var(--sp-4); min-height: var(--size-row-2); padding: var(--sp-0) var(--sp-4); border-bottom: var(--size-bw) solid var(--line); }
+  .ql-n { display: flex; align-items: baseline; justify-content: center; gap: var(--sp-4); min-width: 0; white-space: nowrap; }
+  .ql-n b { min-width: 0; overflow: hidden; text-overflow: ellipsis; font-weight: var(--fw-semibold); }
+  .ql-i { flex: none; color: var(--text-2); font-size: var(--fs-12); font-variant-numeric: tabular-nums; }
+  .ql-z { display: inline-flex; align-items: center; gap: var(--sp-2); min-height: var(--size-control); padding: var(--sp-0) var(--sp-4); border: var(--size-bw) solid var(--border); border-radius: var(--radius-btn); background: var(--surface); color: var(--text); font: inherit; font-size: var(--fs-12); cursor: pointer; }
+  .ql-z:hover { background: var(--bg-hover); }
+  .ql-z[aria-pressed="true"] { background: var(--bg-active); border-color: var(--text); }
+  .ql-st { position: relative; flex: 1 1 0; min-height: 0; background: var(--bg-2); }
+  .ql-b { position: absolute; inset: var(--sp-0); display: flex; align-items: center; justify-content: center; padding: var(--sp-6) var(--sp-10); overflow: hidden; }
+  .ql.real .ql-b { align-items: flex-start; justify-content: flex-start; overflow: auto; padding: var(--sp-0); }
+  /* fitted: the image stays whole in the window, however tall */
+  .ql-img { display: block; flex: none; max-width: 100%; max-height: 100%; border-radius: var(--radius-1); box-shadow: 0 0 0 var(--size-bw) var(--border-strong), var(--shadow-pop); cursor: zoom-in; }
+  .ql.real .ql-img { max-width: none; max-height: none; border-radius: var(--radius-1); box-shadow: none; cursor: zoom-out; }
+  /* a phone: margins on the stage wider than the 44 px buttons (+ their offset), so they sit beside the image, never over it; real size keeps its own padding 0 */
+  .phone .ql-b { padding-inline: calc(var(--size-touch) + 2 * var(--sp-4)); }
+  .ql-err { margin: var(--sp-0); color: var(--text-2); font-size: var(--fs-13); }
+  .ql-nav { position: absolute; top: 50%; display: inline-flex; align-items: center; justify-content: center; width: var(--size-ql-nav); height: var(--size-ql-nav); margin-top: calc(var(--size-ql-nav) / -2); border: var(--size-bw) solid var(--border-strong); border-radius: var(--radius-pill); background: var(--surface); color: var(--text); box-shadow: var(--shadow-pop); cursor: pointer; }
+  .ql-left { left: var(--sp-4); }
+  .ql-right { right: var(--sp-4); }
+  .ql-nav[aria-disabled="true"] { color: var(--text-disabled); box-shadow: none; cursor: default; }
+  .ql-f { flex: none; display: flex; flex-wrap: wrap; align-items: center; gap: var(--sp-2) var(--sp-4); min-height: var(--size-kbdbar); padding: var(--sp-4) var(--sp-6); border-top: var(--size-bw) solid var(--line); font-size: var(--fs-12); white-space: nowrap; }
+  .ql-c { flex: 1 1 100%; min-width: 0; color: var(--text); white-space: normal; overflow-wrap: anywhere; }
+  .ql-meta { color: var(--text-2); font-size: var(--fs-11); font-variant-numeric: tabular-nums; }
+  .ql-sp { flex: 1; }
+  .ql-hint { display: inline-flex; align-items: center; gap: var(--sp-2); color: var(--text-2); font-size: var(--fs-11); }
+  .phone .ql-hint { display: none; }
+  @media (prefers-reduced-motion: no-preference) {
+    .ql-veil, .ql { animation: ql-in var(--dur-fast) var(--ease-out); }
+  }
+  @keyframes ql-in { from { opacity: 0; } }
+}

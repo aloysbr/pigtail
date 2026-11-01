@@ -1,0 +1,147 @@
+/* Pigtail web — DS Hybride tokens: structure, type, spacing, radii, shadows and sizes only (t3/t4 ds.css).
+   Every colour comes from palette.css (generated from palette.ref.cjs, imported first by globals.css), in the
+   4 combinations Terra / Ocean × light / dark. Only tokens something reads stay here: tokens-live.test.ts fails on
+   any token with no reader (its PENDING_READERS / RESERVED lists name the exceptions) and on any colour literal
+   outside this file and palette.css. */
+:root {
+  /* Typography */
+  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", Inter, system-ui, sans-serif;
+  --font-serif: ui-serif, "New York", "Iowan Old Style", Georgia, serif;
+  --font-title: var(--font-serif);    /* page and panel titles (G6) */
+  --fs-page-title: 21px;              /* page and panel titles (serif) */
+  --fw-page-title: 500;
+  --ls-title: -0.005em;               /* serif titles sit a little tighter */
+  --fs-g1: 15px;                      /* group head, level 1 */
+  --fw-g1: 700;
+  --fs-g2: 13px;                      /* group head, level 2 */
+  --fw-g2: 600;
+  --c-g2: var(--text-1);
+  --nav-area-fs: 13px;                /* sidebar area */
+  --nav-area-fw: 700;
+  --fs-11: 11px;
+  --fs-12: 12px;
+  --fs-13: 13px;
+  --fs-15: 15px;
+  --fs-17: 17px;
+  --lh-tight: 1.25;
+  --lh-body: 1.45;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+
+  /* Spacing scale */
+  --sp-0: 0;
+  --sp-1: 2px;
+  --sp-2: 4px;
+  --sp-3: 6px;
+  --sp-4: 8px;
+  --sp-5: 12px;
+  --sp-6: 16px;
+  --sp-8: 24px;
+  --sp-9: 32px;
+  --sp-10: 40px;
+
+  /* Radii */
+  --radius-1: 6px;
+  --radius-2: 8px;
+  --radius-3: 10px;
+  --radius-4: 12px;
+  --radius-btn: 8px;                  /* a button's corner */
+  --radius-pill: 999px;
+  --radius-row: var(--radius-2);      /* Sessions: a row's fill (hover, selection) is rounded */
+  --radius-chip-m: var(--radius-2);   /* a chip on the phone: a moderate radius like the phone buttons */
+
+  /* Motion */
+  --dur-fast: 120ms;
+  --dur: 180ms;
+  --dur-spin: 900ms;                  /* one turn of the launch spinner */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --scale-pop: 0.96;
+  --op-drag: 0.5;
+
+  /* Shadows (theme-independent colour: a shade of black) */
+  --shadow-card: none;                /* flat surfaces: a card is its hairline, not a shadow */
+  --shadow-pop: 0 1px 2px rgba(0, 0, 0, 0.05), 0 10px 30px rgba(20, 20, 19, 0.1);
+
+  /* Sizes */
+  --size-bw: 0.5px;                   /* hairlines */
+  --size-focus: 2px;
+  --size-icon: 16px;
+  --size-icon-sm: 12px;
+  --size-pie-h: 14px;                 /* the pie on a project group header (G5) */
+  --size-sdot: 18px;
+  --size-target: 24px;
+  --size-control: 28px;
+  --size-scrollbar-list: 8px;         /* the list's own thin scrollbar: classic (takes layout), so WebKit's overlay one never sits over the rows */
+  --scroll-thumb: var(--text-disabled);  /* thumb of the list's classic scrollbar; a reference, so every theme follows */
+  --head-h: 56px;                     /* the list header (with the serif title) */
+  --size-row: 32px;
+  --size-row-2: 44px;
+  --size-touch: 44px;
+  --size-sheet: 480px;
+  --size-palette: 580px;
+  --size-popover: 304px;              /* the Réglages popover */
+  --size-frame-h: 800px;
+  --size-fmenu: 220px;
+  --size-kbd: 18px;
+  --size-kbdbar: 32px;
+  --size-sidebar: 240px;
+  --size-sidebar-min: 200px;          /* the sidebar's drag range (D5): no rail */
+  --size-sidebar-max: 360px;
+  --size-panel: 560px;
+  --size-panel-min: 400px;            /* the sheet never gets narrower than this when dragged */
+  --size-panel-xl: 640px;             /* the sheet on a wide screen */
+  --size-list-min: 400px;             /* the list keeps this much beside an open sheet, else the sheet goes over it */
+  --size-col-rank: 40px;
+  --size-col-age: 52px;
+  --size-col-num: 96px;
+  --size-col-step3: 108px;            /* step column: 3 ticks + « Construire » */
+  --size-col-theme: 132px;
+  --size-col-sstate: 200px;          /* Sessions: the state and life written out (« Attend ta réponse · En pause depuis 15:02 ») */
+  --size-col-cell: 44px;              /* Sessions: the cell (two or three letters) */
+  --size-col-since: 92px;             /* Sessions: « depuis 12 min » */
+  --size-sess-dot: 8px;               /* Sessions: the state dot (t3 .sd-wait) */
+  --size-sess-halo: 3px;              /* its halo when it waits */
+  --size-wait-band: 3px;              /* the wait card's left band, in the dot's colour (t3 .wait) */
+  --size-tick: 6px;
+  --size-tick-gap: 3px;
+  --size-step-tick: 14px;             /* step progress tick (the current one is wider) */
+  --size-launch-w: 112px;             /* action column: fits « Lancement… » and « Rejoindre l » */
+  --size-group-indent: var(--sp-6);   /* a nested group header is indented by one step */
+  --size-search-w: 200px;             /* the backlog search field */
+  --size-search-c: 96px;              /* the search field at rest; it widens to --size-search-w on focus */
+  --size-split-hit: 8px;              /* grab area of the separator, centred on the boundary */
+  --size-split-step: 16px;            /* ← → on the focused separator; ⇧ multiplies by 4 */
+  --size-split-tip: 176px;            /* the bubble fits a sidebar at its minimum */
+  --size-cy-sw: 20px;                 /* the switch inside the lifecycle box */
+  --size-hv-type: 60px;               /* history: type column (« Décision », « Attente »…) */
+  --size-hv-time: 36px;               /* history: time column (15:38) */
+  --size-ql-w: 720px;                 /* image preview (Quick Look), fitted */
+  --size-ql-min: 480px;               /* the narrowest preview window */
+  --size-ql-nav: 32px;                /* the round ← → buttons on the preview's sides */
+  --size-sess-card: 360px;            /* the session dock as a floating card (D6, t2 .sp-card) */
+  --size-sess-side: 380px;            /* the session dock as a side band from 1700 px (D7) */
+
+  /* Breakpoints, read by the app (a custom property cannot sit in a media query) */
+  --bp-half: 800px;                   /* under: the narrow column, the sheet is a page */
+  --bp-wide: 1536px;                  /* from: content width is capped, the sheet gets wider */
+  --bp-head-1: 1000px;                /* list width under which the scopes fold into one menu */
+  --bp-head-2: 920px;                 /* under: search, group and abandoned fold to icons */
+  --bp-head-tight: 1180px;            /* under: the scope pills drop their counts */
+
+  /* Roles: list rows, chips, groups */
+  --row-h: var(--size-row);
+  --row-line: transparent;            /* airy rows: no line between them */
+  --row-title-fw: var(--fw-medium);
+  --row-inset: var(--sp-4);           /* Sessions: a row's fill stops this far from the list's edges */
+  --g1-pt: var(--sp-6);               /* Sessions: space above a first-level group header */
+  --row-meta-gap: var(--sp-2);        /* between the lines of a 2- or 3-line row */
+  --chip-pad: var(--sp-3);
+  --chip-fw: var(--fw-medium);
+  --group-bg: transparent;            /* list group header: flat */
+  --s-capture: var(--text-2);         /* a capture: quieter than a subject */
+}
+
+:root[data-theme="dark"] {
+  --shadow-pop: 0 1px 2px rgba(0, 0, 0, 0.2), 0 12px 32px rgba(0, 0, 0, 0.45);
+}

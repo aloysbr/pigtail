@@ -1,0 +1,505 @@
+{
+ "_comment": "Synthetic fixture for TestSuggestReplay (criterion 1 of the suggestion subject): the shapes of off-topic declarations, no real reason and no personal data.",
+ "themes": [
+  {
+   "id": "thm_t",
+   "name": "T",
+   "kind": "project",
+   "vault_link": "Globex/Projects/t"
+  },
+  {
+   "id": "thm_p",
+   "name": "P",
+   "kind": "area",
+   "vault_link": "Perso/Areas/p"
+  }
+ ],
+ "subjects": [
+  {
+   "id": "sub_feed",
+   "theme": "thm_t",
+   "title": "Gauge layout polish",
+   "status": "done",
+   "logs": [
+    [
+     "delivery",
+     "globex/station#4242 merged · gauge layout polish"
+    ],
+    [
+     "phase",
+     "draft PR globex/station#4242"
+    ],
+    [
+     "handoff",
+     "état :\nworktree feat/gauge-layout, PR station#4242\nreste : review"
+    ],
+    [
+     "message",
+     "comme #4242 l'a fait"
+    ]
+   ]
+  },
+  {
+   "id": "sub_cite_b",
+   "theme": "thm_t",
+   "title": "Badge counters",
+   "status": "building",
+   "logs": [
+    [
+     "phase",
+     "keeps badge prop for PR #4242"
+    ],
+    [
+     "handoff",
+     "waiting on #4242"
+    ],
+    [
+     "note",
+     "see #4242"
+    ]
+   ]
+  },
+  {
+   "id": "sub_cite_c",
+   "theme": "thm_t",
+   "title": "Gate after gauge merge",
+   "status": "building",
+   "logs": [
+    [
+     "progress",
+     "gate x-after-4242 (fusion de station#4242)"
+    ]
+   ]
+  },
+  {
+   "id": "sub_cite_d",
+   "theme": "thm_t",
+   "title": "Row counters",
+   "status": "building",
+   "logs": [
+    [
+     "phase",
+     "#4242 padding override"
+    ],
+    [
+     "handoff",
+     "état :\nbranch feat/row-counters, rebased on #4242 by the other session"
+    ]
+   ]
+  },
+  {
+   "id": "sub_cite_e",
+   "theme": "thm_t",
+   "title": "Row padding",
+   "status": "building",
+   "logs": [
+    [
+     "phase",
+     "#4242 gauge row padding"
+    ],
+    [
+     "progress",
+     "station#4242 sets the padding"
+    ]
+   ]
+  },
+  {
+   "id": "sub_cite_f",
+   "theme": "thm_t",
+   "title": "Regression window",
+   "status": "building",
+   "logs": [
+    [
+     "phase",
+     "regression window (PR #4242 gauge layout polish)"
+    ]
+   ]
+  },
+  {
+   "id": "sub_panel",
+   "theme": "thm_t",
+   "title": "Rain gauge driver",
+   "status": "building",
+   "logs": [
+    [
+     "phase",
+     "PR #3102 draft on feat/rain-gauge-driver"
+    ],
+    [
+     "delivery",
+     "globex/backend#3102 merged"
+    ]
+   ]
+  },
+  {
+   "id": "sub_tabrm",
+   "theme": "thm_t",
+   "title": "Legacy tab removal",
+   "status": "done",
+   "logs": [
+    [
+     "delivery",
+     "globex/backend#3103 merged"
+    ]
+   ]
+  },
+  {
+   "id": "sub_cite_x",
+   "theme": "thm_t",
+   "title": "Sensor calibration",
+   "status": "building",
+   "logs": [
+    [
+     "handoff",
+     "depends on #3102"
+    ]
+   ]
+  },
+  {
+   "id": "sub_offsite_1",
+   "theme": "thm_t",
+   "title": "Calibration · offset",
+   "status": "building",
+   "logs": []
+  },
+  {
+   "id": "sub_offsite_2",
+   "theme": "thm_t",
+   "title": "Calibration · drift",
+   "status": "building",
+   "logs": []
+  },
+  {
+   "id": "sub_offsite_3",
+   "theme": "thm_t",
+   "title": "Calibration · humidity",
+   "status": "building",
+   "logs": []
+  },
+  {
+   "id": "sub_offsite_4",
+   "theme": "thm_t",
+   "title": "Calibration · archive",
+   "status": "done",
+   "logs": []
+  },
+  {
+   "id": "sub_outputs",
+   "theme": "thm_p",
+   "title": "Fin de vie des moules",
+   "status": "building",
+   "logs": []
+  },
+  {
+   "id": "sub_pig218",
+   "theme": "thm_p",
+   "title": "Sidebar folders",
+   "status": "done",
+   "logs": [
+    [
+     "delivery",
+     "acme/tool#218 merged"
+    ]
+   ]
+  },
+  {
+   "id": "sub_pig219",
+   "theme": "thm_p",
+   "title": "Sleep control",
+   "status": "done",
+   "logs": [
+    [
+     "delivery",
+     "acme/tool#219 merged"
+    ]
+   ]
+  },
+  {
+   "id": "sub_fill_00",
+   "theme": "thm_p",
+   "title": "Calendar sync",
+   "status": "building",
+   "logs": []
+  },
+  {
+   "id": "sub_fill_01",
+   "theme": "thm_t",
+   "title": "Search indexing",
+   "status": "building",
+   "logs": []
+  },
+  {
+   "id": "sub_fill_02",
+   "theme": "thm_t",
+   "title": "Billing export",
+   "status": "building",
+   "logs": []
+  },
+  {
+   "id": "sub_fill_03",
+   "theme": "thm_p",
+   "title": "Mobile onboarding",
+   "status": "building",
+   "logs": []
+  },
+  {
+   "id": "sub_fill_04",
+   "theme": "thm_t",
+   "title": "Dark mode tokens",
+   "status": "building",
+   "logs": []
+  },
+  {
+   "id": "sub_fill_05",
+   "theme": "thm_t",
+   "title": "Audit log retention",
+   "status": "building",
+   "logs": []
+  },
+  {
+   "id": "sub_fill_06",
+   "theme": "thm_p",
+   "title": "Humidity probe",
+   "status": "building",
+   "logs": []
+  },
+  {
+   "id": "sub_fill_07",
+   "theme": "thm_t",
+   "title": "Wind speed filter",
+   "status": "building",
+   "logs": []
+  },
+  {
+   "id": "sub_fill_08",
+   "theme": "thm_t",
+   "title": "Frost alarm",
+   "status": "building",
+   "logs": []
+  },
+  {
+   "id": "sub_fill_09",
+   "theme": "thm_p",
+   "title": "File preview",
+   "status": "building",
+   "logs": []
+  },
+  {
+   "id": "sub_fill_10",
+   "theme": "thm_t",
+   "title": "SSO login",
+   "status": "building",
+   "logs": []
+  },
+  {
+   "id": "sub_fill_11",
+   "theme": "thm_t",
+   "title": "Email digest",
+   "status": "building",
+   "logs": []
+  },
+  {
+   "id": "sub_fill_12",
+   "theme": "thm_p",
+   "title": "Dew point chart",
+   "status": "building",
+   "logs": []
+  },
+  {
+   "id": "sub_fill_13",
+   "theme": "thm_t",
+   "title": "Analytics dashboard",
+   "status": "building",
+   "logs": []
+  },
+  {
+   "id": "sub_fill_14",
+   "theme": "thm_t",
+   "title": "Station directory",
+   "status": "building",
+   "logs": []
+  },
+  {
+   "id": "sub_fill_15",
+   "theme": "thm_p",
+   "title": "Avatar upload",
+   "status": "building",
+   "logs": []
+  },
+  {
+   "id": "sub_fill_16",
+   "theme": "thm_t",
+   "title": "Solar panel mount",
+   "status": "building",
+   "logs": []
+  },
+  {
+   "id": "sub_fill_17",
+   "theme": "thm_t",
+   "title": "Draft autosave",
+   "status": "building",
+   "logs": []
+  },
+  {
+   "id": "sub_fill_18",
+   "theme": "thm_p",
+   "title": "Release notes",
+   "status": "building",
+   "logs": []
+  },
+  {
+   "id": "sub_fill_19",
+   "theme": "thm_t",
+   "title": "Status page",
+   "status": "building",
+   "logs": []
+  },
+  {
+   "id": "sub_fill_20",
+   "theme": "thm_t",
+   "title": "Push notifications",
+   "status": "building",
+   "logs": []
+  },
+  {
+   "id": "sub_fill_21",
+   "theme": "thm_p",
+   "title": "Translation pipeline",
+   "status": "building",
+   "logs": []
+  },
+  {
+   "id": "sub_fill_22",
+   "theme": "thm_t",
+   "title": "Export PDF",
+   "status": "building",
+   "logs": []
+  },
+  {
+   "id": "sub_fill_23",
+   "theme": "thm_t",
+   "title": "Tag cloud",
+   "status": "building",
+   "logs": []
+  },
+  {
+   "id": "sub_fill_24",
+   "theme": "thm_p",
+   "title": "Pressure widget",
+   "status": "building",
+   "logs": []
+  }
+ ],
+ "cases": [
+  {
+   "reason": "polish follow-up of merged #4242 (micro-fix)",
+   "caller": "gx",
+   "expect": "strong:sub_feed"
+  },
+  {
+   "reason": "fix padding regression after #4242",
+   "caller": "gx",
+   "expect": "strong:sub_feed"
+  },
+  {
+   "reason": "globex/station#4242 : regarder les commentaires",
+   "caller": "gx",
+   "expect": "strong:sub_feed"
+  },
+  {
+   "reason": "polish follow-up of merged #4242 (micro-fix)",
+   "caller": "perso",
+   "expect": "strong:sub_feed"
+  },
+  {
+   "reason": "question sur PR 3102/3103",
+   "caller": "gx",
+   "expect": "strong:sub_tabrm,sub_panel"
+  },
+  {
+   "reason": "PR #3103 : vérifier le retrait de l'onglet",
+   "caller": "gx",
+   "expect": "strong:sub_tabrm"
+  },
+  {
+   "reason": "retouche capteur calibration (schema success H1/H2)",
+   "caller": "gx",
+   "expect": "weak-any"
+  },
+  {
+   "reason": "relire l'offset de la calibration avec un collègue",
+   "caller": "gx",
+   "expect": "weak-any"
+  },
+  {
+   "reason": "capteur calibration version finale",
+   "caller": "gx",
+   "expect": "weak-any"
+  },
+  {
+   "reason": "question: prévention prompt injection",
+   "caller": "gx",
+   "expect": "none"
+  },
+  {
+   "reason": "conteneurs en dev : faut-il un compose",
+   "caller": "gx",
+   "expect": "none"
+  },
+  {
+   "reason": "simuler un écran à faible contraste",
+   "caller": "gx",
+   "expect": "none"
+  },
+  {
+   "reason": "question générale sur le message d'un collègue",
+   "caller": "gx",
+   "expect": "none"
+  },
+  {
+   "reason": "comment configurer git rerere",
+   "caller": "perso",
+   "expect": "none"
+  },
+  {
+   "reason": "lecture d'un article sur les agents",
+   "caller": "perso",
+   "expect": "none"
+  },
+  {
+   "reason": "estimation de charge pour un collègue",
+   "caller": "gx",
+   "expect": "none"
+  },
+  {
+   "reason": "vérifier la facture du mois",
+   "caller": "perso",
+   "expect": "none"
+  },
+  {
+   "reason": "traduire un mail en anglais",
+   "caller": "gx",
+   "expect": "none"
+  },
+  {
+   "reason": "fin de vie des moules",
+   "caller": "gx",
+   "expect": "elsewhere-weak"
+  },
+  {
+   "reason": "fin de vie des moules",
+   "caller": "perso",
+   "expect": "weak-any"
+  },
+  {
+   "reason": "#218 review follow-up",
+   "caller": "perso",
+   "expect": "weak-pr:sub_pig218"
+  },
+  {
+   "reason": "rebase de #219",
+   "caller": "perso",
+   "expect": "weak-pr:sub_pig219"
+  }
+ ]
+}

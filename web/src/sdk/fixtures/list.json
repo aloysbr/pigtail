@@ -1,0 +1,84 @@
+{
+  "data": {
+    "sessions": [
+      {
+        "id": "sdk_p1",
+        "subject_id": "sub_p",
+        "cwd": "/work/p",
+        "config_dir": "/cell/mp",
+        "claude_session_id": "csid-p",
+        "state": "waiting",
+        "host_pid": 4242,
+        "claude_pids": [
+          4243
+        ],
+        "turn": 0,
+        "pending": [
+          {
+            "rid": "r1",
+            "kind": "question",
+            "tool": "AskUserQuestion",
+            "input": {
+              "questions": [
+                {
+                  "question": "Which fruits?",
+                  "header": "Fruit",
+                  "multiSelect": true,
+                  "options": [
+                    {
+                      "label": "Apple",
+                      "description": "a"
+                    },
+                    {
+                      "label": "Banana",
+                      "description": "b"
+                    }
+                  ]
+                }
+              ]
+            },
+            "opened_at": "2026-10-29T10:00:05Z"
+          }
+        ],
+        "live": true,
+        "started_at": "2026-10-29T10:00:00Z"
+      },
+      {
+        "id": "sdk_p2",
+        "subject_id": "sub_p",
+        "cwd": "/work/p",
+        "config_dir": "/cell/mp",
+        "claude_session_id": "csid-p2",
+        "state": "ended",
+        "resume_command": "cd /work/p \u0026\u0026 CLAUDE_CONFIG_DIR=/cell/mp claude --resume csid-p2",
+        "host_pid": 0,
+        "claude_pids": [],
+        "turn": 0,
+        "pending": [],
+        "live": false,
+        "started_at": "2026-10-29T09:00:00Z"
+      },
+      {
+        "id": "sdk_t1",
+        "subject_id": "sub_t",
+        "cwd": "/work/t",
+        "config_dir": "/cell/mt",
+        "claude_session_id": "csid-t",
+        "state": "idle",
+        "host_pid": 5252,
+        "claude_pids": [
+          5253
+        ],
+        "turn": 1,
+        "pending": [],
+        "live": true,
+        "started_at": "2026-10-29T10:00:00Z"
+      }
+    ],
+    "launch_enabled": true
+  },
+  "meta": {
+    "request_id": "req_fixture"
+  }
+}
+

@@ -1,0 +1,1917 @@
+{
+ "_comment": "Synthetic bench: invented subjects of a fictional product team (7 themes, 167 titles, 27 of them close neighbours of the expected ones (distractors), French and English mixed) and 30 partial queries in the shape of real resolutions (stems, missing accents, two languages). Non-regression guard on the top-5 rate: the promise is top-5, the real rank is measured live from the recorded picks.",
+ "themes": [
+  {
+   "id": "thm_fx_platform",
+   "name": "Platform",
+   "kind": "ongoing",
+   "vault_link": "Perso/Projects/platform"
+  },
+  {
+   "id": "thm_fx_api",
+   "name": "Public API",
+   "kind": "ongoing",
+   "vault_link": "Perso/Projects/public_api"
+  },
+  {
+   "id": "thm_fx_mobile",
+   "name": "Mobile app",
+   "kind": "ongoing",
+   "vault_link": "Perso/Projects/mobile_app"
+  },
+  {
+   "id": "thm_fx_billing",
+   "name": "Billing",
+   "kind": "project",
+   "vault_link": "Perso/Projects/billing"
+  },
+  {
+   "id": "thm_fx_search",
+   "name": "Search",
+   "kind": "project",
+   "vault_link": "Perso/Projects/search"
+  },
+  {
+   "id": "thm_fx_docs",
+   "name": "Documentation",
+   "kind": "ongoing",
+   "vault_link": "Perso/Projects/documentation"
+  },
+  {
+   "id": "thm_fx_onboarding",
+   "name": "Onboarding",
+   "kind": "ongoing",
+   "vault_link": "Perso/Projects/onboarding"
+  }
+ ],
+ "subjects": [
+  {
+   "id": "sub_fx_001",
+   "theme": "thm_fx_platform",
+   "title": "Job queue : retries bornés avec backoff exponentiel",
+   "short_title": "",
+   "status": "done",
+   "logs": []
+  },
+  {
+   "id": "sub_fx_002",
+   "theme": "thm_fx_platform",
+   "title": "Cache : invalider les entrées périmées au rechargement",
+   "short_title": "",
+   "status": "done",
+   "logs": [
+    {
+     "kind": "phase",
+     "ts": 1002
+    }
+   ]
+  },
+  {
+   "id": "sub_fx_003",
+   "theme": "thm_fx_platform",
+   "title": "Scheduler : le délai de la tâche récurrente dérive après un redémarrage",
+   "short_title": "",
+   "status": "captured",
+   "logs": []
+  },
+  {
+   "id": "sub_fx_004",
+   "theme": "thm_fx_platform",
+   "title": "Logs : rotation quotidienne et rétention de 14 jours",
+   "short_title": "",
+   "status": "understanding",
+   "logs": []
+  },
+  {
+   "id": "sub_fx_005",
+   "theme": "thm_fx_platform",
+   "title": "Feature flags : évaluer côté serveur avec un défaut sûr",
+   "short_title": "",
+   "status": "captured",
+   "logs": []
+  },
+  {
+   "id": "sub_fx_006",
+   "theme": "thm_fx_platform",
+   "title": "Migrations : verrou consultatif pendant le déploiement",
+   "short_title": "",
+   "status": "done",
+   "logs": [
+    {
+     "kind": "phase",
+     "ts": 1006
+    }
+   ]
+  },
+  {
+   "id": "sub_fx_007",
+   "theme": "thm_fx_platform",
+   "title": "Worker pool : plafond de mémoire par worker",
+   "short_title": "",
+   "status": "building",
+   "logs": []
+  },
+  {
+   "id": "sub_fx_008",
+   "theme": "thm_fx_platform",
+   "title": "Config : recharger à chaud sans couper les connexions",
+   "short_title": "",
+   "status": "done",
+   "logs": [
+    {
+     "kind": "phase",
+     "ts": 1008
+    }
+   ]
+  },
+  {
+   "id": "sub_fx_009",
+   "theme": "thm_fx_platform",
+   "title": "Health check : séparer liveness et readiness",
+   "short_title": "",
+   "status": "parked",
+   "logs": []
+  },
+  {
+   "id": "sub_fx_010",
+   "theme": "thm_fx_platform",
+   "title": "Rate limiter : fenêtre glissante par clé d'API",
+   "short_title": "",
+   "status": "parked",
+   "logs": []
+  },
+  {
+   "id": "sub_fx_011",
+   "theme": "thm_fx_platform",
+   "title": "Secrets : rotation automatique des clés de signature",
+   "short_title": "",
+   "status": "captured",
+   "logs": []
+  },
+  {
+   "id": "sub_fx_012",
+   "theme": "thm_fx_platform",
+   "title": "Queue dashboard : afficher les tâches bloquées",
+   "short_title": "",
+   "status": "done",
+   "logs": [
+    {
+     "kind": "phase",
+     "ts": 1012
+    }
+   ]
+  },
+  {
+   "id": "sub_fx_013",
+   "theme": "thm_fx_platform",
+   "title": "Graceful shutdown : drainer les requêtes en cours",
+   "short_title": "",
+   "status": "parked",
+   "logs": []
+  },
+  {
+   "id": "sub_fx_014",
+   "theme": "thm_fx_platform",
+   "title": "Tracing : propager l'identifiant de corrélation",
+   "short_title": "",
+   "status": "captured",
+   "logs": []
+  },
+  {
+   "id": "sub_fx_015",
+   "theme": "thm_fx_platform",
+   "title": "Metrics : histogramme de latence par route",
+   "short_title": "",
+   "status": "captured",
+   "logs": []
+  },
+  {
+   "id": "sub_fx_016",
+   "theme": "thm_fx_platform",
+   "title": "Blob storage : nettoyage des fichiers orphelins",
+   "short_title": "",
+   "status": "done",
+   "logs": [
+    {
+     "kind": "phase",
+     "ts": 1016
+    }
+   ]
+  },
+  {
+   "id": "sub_fx_017",
+   "theme": "thm_fx_platform",
+   "title": "Backups : restauration testée chaque semaine",
+   "short_title": "",
+   "status": "captured",
+   "logs": []
+  },
+  {
+   "id": "sub_fx_018",
+   "theme": "thm_fx_platform",
+   "title": "Canary release : bascule progressive par pourcentage",
+   "short_title": "",
+   "status": "done",
+   "logs": [
+    {
+     "kind": "phase",
+     "ts": 1018
+    }
+   ]
+  },
+  {
+   "id": "sub_fx_019",
+   "theme": "thm_fx_platform",
+   "title": "Dependency audit : bloquer les licences incompatibles",
+   "short_title": "",
+   "status": "done",
+   "logs": [
+    {
+     "kind": "phase",
+     "ts": 1019
+    }
+   ]
+  },
+  {
+   "id": "sub_fx_020",
+   "theme": "thm_fx_platform",
+   "title": "CI : paralléliser les tests d'intégration",
+   "short_title": "",
+   "status": "captured",
+   "logs": []
+  },
+  {
+   "id": "sub_fx_021",
+   "theme": "thm_fx_api",
+   "title": "Pagination : curseurs stables sur la liste des commandes",
+   "short_title": "",
+   "status": "done",
+   "logs": [
+    {
+     "kind": "phase",
+     "ts": 1021
+    }
+   ]
+  },
+  {
+   "id": "sub_fx_022",
+   "theme": "thm_fx_api",
+   "title": "Webhooks : signature HMAC et rejeu manuel",
+   "short_title": "",
+   "status": "understanding",
+   "logs": []
+  },
+  {
+   "id": "sub_fx_023",
+   "theme": "thm_fx_api",
+   "title": "Erreurs : format problem+json homogène",
+   "short_title": "",
+   "status": "captured",
+   "logs": []
+  },
+  {
+   "id": "sub_fx_024",
+   "theme": "thm_fx_api",
+   "title": "SDK Python : timeout configurable par appel",
+   "short_title": "",
+   "status": "done",
+   "logs": [
+    {
+     "kind": "phase",
+     "ts": 1024
+    }
+   ]
+  },
+  {
+   "id": "sub_fx_025",
+   "theme": "thm_fx_api",
+   "title": "OpenAPI : générer la spec depuis les handlers",
+   "short_title": "",
+   "status": "captured",
+   "logs": []
+  },
+  {
+   "id": "sub_fx_026",
+   "theme": "thm_fx_api",
+   "title": "Versioning : en-tête de version et période de dépréciation",
+   "short_title": "",
+   "status": "captured",
+   "logs": []
+  },
+  {
+   "id": "sub_fx_027",
+   "theme": "thm_fx_api",
+   "title": "Idempotence : clé d'idempotence sur les paiements",
+   "short_title": "",
+   "status": "done",
+   "logs": [
+    {
+     "kind": "phase",
+     "ts": 1027
+    }
+   ]
+  },
+  {
+   "id": "sub_fx_028",
+   "theme": "thm_fx_api",
+   "title": "Filtres : opérateurs de comparaison sur les dates",
+   "short_title": "",
+   "status": "understanding",
+   "logs": []
+  },
+  {
+   "id": "sub_fx_029",
+   "theme": "thm_fx_api",
+   "title": "Quotas : en-têtes X-RateLimit dans chaque réponse",
+   "short_title": "",
+   "status": "captured",
+   "logs": []
+  },
+  {
+   "id": "sub_fx_030",
+   "theme": "thm_fx_api",
+   "title": "Auth : jetons d'accès à durée courte et refresh",
+   "short_title": "",
+   "status": "captured",
+   "logs": []
+  },
+  {
+   "id": "sub_fx_031",
+   "theme": "thm_fx_api",
+   "title": "Bulk import : endpoint par lots avec rapport d'erreurs",
+   "short_title": "",
+   "status": "done",
+   "logs": [
+    {
+     "kind": "phase",
+     "ts": 1031
+    }
+   ]
+  },
+  {
+   "id": "sub_fx_032",
+   "theme": "thm_fx_api",
+   "title": "Sandbox : environnement de test avec données fictives",
+   "short_title": "",
+   "status": "understanding",
+   "logs": []
+  },
+  {
+   "id": "sub_fx_033",
+   "theme": "thm_fx_api",
+   "title": "GraphQL : limite de profondeur des requêtes",
+   "short_title": "",
+   "status": "parked",
+   "logs": []
+  },
+  {
+   "id": "sub_fx_034",
+   "theme": "thm_fx_api",
+   "title": "Upload : reprise d'un envoi interrompu",
+   "short_title": "",
+   "status": "done",
+   "logs": [
+    {
+     "kind": "phase",
+     "ts": 1034
+    }
+   ]
+  },
+  {
+   "id": "sub_fx_035",
+   "theme": "thm_fx_api",
+   "title": "CORS : liste blanche par application cliente",
+   "short_title": "",
+   "status": "dropped",
+   "logs": []
+  },
+  {
+   "id": "sub_fx_036",
+   "theme": "thm_fx_api",
+   "title": "Sérialisation : champs nuls omis par défaut",
+   "short_title": "",
+   "status": "done",
+   "logs": [
+    {
+     "kind": "phase",
+     "ts": 1036
+    }
+   ]
+  },
+  {
+   "id": "sub_fx_037",
+   "theme": "thm_fx_api",
+   "title": "Changelog API : notes générées à chaque release",
+   "short_title": "",
+   "status": "captured",
+   "logs": []
+  },
+  {
+   "id": "sub_fx_038",
+   "theme": "thm_fx_api",
+   "title": "Exports CSV : encodage UTF-8 avec BOM optionnel",
+   "short_title": "",
+   "status": "done",
+   "logs": [
+    {
+     "kind": "phase",
+     "ts": 1038
+    }
+   ]
+  },
+  {
+   "id": "sub_fx_039",
+   "theme": "thm_fx_api",
+   "title": "Tri : plusieurs clés de tri combinées",
+   "short_title": "",
+   "status": "done",
+   "logs": [
+    {
+     "kind": "phase",
+     "ts": 1039
+    }
+   ]
+  },
+  {
+   "id": "sub_fx_040",
+   "theme": "thm_fx_api",
+   "title": "Webhook retries : file morte après cinq échecs",
+   "short_title": "",
+   "status": "done",
+   "logs": [
+    {
+     "kind": "phase",
+     "ts": 1040
+    }
+   ]
+  },
+  {
+   "id": "sub_fx_041",
+   "theme": "thm_fx_mobile",
+   "title": "Push : regrouper les notifications par conversation",
+   "short_title": "",
+   "status": "done",
+   "logs": [
+    {
+     "kind": "phase",
+     "ts": 1041
+    }
+   ]
+  },
+  {
+   "id": "sub_fx_042",
+   "theme": "thm_fx_mobile",
+   "title": "Offline : file d'écriture locale et resynchronisation",
+   "short_title": "",
+   "status": "captured",
+   "logs": []
+  },
+  {
+   "id": "sub_fx_043",
+   "theme": "thm_fx_mobile",
+   "title": "Deep links : ouvrir directement un document partagé",
+   "short_title": "",
+   "status": "captured",
+   "logs": []
+  },
+  {
+   "id": "sub_fx_044",
+   "theme": "thm_fx_mobile",
+   "title": "Biométrie : déverrouillage Face ID facultatif",
+   "short_title": "",
+   "status": "building",
+   "logs": []
+  },
+  {
+   "id": "sub_fx_045",
+   "theme": "thm_fx_mobile",
+   "title": "Dark mode : couleurs des graphiques illisibles",
+   "short_title": "",
+   "status": "parked",
+   "logs": []
+  },
+  {
+   "id": "sub_fx_046",
+   "theme": "thm_fx_mobile",
+   "title": "Splash screen : démarrage à froid sous deux secondes",
+   "short_title": "",
+   "status": "captured",
+   "logs": []
+  },
+  {
+   "id": "sub_fx_047",
+   "theme": "thm_fx_mobile",
+   "title": "Caméra : compression avant l'envoi d'une photo",
+   "short_title": "",
+   "status": "done",
+   "logs": [
+    {
+     "kind": "phase",
+     "ts": 1047
+    }
+   ]
+  },
+  {
+   "id": "sub_fx_048",
+   "theme": "thm_fx_mobile",
+   "title": "Accessibilité : taille de police dynamique",
+   "short_title": "",
+   "status": "inbox",
+   "logs": []
+  },
+  {
+   "id": "sub_fx_049",
+   "theme": "thm_fx_mobile",
+   "title": "Crash reports : symbolication des builds de release",
+   "short_title": "",
+   "status": "parked",
+   "logs": []
+  },
+  {
+   "id": "sub_fx_050",
+   "theme": "thm_fx_mobile",
+   "title": "Tablette : mise en page à deux colonnes",
+   "short_title": "",
+   "status": "captured",
+   "logs": []
+  },
+  {
+   "id": "sub_fx_051",
+   "theme": "thm_fx_mobile",
+   "title": "Widget : prochains rendez-vous sur l'écran d'accueil",
+   "short_title": "",
+   "status": "captured",
+   "logs": []
+  },
+  {
+   "id": "sub_fx_052",
+   "theme": "thm_fx_mobile",
+   "title": "Mise à jour forcée : écran de version minimale",
+   "short_title": "",
+   "status": "understanding",
+   "logs": []
+  },
+  {
+   "id": "sub_fx_053",
+   "theme": "thm_fx_mobile",
+   "title": "Clavier : le champ de saisie passe sous le clavier",
+   "short_title": "",
+   "status": "done",
+   "logs": [
+    {
+     "kind": "phase",
+     "ts": 1053
+    }
+   ]
+  },
+  {
+   "id": "sub_fx_054",
+   "theme": "thm_fx_mobile",
+   "title": "Gestes : balayer pour archiver un message",
+   "short_title": "",
+   "status": "done",
+   "logs": [
+    {
+     "kind": "phase",
+     "ts": 1054
+    }
+   ]
+  },
+  {
+   "id": "sub_fx_055",
+   "theme": "thm_fx_mobile",
+   "title": "Localisation : formats de date par région",
+   "short_title": "",
+   "status": "dropped",
+   "logs": []
+  },
+  {
+   "id": "sub_fx_056",
+   "theme": "thm_fx_mobile",
+   "title": "Cache images : plafond disque et éviction LRU",
+   "short_title": "",
+   "status": "captured",
+   "logs": []
+  },
+  {
+   "id": "sub_fx_057",
+   "theme": "thm_fx_mobile",
+   "title": "Permissions : demander la caméra au bon moment",
+   "short_title": "",
+   "status": "captured",
+   "logs": []
+  },
+  {
+   "id": "sub_fx_058",
+   "theme": "thm_fx_mobile",
+   "title": "Navigation : conserver la pile après un retour d'arrière-plan",
+   "short_title": "",
+   "status": "done",
+   "logs": [
+    {
+     "kind": "phase",
+     "ts": 1058
+    }
+   ]
+  },
+  {
+   "id": "sub_fx_059",
+   "theme": "thm_fx_mobile",
+   "title": "Tests UI : parcours d'inscription automatisé",
+   "short_title": "",
+   "status": "captured",
+   "logs": []
+  },
+  {
+   "id": "sub_fx_060",
+   "theme": "thm_fx_mobile",
+   "title": "Store listing : captures d'écran et description",
+   "short_title": "",
+   "status": "captured",
+   "logs": []
+  },
+  {
+   "id": "sub_fx_061",
+   "theme": "thm_fx_billing",
+   "title": "Factures : numérotation continue par année",
+   "short_title": "",
+   "status": "done",
+   "logs": [
+    {
+     "kind": "phase",
+     "ts": 1061
+    }
+   ]
+  },
+  {
+   "id": "sub_fx_062",
+   "theme": "thm_fx_billing",
+   "title": "TVA : taux par pays et cas d'autoliquidation",
+   "short_title": "",
+   "status": "dropped",
+   "logs": []
+  },
+  {
+   "id": "sub_fx_063",
+   "theme": "thm_fx_billing",
+   "title": "Relances : séquence d'emails après impayé",
+   "short_title": "",
+   "status": "done",
+   "logs": [
+    {
+     "kind": "phase",
+     "ts": 1063
+    }
+   ]
+  },
+  {
+   "id": "sub_fx_064",
+   "theme": "thm_fx_billing",
+   "title": "Abonnements : changement de formule en cours de période",
+   "short_title": "",
+   "status": "done",
+   "logs": [
+    {
+     "kind": "phase",
+     "ts": 1064
+    }
+   ]
+  },
+  {
+   "id": "sub_fx_065",
+   "theme": "thm_fx_billing",
+   "title": "Prorata : calcul au jour près lors d'un upgrade",
+   "short_title": "",
+   "status": "dropped",
+   "logs": []
+  },
+  {
+   "id": "sub_fx_066",
+   "theme": "thm_fx_billing",
+   "title": "Avoirs : émettre un avoir partiel",
+   "short_title": "",
+   "status": "done",
+   "logs": [
+    {
+     "kind": "phase",
+     "ts": 1066
+    }
+   ]
+  },
+  {
+   "id": "sub_fx_067",
+   "theme": "thm_fx_billing",
+   "title": "Moyens de paiement : carte expirée, alerte anticipée",
+   "short_title": "",
+   "status": "captured",
+   "logs": []
+  },
+  {
+   "id": "sub_fx_068",
+   "theme": "thm_fx_billing",
+   "title": "Export comptable : fichier au format FEC",
+   "short_title": "",
+   "status": "inbox",
+   "logs": []
+  },
+  {
+   "id": "sub_fx_069",
+   "theme": "thm_fx_billing",
+   "title": "Essai gratuit : conversion automatique en fin de période",
+   "short_title": "",
+   "status": "captured",
+   "logs": []
+  },
+  {
+   "id": "sub_fx_070",
+   "theme": "thm_fx_billing",
+   "title": "Coupons : codes promo limités dans le temps",
+   "short_title": "",
+   "status": "done",
+   "logs": [
+    {
+     "kind": "phase",
+     "ts": 1070
+    }
+   ]
+  },
+  {
+   "id": "sub_fx_071",
+   "theme": "thm_fx_billing",
+   "title": "Portail client : télécharger ses factures en PDF",
+   "short_title": "",
+   "status": "captured",
+   "logs": []
+  },
+  {
+   "id": "sub_fx_072",
+   "theme": "thm_fx_billing",
+   "title": "Multi-devises : arrondis et taux de change figés",
+   "short_title": "",
+   "status": "done",
+   "logs": [
+    {
+     "kind": "phase",
+     "ts": 1072
+    }
+   ]
+  },
+  {
+   "id": "sub_fx_073",
+   "theme": "thm_fx_billing",
+   "title": "Rapprochement bancaire : correspondance des virements",
+   "short_title": "",
+   "status": "inbox",
+   "logs": []
+  },
+  {
+   "id": "sub_fx_074",
+   "theme": "thm_fx_billing",
+   "title": "Dunning : suspension progressive du compte",
+   "short_title": "",
+   "status": "captured",
+   "logs": []
+  },
+  {
+   "id": "sub_fx_075",
+   "theme": "thm_fx_billing",
+   "title": "Taxes : arrondi par ligne ou par total",
+   "short_title": "",
+   "status": "captured",
+   "logs": []
+  },
+  {
+   "id": "sub_fx_076",
+   "theme": "thm_fx_billing",
+   "title": "Reporting MRR : churn et expansion par cohorte",
+   "short_title": "",
+   "status": "dropped",
+   "logs": []
+  },
+  {
+   "id": "sub_fx_077",
+   "theme": "thm_fx_billing",
+   "title": "Remboursements : motif obligatoire et plafond",
+   "short_title": "",
+   "status": "done",
+   "logs": [
+    {
+     "kind": "phase",
+     "ts": 1077
+    }
+   ]
+  },
+  {
+   "id": "sub_fx_078",
+   "theme": "thm_fx_billing",
+   "title": "Devis : transformer un devis accepté en abonnement",
+   "short_title": "",
+   "status": "captured",
+   "logs": []
+  },
+  {
+   "id": "sub_fx_079",
+   "theme": "thm_fx_billing",
+   "title": "Mentions légales : pied de facture configurable",
+   "short_title": "",
+   "status": "parked",
+   "logs": []
+  },
+  {
+   "id": "sub_fx_080",
+   "theme": "thm_fx_billing",
+   "title": "Webhook paiement : doublons ignorés",
+   "short_title": "",
+   "status": "understanding",
+   "logs": []
+  },
+  {
+   "id": "sub_fx_081",
+   "theme": "thm_fx_search",
+   "title": "Index : reconstruction incrémentale la nuit",
+   "short_title": "",
+   "status": "done",
+   "logs": [
+    {
+     "kind": "phase",
+     "ts": 1081
+    }
+   ]
+  },
+  {
+   "id": "sub_fx_082",
+   "theme": "thm_fx_search",
+   "title": "Analyseur : racines des mots français et anglais",
+   "short_title": "",
+   "status": "done",
+   "logs": [
+    {
+     "kind": "phase",
+     "ts": 1082
+    }
+   ]
+  },
+  {
+   "id": "sub_fx_083",
+   "theme": "thm_fx_search",
+   "title": "Synonymes : dictionnaire éditable par l'équipe",
+   "short_title": "",
+   "status": "done",
+   "logs": []
+  },
+  {
+   "id": "sub_fx_084",
+   "theme": "thm_fx_search",
+   "title": "Facettes : compter les résultats par catégorie",
+   "short_title": "",
+   "status": "captured",
+   "logs": []
+  },
+  {
+   "id": "sub_fx_085",
+   "theme": "thm_fx_search",
+   "title": "Autocomplétion : suggestions après deux caractères",
+   "short_title": "",
+   "status": "captured",
+   "logs": []
+  },
+  {
+   "id": "sub_fx_086",
+   "theme": "thm_fx_search",
+   "title": "Pertinence : pondérer le titre plus que le corps",
+   "short_title": "",
+   "status": "captured",
+   "logs": []
+  },
+  {
+   "id": "sub_fx_087",
+   "theme": "thm_fx_search",
+   "title": "Fautes de frappe : tolérance à une lettre près",
+   "short_title": "",
+   "status": "captured",
+   "logs": []
+  },
+  {
+   "id": "sub_fx_088",
+   "theme": "thm_fx_search",
+   "title": "Highlight : surligner les termes trouvés",
+   "short_title": "",
+   "status": "done",
+   "logs": [
+    {
+     "kind": "phase",
+     "ts": 1088
+    }
+   ]
+  },
+  {
+   "id": "sub_fx_089",
+   "theme": "thm_fx_search",
+   "title": "Permissions : filtrer les résultats par droits",
+   "short_title": "",
+   "status": "captured",
+   "logs": []
+  },
+  {
+   "id": "sub_fx_090",
+   "theme": "thm_fx_search",
+   "title": "Requêtes lentes : journal des recherches au-delà d'une seconde",
+   "short_title": "",
+   "status": "inbox",
+   "logs": []
+  },
+  {
+   "id": "sub_fx_091",
+   "theme": "thm_fx_search",
+   "title": "Pièces jointes : extraire le texte des PDF",
+   "short_title": "",
+   "status": "captured",
+   "logs": []
+  },
+  {
+   "id": "sub_fx_092",
+   "theme": "thm_fx_search",
+   "title": "Tri par date : fraîcheur des documents récents",
+   "short_title": "",
+   "status": "done",
+   "logs": [
+    {
+     "kind": "phase",
+     "ts": 1092
+    }
+   ]
+  },
+  {
+   "id": "sub_fx_093",
+   "theme": "thm_fx_search",
+   "title": "Historique : suggestions depuis les recherches passées",
+   "short_title": "",
+   "status": "captured",
+   "logs": []
+  },
+  {
+   "id": "sub_fx_094",
+   "theme": "thm_fx_search",
+   "title": "Zéro résultat : proposer des alternatives",
+   "short_title": "",
+   "status": "parked",
+   "logs": []
+  },
+  {
+   "id": "sub_fx_095",
+   "theme": "thm_fx_search",
+   "title": "Reindex : commande d'administration sans interruption",
+   "short_title": "",
+   "status": "understanding",
+   "logs": []
+  },
+  {
+   "id": "sub_fx_096",
+   "theme": "thm_fx_search",
+   "title": "Accents : ignorer la casse et les diacritiques",
+   "short_title": "",
+   "status": "done",
+   "logs": [
+    {
+     "kind": "phase",
+     "ts": 1096
+    }
+   ]
+  },
+  {
+   "id": "sub_fx_097",
+   "theme": "thm_fx_search",
+   "title": "Opérateurs : guillemets et exclusion avec un moins",
+   "short_title": "",
+   "status": "done",
+   "logs": []
+  },
+  {
+   "id": "sub_fx_098",
+   "theme": "thm_fx_search",
+   "title": "Cluster : répartition des shards après ajout d'un nœud",
+   "short_title": "",
+   "status": "building",
+   "logs": []
+  },
+  {
+   "id": "sub_fx_099",
+   "theme": "thm_fx_search",
+   "title": "Analytics : termes les plus cherchés sans résultat",
+   "short_title": "",
+   "status": "captured",
+   "logs": []
+  },
+  {
+   "id": "sub_fx_100",
+   "theme": "thm_fx_search",
+   "title": "Snippets : extrait contextuel de trois lignes",
+   "short_title": "",
+   "status": "dropped",
+   "logs": []
+  },
+  {
+   "id": "sub_fx_101",
+   "theme": "thm_fx_docs",
+   "title": "Guide de démarrage : installation en cinq minutes",
+   "short_title": "",
+   "status": "understanding",
+   "logs": []
+  },
+  {
+   "id": "sub_fx_102",
+   "theme": "thm_fx_docs",
+   "title": "Référence CLI : générer les pages depuis l'aide",
+   "short_title": "",
+   "status": "done",
+   "logs": [
+    {
+     "kind": "phase",
+     "ts": 1102
+    }
+   ]
+  },
+  {
+   "id": "sub_fx_103",
+   "theme": "thm_fx_docs",
+   "title": "Tutoriel : première intégration pas à pas",
+   "short_title": "",
+   "status": "done",
+   "logs": [
+    {
+     "kind": "phase",
+     "ts": 1103
+    }
+   ]
+  },
+  {
+   "id": "sub_fx_104",
+   "theme": "thm_fx_docs",
+   "title": "Glossaire : définitions et renvois croisés",
+   "short_title": "",
+   "status": "done",
+   "logs": [
+    {
+     "kind": "phase",
+     "ts": 1104
+    }
+   ]
+  },
+  {
+   "id": "sub_fx_105",
+   "theme": "thm_fx_docs",
+   "title": "FAQ : regrouper les questions fréquentes du support",
+   "short_title": "",
+   "status": "captured",
+   "logs": []
+  },
+  {
+   "id": "sub_fx_106",
+   "theme": "thm_fx_docs",
+   "title": "Exemples de code : tester les extraits à chaque build",
+   "short_title": "",
+   "status": "done",
+   "logs": [
+    {
+     "kind": "phase",
+     "ts": 1106
+    }
+   ]
+  },
+  {
+   "id": "sub_fx_107",
+   "theme": "thm_fx_docs",
+   "title": "Recherche docs : filtrer par version",
+   "short_title": "",
+   "status": "captured",
+   "logs": []
+  },
+  {
+   "id": "sub_fx_108",
+   "theme": "thm_fx_docs",
+   "title": "Traductions : synchroniser avec l'outil de localisation",
+   "short_title": "",
+   "status": "done",
+   "logs": [
+    {
+     "kind": "phase",
+     "ts": 1108
+    }
+   ]
+  },
+  {
+   "id": "sub_fx_109",
+   "theme": "thm_fx_docs",
+   "title": "Diagrammes : source versionnée et rendu automatique",
+   "short_title": "",
+   "status": "captured",
+   "logs": []
+  },
+  {
+   "id": "sub_fx_110",
+   "theme": "thm_fx_docs",
+   "title": "Notes de migration : de la v2 vers la v3",
+   "short_title": "",
+   "status": "captured",
+   "logs": []
+  },
+  {
+   "id": "sub_fx_111",
+   "theme": "thm_fx_docs",
+   "title": "Contribuer : modèle de pull request et charte",
+   "short_title": "",
+   "status": "captured",
+   "logs": []
+  },
+  {
+   "id": "sub_fx_112",
+   "theme": "thm_fx_docs",
+   "title": "Liens cassés : vérification dans la CI",
+   "short_title": "",
+   "status": "understanding",
+   "logs": []
+  },
+  {
+   "id": "sub_fx_113",
+   "theme": "thm_fx_docs",
+   "title": "Architecture : vue d'ensemble et décisions",
+   "short_title": "",
+   "status": "captured",
+   "logs": []
+  },
+  {
+   "id": "sub_fx_114",
+   "theme": "thm_fx_docs",
+   "title": "Sécurité : page de divulgation responsable",
+   "short_title": "",
+   "status": "done",
+   "logs": [
+    {
+     "kind": "phase",
+     "ts": 1114
+    }
+   ]
+  },
+  {
+   "id": "sub_fx_115",
+   "theme": "thm_fx_docs",
+   "title": "Release notes : format uniforme par version",
+   "short_title": "",
+   "status": "captured",
+   "logs": []
+  },
+  {
+   "id": "sub_fx_116",
+   "theme": "thm_fx_docs",
+   "title": "Playground : essayer l'API dans le navigateur",
+   "short_title": "",
+   "status": "done",
+   "logs": [
+    {
+     "kind": "phase",
+     "ts": 1116
+    }
+   ]
+  },
+  {
+   "id": "sub_fx_117",
+   "theme": "thm_fx_docs",
+   "title": "Mode sombre : thème du site de documentation",
+   "short_title": "",
+   "status": "captured",
+   "logs": []
+  },
+  {
+   "id": "sub_fx_118",
+   "theme": "thm_fx_docs",
+   "title": "Vidéos : captions et transcription",
+   "short_title": "",
+   "status": "done",
+   "logs": []
+  },
+  {
+   "id": "sub_fx_119",
+   "theme": "thm_fx_docs",
+   "title": "Index des erreurs : un code, une explication",
+   "short_title": "",
+   "status": "done",
+   "logs": [
+    {
+     "kind": "phase",
+     "ts": 1119
+    }
+   ]
+  },
+  {
+   "id": "sub_fx_120",
+   "theme": "thm_fx_docs",
+   "title": "Snippets : copier en un clic avec la langue détectée",
+   "short_title": "",
+   "status": "captured",
+   "logs": []
+  },
+  {
+   "id": "sub_fx_121",
+   "theme": "thm_fx_onboarding",
+   "title": "Checklist : étapes de configuration du compte",
+   "short_title": "",
+   "status": "inbox",
+   "logs": []
+  },
+  {
+   "id": "sub_fx_122",
+   "theme": "thm_fx_onboarding",
+   "title": "Invitations : relancer un collègue qui n'a pas répondu",
+   "short_title": "",
+   "status": "dropped",
+   "logs": []
+  },
+  {
+   "id": "sub_fx_123",
+   "theme": "thm_fx_onboarding",
+   "title": "Import de contacts : correspondance des colonnes",
+   "short_title": "",
+   "status": "inbox",
+   "logs": []
+  },
+  {
+   "id": "sub_fx_124",
+   "theme": "thm_fx_onboarding",
+   "title": "Visite guidée : info-bulles sur le tableau de bord",
+   "short_title": "",
+   "status": "inbox",
+   "logs": []
+  },
+  {
+   "id": "sub_fx_125",
+   "theme": "thm_fx_onboarding",
+   "title": "Emails de bienvenue : séquence sur sept jours",
+   "short_title": "",
+   "status": "done",
+   "logs": [
+    {
+     "kind": "phase",
+     "ts": 1125
+    }
+   ]
+  },
+  {
+   "id": "sub_fx_126",
+   "theme": "thm_fx_onboarding",
+   "title": "Modèles : espaces de départ par métier",
+   "short_title": "",
+   "status": "captured",
+   "logs": []
+  },
+  {
+   "id": "sub_fx_127",
+   "theme": "thm_fx_onboarding",
+   "title": "Profil : photo et fuseau horaire à la première connexion",
+   "short_title": "",
+   "status": "done",
+   "logs": [
+    {
+     "kind": "phase",
+     "ts": 1127
+    }
+   ]
+  },
+  {
+   "id": "sub_fx_128",
+   "theme": "thm_fx_onboarding",
+   "title": "SSO : domaine vérifié et provisionnement",
+   "short_title": "",
+   "status": "inbox",
+   "logs": []
+  },
+  {
+   "id": "sub_fx_129",
+   "theme": "thm_fx_onboarding",
+   "title": "Permissions : rôle par défaut des nouveaux membres",
+   "short_title": "",
+   "status": "captured",
+   "logs": []
+  },
+  {
+   "id": "sub_fx_130",
+   "theme": "thm_fx_onboarding",
+   "title": "Données de démo : espace d'exemple supprimable",
+   "short_title": "",
+   "status": "building",
+   "logs": []
+  },
+  {
+   "id": "sub_fx_131",
+   "theme": "thm_fx_onboarding",
+   "title": "Progression : barre d'activation par équipe",
+   "short_title": "",
+   "status": "captured",
+   "logs": []
+  },
+  {
+   "id": "sub_fx_132",
+   "theme": "thm_fx_onboarding",
+   "title": "Aide contextuelle : bouton question en bas à droite",
+   "short_title": "",
+   "status": "done",
+   "logs": []
+  },
+  {
+   "id": "sub_fx_133",
+   "theme": "thm_fx_onboarding",
+   "title": "Mobile : lien magique pour installer l'application",
+   "short_title": "",
+   "status": "building",
+   "logs": []
+  },
+  {
+   "id": "sub_fx_134",
+   "theme": "thm_fx_onboarding",
+   "title": "Questionnaire : objectifs et taille de l'équipe",
+   "short_title": "",
+   "status": "done",
+   "logs": [
+    {
+     "kind": "phase",
+     "ts": 1134
+    }
+   ]
+  },
+  {
+   "id": "sub_fx_135",
+   "theme": "thm_fx_onboarding",
+   "title": "Succès : célébrer la première tâche terminée",
+   "short_title": "",
+   "status": "understanding",
+   "logs": []
+  },
+  {
+   "id": "sub_fx_136",
+   "theme": "thm_fx_onboarding",
+   "title": "Essai : rappel avant la fin de la période",
+   "short_title": "",
+   "status": "captured",
+   "logs": []
+  },
+  {
+   "id": "sub_fx_137",
+   "theme": "thm_fx_onboarding",
+   "title": "Migration depuis un concurrent : assistant d'import",
+   "short_title": "",
+   "status": "building",
+   "logs": []
+  },
+  {
+   "id": "sub_fx_138",
+   "theme": "thm_fx_onboarding",
+   "title": "Webinaire : inscription depuis l'application",
+   "short_title": "",
+   "status": "done",
+   "logs": []
+  },
+  {
+   "id": "sub_fx_139",
+   "theme": "thm_fx_onboarding",
+   "title": "Churn précoce : analyser l'abandon en jour un",
+   "short_title": "",
+   "status": "captured",
+   "logs": []
+  },
+  {
+   "id": "sub_fx_140",
+   "theme": "thm_fx_onboarding",
+   "title": "Rôles : expliquer admin, membre et invité",
+   "short_title": "",
+   "status": "done",
+   "logs": [
+    {
+     "kind": "phase",
+     "ts": 1140
+    }
+   ]
+  },
+  {
+   "id": "sub_fx_142",
+   "theme": "thm_fx_platform",
+   "title": "Cache : taille maximale des entrées en mémoire",
+   "short_title": "",
+   "status": "building",
+   "logs": [
+    {
+     "kind": "phase",
+     "ts": 1142
+    }
+   ]
+  },
+  {
+   "id": "sub_fx_143",
+   "theme": "thm_fx_platform",
+   "title": "Rate limiter : quotas par organisation",
+   "short_title": "",
+   "status": "done",
+   "logs": [
+    {
+     "kind": "phase",
+     "ts": 1143
+    }
+   ]
+  },
+  {
+   "id": "sub_fx_144",
+   "theme": "thm_fx_api",
+   "title": "Pagination : limite de page sur la liste des clients",
+   "short_title": "",
+   "status": "building",
+   "logs": [
+    {
+     "kind": "phase",
+     "ts": 1144
+    }
+   ]
+  },
+  {
+   "id": "sub_fx_145",
+   "theme": "thm_fx_api",
+   "title": "Pagination : curseurs sur les exports",
+   "short_title": "",
+   "status": "done",
+   "logs": [
+    {
+     "kind": "phase",
+     "ts": 1145
+    }
+   ]
+  },
+  {
+   "id": "sub_fx_146",
+   "theme": "thm_fx_api",
+   "title": "Webhooks : file d'attente des livraisons en échec",
+   "short_title": "",
+   "status": "building",
+   "logs": [
+    {
+     "kind": "phase",
+     "ts": 1146
+    }
+   ]
+  },
+  {
+   "id": "sub_fx_147",
+   "theme": "thm_fx_api",
+   "title": "Webhooks : signature des événements de facturation",
+   "short_title": "",
+   "status": "done",
+   "logs": [
+    {
+     "kind": "phase",
+     "ts": 1147
+    }
+   ]
+  },
+  {
+   "id": "sub_fx_148",
+   "theme": "thm_fx_api",
+   "title": "Idempotence : clé sur les commandes",
+   "short_title": "",
+   "status": "done",
+   "logs": [
+    {
+     "kind": "phase",
+     "ts": 1148
+    }
+   ]
+  },
+  {
+   "id": "sub_fx_149",
+   "theme": "thm_fx_mobile",
+   "title": "Push : notifications silencieuses de synchronisation",
+   "short_title": "",
+   "status": "building",
+   "logs": [
+    {
+     "kind": "phase",
+     "ts": 1149
+    }
+   ]
+  },
+  {
+   "id": "sub_fx_150",
+   "theme": "thm_fx_mobile",
+   "title": "Push : regrouper les alertes par projet",
+   "short_title": "",
+   "status": "done",
+   "logs": [
+    {
+     "kind": "phase",
+     "ts": 1150
+    }
+   ]
+  },
+  {
+   "id": "sub_fx_152",
+   "theme": "thm_fx_mobile",
+   "title": "Deep links : ouvrir une conversation partagée",
+   "short_title": "",
+   "status": "building",
+   "logs": [
+    {
+     "kind": "phase",
+     "ts": 1152
+    }
+   ]
+  },
+  {
+   "id": "sub_fx_153",
+   "theme": "thm_fx_billing",
+   "title": "Factures : numérotation des brouillons",
+   "short_title": "",
+   "status": "building",
+   "logs": [
+    {
+     "kind": "phase",
+     "ts": 1153
+    }
+   ]
+  },
+  {
+   "id": "sub_fx_154",
+   "theme": "thm_fx_billing",
+   "title": "Factures : export comptable par année",
+   "short_title": "",
+   "status": "done",
+   "logs": [
+    {
+     "kind": "phase",
+     "ts": 1154
+    }
+   ]
+  },
+  {
+   "id": "sub_fx_155",
+   "theme": "thm_fx_billing",
+   "title": "TVA : taux réduits par produit",
+   "short_title": "",
+   "status": "building",
+   "logs": [
+    {
+     "kind": "phase",
+     "ts": 1155
+    }
+   ]
+  },
+  {
+   "id": "sub_fx_156",
+   "theme": "thm_fx_billing",
+   "title": "Prorata : calcul lors d'un downgrade",
+   "short_title": "",
+   "status": "done",
+   "logs": [
+    {
+     "kind": "phase",
+     "ts": 1156
+    }
+   ]
+  },
+  {
+   "id": "sub_fx_157",
+   "theme": "thm_fx_billing",
+   "title": "Avoirs : annuler un avoir émis",
+   "short_title": "",
+   "status": "done",
+   "logs": [
+    {
+     "kind": "phase",
+     "ts": 1157
+    }
+   ]
+  },
+  {
+   "id": "sub_fx_158",
+   "theme": "thm_fx_billing",
+   "title": "Dunning : relance par email avant suspension",
+   "short_title": "",
+   "status": "building",
+   "logs": [
+    {
+     "kind": "phase",
+     "ts": 1158
+    }
+   ]
+  },
+  {
+   "id": "sub_fx_159",
+   "theme": "thm_fx_search",
+   "title": "Index : reconstruction à la demande",
+   "short_title": "",
+   "status": "building",
+   "logs": [
+    {
+     "kind": "phase",
+     "ts": 1159
+    }
+   ]
+  },
+  {
+   "id": "sub_fx_160",
+   "theme": "thm_fx_search",
+   "title": "Analyseur : racines des mots allemands",
+   "short_title": "",
+   "status": "done",
+   "logs": [
+    {
+     "kind": "phase",
+     "ts": 1160
+    }
+   ]
+  },
+  {
+   "id": "sub_fx_162",
+   "theme": "thm_fx_search",
+   "title": "Autocomplétion : suggestions récentes par utilisateur",
+   "short_title": "",
+   "status": "done",
+   "logs": [
+    {
+     "kind": "phase",
+     "ts": 1162
+    }
+   ]
+  },
+  {
+   "id": "sub_fx_163",
+   "theme": "thm_fx_search",
+   "title": "Fautes de frappe : tolérance sur les noms propres",
+   "short_title": "",
+   "status": "building",
+   "logs": [
+    {
+     "kind": "phase",
+     "ts": 1163
+    }
+   ]
+  },
+  {
+   "id": "sub_fx_164",
+   "theme": "thm_fx_docs",
+   "title": "Guide de démarrage : installation sur Windows",
+   "short_title": "",
+   "status": "done",
+   "logs": [
+    {
+     "kind": "phase",
+     "ts": 1164
+    }
+   ]
+  },
+  {
+   "id": "sub_fx_165",
+   "theme": "thm_fx_docs",
+   "title": "Référence CLI : exemples par commande",
+   "short_title": "",
+   "status": "building",
+   "logs": [
+    {
+     "kind": "phase",
+     "ts": 1165
+    }
+   ]
+  },
+  {
+   "id": "sub_fx_166",
+   "theme": "thm_fx_onboarding",
+   "title": "Invitations : relancer un invité qui n'a pas ouvert l'email",
+   "short_title": "",
+   "status": "building",
+   "logs": [
+    {
+     "kind": "phase",
+     "ts": 1166
+    }
+   ]
+  },
+  {
+   "id": "sub_fx_167",
+   "theme": "thm_fx_onboarding",
+   "title": "Checklist : étapes de configuration de l'équipe",
+   "short_title": "",
+   "status": "done",
+   "logs": [
+    {
+     "kind": "phase",
+     "ts": 1167
+    }
+   ]
+  },
+  {
+   "id": "sub_fx_168",
+   "theme": "thm_fx_onboarding",
+   "title": "Visite guidée : info-bulles sur la liste des contacts",
+   "short_title": "",
+   "status": "building",
+   "logs": [
+    {
+     "kind": "phase",
+     "ts": 1168
+    }
+   ]
+  },
+  {
+   "id": "sub_fx_169",
+   "theme": "thm_fx_platform",
+   "title": "Secrets : rotation manuelle des clés d'accès",
+   "short_title": "",
+   "status": "done",
+   "logs": [
+    {
+     "kind": "phase",
+     "ts": 1169
+    }
+   ]
+  },
+  {
+   "id": "sub_fx_170",
+   "theme": "thm_fx_platform",
+   "title": "Graceful shutdown : drainer les connexions longues",
+   "short_title": "",
+   "status": "building",
+   "logs": [
+    {
+     "kind": "phase",
+     "ts": 1170
+    }
+   ]
+  }
+ ],
+ "cases": [
+  {
+   "query": "retries backoff file attente",
+   "expect": "sub_fx_001",
+   "caller": "perso"
+  },
+  {
+   "query": "cache invalid périmé reload",
+   "expect": "sub_fx_002",
+   "caller": "perso"
+  },
+  {
+   "query": "limit débit clé api",
+   "expect": "sub_fx_010",
+   "caller": "perso"
+  },
+  {
+   "query": "pagination curseur commandes",
+   "expect": "sub_fx_021",
+   "caller": "perso"
+  },
+  {
+   "query": "webhook signature hmac rejeu",
+   "expect": "sub_fx_022",
+   "caller": "perso"
+  },
+  {
+   "query": "idempotence paiement clé",
+   "expect": "sub_fx_027",
+   "caller": "perso"
+  },
+  {
+   "query": "push notif conversation",
+   "expect": "sub_fx_041",
+   "caller": "perso"
+  },
+  {
+   "query": "offline hors-ligne synchro",
+   "expect": "sub_fx_042",
+   "caller": "perso"
+  },
+  {
+   "query": "deeplink lien document partagé",
+   "expect": "sub_fx_043",
+   "caller": "perso"
+  },
+  {
+   "query": "facture numéro année",
+   "expect": "sub_fx_061",
+   "caller": "perso"
+  },
+  {
+   "query": "tva pays autoliquidation",
+   "expect": "sub_fx_062",
+   "caller": "perso"
+  },
+  {
+   "query": "prorata upgrade jour",
+   "expect": "sub_fx_065",
+   "caller": "perso"
+  },
+  {
+   "query": "avoir partiel",
+   "expect": "sub_fx_066",
+   "caller": "perso"
+  },
+  {
+   "query": "index reconstruction nuit",
+   "expect": "sub_fx_081",
+   "caller": "perso"
+  },
+  {
+   "query": "analyseur racine français anglais",
+   "expect": "sub_fx_082",
+   "caller": "perso"
+  },
+  {
+   "query": "synonyme dictionnaire",
+   "expect": "sub_fx_083",
+   "caller": "perso"
+  },
+  {
+   "query": "autocompletion suggestion caractère",
+   "expect": "sub_fx_085",
+   "caller": "perso"
+  },
+  {
+   "query": "faute frappe tolérance",
+   "expect": "sub_fx_087",
+   "caller": "perso"
+  },
+  {
+   "query": "guide démarrage installation",
+   "expect": "sub_fx_101",
+   "caller": "perso"
+  },
+  {
+   "query": "reference cli pages aide",
+   "expect": "sub_fx_102",
+   "caller": "perso"
+  },
+  {
+   "query": "lien cassé ci vérif",
+   "expect": "sub_fx_112",
+   "caller": "perso"
+  },
+  {
+   "query": "checklist configuration compte",
+   "expect": "sub_fx_121",
+   "caller": "perso"
+  },
+  {
+   "query": "invitation relance collègue",
+   "expect": "sub_fx_122",
+   "caller": "perso"
+  },
+  {
+   "query": "visite guidée tooltip dashboard",
+   "expect": "sub_fx_124",
+   "caller": "perso"
+  },
+  {
+   "query": "import contact colonne",
+   "expect": "sub_fx_123",
+   "caller": "perso"
+  },
+  {
+   "query": "secret rotation clé signature",
+   "expect": "sub_fx_011",
+   "caller": "perso"
+  },
+  {
+   "query": "shutdown drain requête",
+   "expect": "sub_fx_013",
+   "caller": "perso"
+  },
+  {
+   "query": "dunning suspension compte",
+   "expect": "sub_fx_074",
+   "caller": "perso"
+  },
+  {
+   "query": "dark mode graphique",
+   "expect": "sub_fx_045",
+   "caller": "perso"
+  },
+  {
+   "query": "permission résultat droits",
+   "expect": "sub_fx_089",
+   "caller": "perso"
+  },
+  {
+   "query": "webhook doublon",
+   "expect": "sub_fx_080",
+   "caller": "perso"
+  },
+  {
+   "query": "release notes version",
+   "expect": "sub_fx_115",
+   "caller": "perso"
+  },
+  {
+   "query": "import",
+   "expect": "sub_fx_123",
+   "caller": "perso"
+  },
+  {
+   "query": "export csv encodage",
+   "expect": "sub_fx_038",
+   "caller": "perso"
+  }
+ ]
+}

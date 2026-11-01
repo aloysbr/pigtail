@@ -1,0 +1,47 @@
+.DS_Store
+*.swp
+*.swo
+
+# État local des projets cibles
+.workspaces.json
+
+# Config dev locale
+wt-manager.local.json
+
+# Artefacts de test
+tests/fixtures/tmp/
+tests/tmp/
+
+# Local notes (drafts) — never commit
+private/
+
+# Go build artefacts
+/bin/pigtail
+/bin/pigtaild
+/pigtail
+/pigtaild
+
+# Superpowers scratch (brainstorm mockups, SDD ledgers/briefs)
+.superpowers/
+
+# Swift app build artefacts
+macapp/.build/
+macapp/Pigtail.app/
+
+# Web front (web/): dependencies, build and caches. The build that
+# ships is internal/webui/dist (make web).
+web/node_modules/
+web/dist/
+web/.vite/
+web/*.tsbuildinfo
+web/coverage/
+
+# H2 rendering spike (spikes/h2): binary, page deps (a symlink out of the
+# repo, hence no trailing slash), build and Playwright outputs.
+spikes/h2/bin/
+spikes/h2/web/node_modules
+spikes/h2/web/dist/
+spikes/h2/web/test-results/
+spikes/h2/web/playwright-report/
+clients/sdkhost/node_modules/
+Makefile.local

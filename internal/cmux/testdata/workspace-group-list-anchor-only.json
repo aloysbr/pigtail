@@ -1,0 +1,69 @@
+{
+  "groups" : [
+    {
+      "anchor_workspace_id" : "DE245ED7-CC65-458F-83C2-B7EA6BF20E63",
+      "anchor_workspace_is_generated" : true,
+      "anchor_workspace_provenance" : "generated",
+      "anchor_workspace_ref" : "workspace:74",
+      "custom_color" : null,
+      "icon_symbol" : null,
+      "id" : "7BEDD748-2839-4634-9D2A-D85E66D3D64F",
+      "is_collapsed" : false,
+      "is_empty" : false,
+      "is_pinned" : false,
+      "member_count" : 1,
+      "member_workspace_ids" : [
+        "DE245ED7-CC65-458F-83C2-B7EA6BF20E63"
+      ],
+      "member_workspace_refs" : [
+        "workspace:74"
+      ],
+      "name" : "PT Folder",
+      "ref" : "workspace_group:10"
+    },
+    {
+      "anchor_workspace_id" : "E85C5967-6120-4BC9-827E-74CBB7D4E850",
+      "anchor_workspace_is_generated" : true,
+      "anchor_workspace_provenance" : "generated",
+      "anchor_workspace_ref" : "workspace:73",
+      "custom_color" : null,
+      "icon_symbol" : null,
+      "id" : "22711DB6-B42C-4F2F-9D1F-722B2B0C72C7",
+      "is_collapsed" : false,
+      "is_empty" : false,
+      "is_pinned" : false,
+      "member_count" : 1,
+      "member_workspace_ids" : [
+        "E85C5967-6120-4BC9-827E-74CBB7D4E850"
+      ],
+      "member_workspace_refs" : [
+        "workspace:73"
+      ],
+      "name" : "PT P9b",
+      "ref" : "workspace_group:9"
+    },
+    {
+      "anchor_workspace_id" : "5ED0D269-3C2B-41F2-9C94-27D09BBEAE59",
+      "anchor_workspace_is_generated" : true,
+      "anchor_workspace_provenance" : "generated",
+      "anchor_workspace_ref" : "workspace:71",
+      "custom_color" : null,
+      "icon_symbol" : null,
+      "id" : "04E04DEA-4E28-4A28-889E-7A37B6D22CC8",
+      "is_collapsed" : false,
+      "is_empty" : false,
+      "is_pinned" : false,
+      "member_count" : 1,
+      "member_workspace_ids" : [
+        "5ED0D269-3C2B-41F2-9C94-27D09BBEAE59"
+      ],
+      "member_workspace_refs" : [
+        "workspace:71"
+      ],
+      "name" : "PT P9a",
+      "ref" : "workspace_group:8"
+    }
+  ],
+  "window_id" : "C345268F-5D10-4843-8FF0-E427D5DD401A",
+  "window_ref" : "window:2"
+}

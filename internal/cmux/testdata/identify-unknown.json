@@ -1,0 +1,6 @@
+{
+  "bundle_identifier" : "com.cmuxterm.app",
+  "caller" : null,
+  "focused" : {"window_ref":"window:1","workspace_ref":"workspace:2"},
+  "socket_path" : "/tmp/cmux.sock"
+}

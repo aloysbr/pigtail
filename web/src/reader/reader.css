@@ -1,0 +1,158 @@
+/* The full-page reader (D4, t2 .rd): a layer at inset 0 over the app (sheet 6, Réglages 9, the palette's level 10,
+   which cannot open over it), under the image preview (11, 12); its bar, the old-version band and the round in an iframe.
+   The toast host is mounted inside the layer while it is open: .toast6 (z 6) then passes over its bar (4) and stage,
+   and stays under the palette (hybride-surfaces.test.ts). Tokens only; no veil and no foot (t2), no loader. */
+@layer components {
+  .rd { position: fixed; inset: var(--sp-0); z-index: 10; display: flex; flex-direction: column; background: var(--surface); color: var(--text); }
+  /* the layer takes the focus on open (tabindex -1), to hold the keys: it is no control, no ring */
+  .rd:focus-visible { outline: none; }
+  .rd-h { flex: none; position: relative; z-index: 4; display: flex; align-items: center; gap: var(--sp-4); min-height: var(--size-row-2); padding: var(--sp-0) var(--sp-4); border-bottom: var(--size-bw) solid var(--line); background: var(--surface); white-space: nowrap; }
+  .rd-n { display: flex; align-items: baseline; gap: var(--sp-4); min-width: 0; overflow: hidden; }
+  .rd-nm { flex: 0 1 auto; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-weight: var(--fw-semibold); }
+  .rd-sub { display: flex; align-items: baseline; gap: var(--sp-4); min-width: 0; overflow: hidden; }
+  .rd-sub .ql-i { flex: none; }
+  .rd-n .ql-meta { min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+  .rd-n .ql-meta b { font-weight: var(--fw-semibold); color: var(--text); }
+  .rd-h .ql-hint { flex: none; }
+  .rd-tools { position: relative; flex: none; display: inline-flex; align-items: center; gap: var(--sp-2); margin-left: var(--sp-4); }
+  .rd-gap { width: var(--sp-4); }
+  .rd-tools .ql-z { text-decoration: none; }
+  .rd-tools .ql-z[aria-disabled="true"] { color: var(--text-disabled); cursor: default; }
+  .rd-tools .ql-z[aria-disabled="true"]:hover { background: var(--surface); }
+  .rd-tools .ql-z.ico { justify-content: center; width: var(--size-control); padding: var(--sp-0); }
+  .rd-tools .ql-z.tour { font-weight: var(--fw-semibold); font-variant-numeric: tabular-nums; }
+  .rd-tools .ql-z.tour[aria-expanded="true"] { background: var(--bg-active); border-color: var(--text); }
+  .rd-tools .chv { width: var(--size-icon-sm); height: var(--size-icon-sm); color: var(--text-2); }
+  /* the round menu: .gmenu (list.css), at most ten rows tall, scrolling past them */
+  .rd-menu { max-height: calc(var(--size-row) * 10 + var(--sp-2) * 2); overflow-y: auto; }
+  .rd-menu .gm-r { display: inline-flex; align-items: center; gap: var(--sp-4); color: var(--text-2); font-weight: var(--fw-regular); font-variant-numeric: tabular-nums; }
+  .gm-tag { display: inline-flex; align-items: center; height: var(--size-sdot); padding: var(--sp-0) var(--chip-pad); border-radius: var(--radius-pill); background: var(--chip-bg); color: var(--chip-text); font-size: var(--fs-11); font-weight: var(--chip-fw); }
+  /* a round gone from the disk awaits no answer: no attention accent (accent-sense.test.ts), an outlined neutral tag */
+  .gm-tag.bad { background: transparent; box-shadow: inset 0 0 0 var(--size-bw) var(--border-strong); color: var(--text-1); }
+  .rd-old { flex: none; display: flex; align-items: center; gap: var(--sp-4); padding: var(--sp-2) var(--sp-6); border-bottom: var(--size-bw) solid var(--border); background: var(--bg-3); color: var(--text); font-size: var(--fs-12); }
+  /* the text may wrap on a phone, the button never does */
+  .rd-old-t { flex: 0 1 auto; min-width: 0; }
+  .rd-old-t b { font-weight: var(--fw-semibold); }
+  .rd-old .ql-z { flex: none; min-height: var(--size-target); white-space: nowrap; }
+  /* the round and the session dock: a row (the band beside the round, D6), the card, sheet and pill over it */
+  .rd-body { position: relative; flex: 1 1 0; display: flex; min-width: 0; min-height: 0; }
+  .rd-st { position: relative; flex: 1 1 0; min-width: 0; min-height: 0; background: var(--bg-2); }
+  .rd-st iframe { display: block; width: 100%; height: 100%; border: none; background: var(--surface); }
+  .ql-miss { position: absolute; inset: var(--sp-0); display: flex; align-items: center; justify-content: center; padding: var(--sp-10); }
+  .ql-miss > div { max-width: var(--size-ql-min); display: flex; flex-direction: column; gap: var(--sp-4); }
+  .ql-miss h3 { margin: var(--sp-0); font-size: var(--fs-15); font-weight: var(--fw-semibold); }
+  .ql-miss p { margin: var(--sp-0); color: var(--text-1); font-size: var(--fs-13); }
+  .ql-miss code { font-size: var(--fs-11); color: var(--text); background: var(--bg-3); padding: var(--sp-0) var(--sp-1); border-radius: var(--radius-1); overflow-wrap: anywhere; }
+  .ql-miss .btnl { align-self: flex-start; margin-top: var(--sp-2); }
+  /* The session dock (D5–D8, t2 .sp): one content, three forms by width (dockForm.ts), folded into a pill. Its card,
+     sheet and pill stack at 3, under the bar (4) that hosts the tours menu, so the menu always passes over the dock;
+     .rd-body opens no stacking context. The pill and every control keep a ring of room (the ring that overflowed). */
+  .sd { display: contents; }
+  .sd-panel { display: flex; flex-direction: column; min-width: var(--sp-0); min-height: var(--sp-0); background: var(--surface); color: var(--text); }
+  .sd-panel:focus-visible { outline: none; }
+  .sd-side { flex: none; width: var(--size-sess-side); border-left: var(--size-bw) solid var(--line); }
+  .sd-card { position: absolute; z-index: 3; right: var(--sp-6); bottom: var(--sp-6); width: var(--size-sess-card); max-width: calc(100% - var(--sp-6) * 2); max-height: calc(100% - var(--sp-6) * 2); border: var(--size-bw) solid var(--border-strong); border-radius: var(--radius-4); box-shadow: var(--shadow-pop); overflow: hidden; }
+  .sd-sheet { position: absolute; z-index: 3; left: var(--sp-4); right: var(--sp-4); bottom: var(--sp-4); max-height: calc(100% - var(--size-row-2)); border: var(--size-bw) solid var(--border-strong); border-radius: var(--radius-4); box-shadow: var(--shadow-pop); overflow: hidden; }
+  .sd-h { flex: none; display: flex; align-items: center; gap: var(--sp-3); min-height: var(--size-row-2); padding: var(--sp-2) var(--sp-2) var(--sp-2) var(--sp-3); border-bottom: var(--size-bw) solid var(--line); background: var(--surface); }
+  .sd-card .sd-h { cursor: grab; touch-action: none; user-select: none; }
+  .sd-grip { display: inline-flex; color: var(--text-2); }
+  .sd-card .sd-h:hover .sd-grip { color: var(--text); }
+  .sd-card .sd-h:focus-within .sd-grip { color: var(--text); }
+  .sd-grip svg { width: var(--size-icon); height: var(--size-icon); }
+  .sd-fold svg { width: var(--size-icon-sm); height: var(--size-icon-sm); }
+  .sd-id { display: flex; flex-direction: column; min-width: var(--sp-0); line-height: var(--lh-tight); }
+  .sd-id b { min-width: var(--sp-0); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-weight: var(--fw-semibold); }
+  .sd-id span { min-width: var(--sp-0); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--text-2); font-size: var(--fs-11); }
+  .sd-fold { flex: none; gap: var(--sp-1); width: auto; padding: var(--sp-0) var(--sp-2); }
+  .sd-b { flex: 1 1 auto; min-height: var(--sp-0); overflow-y: auto; display: flex; flex-direction: column; gap: var(--sp-4); padding: var(--sp-5); }
+  /* children never shrink: a short window scrolls the body (.wait is overflow hidden and would collapse to its padding) */
+  .sd-b > * { flex: none; }
+  /* « Lancer une session »: a button at its own width with its icon (a flex column would stretch it into a field) */
+  .sd-launch { align-self: flex-start; }
+  .sd-launch svg { flex: none; }
+  .sd-back { align-self: flex-start; }
+  /* the picker's free sessions: one real button per row, the readable name first, the question whole */
+  .pk { margin: var(--sp-0); padding: var(--sp-0); border-bottom: var(--size-bw) solid var(--row-line); list-style: none; }
+  .pk:last-child { border-bottom: none; }
+  .pk-b { display: grid; grid-template-columns: var(--size-icon) minmax(0, 1fr); align-items: start; gap: var(--sp-4); width: 100%; padding: var(--sp-3) var(--sp-4); border: none; border-radius: var(--radius-row); background: transparent; color: var(--text); font: inherit; font-size: var(--fs-12); text-align: start; cursor: pointer; }
+  .pk-b:hover { background: var(--bg-hover-panel); }
+  /* a gap under the « Sessions en cours » label: the first row's 2 px focus ring must not touch it */
+  .srows.pk-list { padding-top: var(--sp-1); }
+  .pk-t { display: flex; flex-direction: column; gap: var(--sp-1); min-width: var(--sp-0); }
+  .pk-n { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--sp-3); }
+  .pk-n b { min-width: var(--sp-0); overflow-wrap: anywhere; font-weight: var(--fw-semibold); }
+  .pk-q { color: var(--text-1); overflow-wrap: anywhere; }
+  .pk-m { color: var(--text-2); font-size: var(--fs-11); }
+  .sd-x { display: flex; flex-direction: column; gap: var(--sp-3); margin: var(--sp-0); padding: var(--sp-0); list-style: none; }
+  .sd-x li { display: flex; flex-direction: column; gap: var(--sp-1); font-size: var(--fs-12); }
+  .sd-xk { color: var(--text-2); font-size: var(--fs-11); font-variant-numeric: tabular-nums; }
+  .sd-xq { color: var(--text-1); overflow-wrap: anywhere; }
+  .sd-xa { color: var(--text); overflow-wrap: anywhere; }
+  .sd-xa b { margin-right: var(--sp-2); font-weight: var(--fw-semibold); }
+  .sd-note { margin: var(--sp-0); color: var(--text-1); font-size: var(--fs-12); }
+  .sd-note b { color: var(--text); font-weight: var(--fw-semibold); }
+  .sd-f { flex: none; display: flex; flex-direction: column; gap: var(--sp-3); padding: var(--sp-4) var(--sp-5) var(--sp-5); border-top: var(--size-bw) solid var(--line); background: var(--surface); }
+  .sd-pill { position: absolute; z-index: 3; right: var(--sp-6); bottom: var(--sp-6); display: inline-flex; align-items: center; gap: var(--sp-3); max-width: calc(100% - var(--sp-6) * 2); min-height: var(--size-row); padding: var(--sp-0) var(--sp-3) var(--sp-0) var(--sp-2); border: var(--size-bw) solid var(--border-strong); border-radius: var(--radius-pill); background: var(--surface); color: var(--text); box-shadow: var(--shadow-pop); font: inherit; font-size: var(--fs-12); white-space: nowrap; cursor: pointer; }
+  .sd-pill b { min-width: var(--sp-0); overflow: hidden; text-overflow: ellipsis; font-weight: var(--fw-semibold); }
+  .sd-pill .muted { color: var(--text-2); }
+
+  /* The wait card that answers (ui/WaitCard.tsx variant answer, T12): options, field, send; reusable outside the dock */
+  .wait-f { display: flex; flex-direction: column; gap: var(--sp-3); padding: var(--sp-4) var(--sp-6) var(--sp-5) calc(var(--sp-6) + var(--size-wait-band)); border-top: var(--size-bw) solid var(--line); }
+  .wa-opts { display: flex; flex-direction: column; gap: var(--sp-1); margin-top: var(--sp-4); }
+  .wa-o { display: flex; align-items: center; gap: var(--sp-4); min-height: var(--size-row); padding: var(--sp-0) var(--sp-3); border: var(--size-bw) solid var(--border); border-radius: var(--radius-2); background: var(--surface); color: var(--text); font: inherit; font-size: var(--fs-12); text-align: start; cursor: pointer; }
+  .wa-o .rad { flex: none; width: var(--size-icon-sm); height: var(--size-icon-sm); border: var(--size-focus) solid var(--border-strong); border-radius: var(--radius-pill); box-sizing: border-box; }
+  .wa-o[aria-checked="true"] { border-color: var(--border-strong); background: var(--bg-selected); font-weight: var(--fw-semibold); }
+  /* selected = a filled radio; the focus ring (an outline) stays the only ink frame around the row */
+  .wa-o[aria-checked="true"] .rad { border-color: var(--text); background: var(--text); box-shadow: inset 0 0 0 var(--size-focus) var(--bg-selected); }
+  .wa-ol { min-width: var(--sp-0); overflow-wrap: anywhere; }
+  .wa-o .gm-tag { margin-left: auto; font-weight: var(--fw-medium); box-shadow: inset 0 0 0 var(--size-bw) var(--border-strong); }
+  .wait-h .kind { box-shadow: inset 0 0 0 var(--size-bw) var(--accent-attn-line); }
+  .wa-cmd { display: block; margin-top: var(--sp-4); padding: var(--sp-2) var(--sp-3); border-radius: var(--radius-1); background: var(--bg-3); color: var(--text); font-size: var(--fs-11); overflow-wrap: anywhere; }
+  .wa-where { margin: var(--sp-2) var(--sp-0) var(--sp-0); color: var(--text-2); font-size: var(--fs-11); overflow-wrap: anywhere; }
+  .wa-items { display: flex; flex-direction: column; gap: var(--sp-1); margin: var(--sp-4) var(--sp-0) var(--sp-0); padding-left: var(--sp-6); font-size: var(--fs-12); }
+  .wa-in { display: block; width: 100%; min-height: calc(var(--size-row) * 2); padding: var(--sp-3) var(--sp-4); border: var(--size-bw) solid var(--border-strong); border-radius: var(--radius-2); background: var(--bg); color: var(--text); font: inherit; font-size: var(--fs-13); line-height: var(--lh-body); resize: vertical; box-sizing: border-box; }
+  .wa-in::placeholder { color: var(--text-2); }
+  .wa-fail { margin: var(--sp-0); color: var(--status-late); font-size: var(--fs-12); }
+  .wa-fr { display: flex; align-items: center; gap: var(--sp-4); }
+  .btnp { display: inline-flex; align-items: center; gap: var(--sp-3); min-height: var(--size-target); padding: var(--sp-0) var(--sp-4); border: none; border-radius: var(--radius-btn); background: var(--btn-fill); color: var(--btn-on); font: inherit; font-size: var(--fs-12); font-weight: var(--fw-semibold); white-space: nowrap; cursor: pointer; }
+  .btnp .k { font-weight: var(--fw-regular); }
+  .btnp svg { flex: none; width: var(--size-icon-sm); height: var(--size-icon-sm); }
+  .btnp[disabled] { cursor: progress; }
+  /* the dock footer's primary action (« Aller à la session »): centred, at least as tall as the bordered secondary under it */
+  .sd-f .btnp { justify-content: center; min-height: var(--size-row); }
+  /* under 600 px (a media query takes no var()): a 44 px touch height for the dock's three buttons */
+  @media (max-width: 599.98px) {
+    .sd-f .btnp, .sd-back, .sd-launch { min-height: var(--size-touch); }
+  }
+  /* answered: grey, the accent gone (it no longer waits) */
+  .wait.over { border-color: var(--border); background: var(--bg-2); box-shadow: var(--shadow-card); }
+  .wait.over .wait-h { color: var(--text-1); }
+  .wait.over .wait-h .kind { background: var(--chip-bg); color: var(--chip-text); }
+  .wa-sent { display: flex; flex-direction: column; gap: var(--sp-1); margin: var(--sp-4) var(--sp-0) var(--sp-0); padding: var(--sp-3) var(--sp-4); border: var(--size-bw) solid var(--border); border-radius: var(--radius-2); background: var(--bg-selected); font-size: var(--fs-13); }
+  .wa-sk { color: var(--text-2); font-size: var(--fs-11); }
+
+  /* a phone: the key hints go (no keyboard), the bar keeps its tools */
+  .phone .rd-h .ql-hint { display: none; }
+  /* the card form starts at 600 px, under the phone breakpoint: its own hints (Esc replier) stay, as at 1280 */
+  .phone .sd-card .ql-hint { display: inline-flex; }
+  /* and its keys: `.phone kbd` (list.css) would still hide the <kbd> inside; the sheet form (< 600 px) keeps them hidden */
+  .phone .sd-card kbd { display: inline-flex; }
+  /* under 480 px (a media query takes no var()): two rows — ×, the name (ellipsed) and the tools, then the count, the
+     round's title and date, which may wrap; « Ouvrir dans un onglet » is an icon button (its aria-label keeps the name) */
+  @media (max-width: 479.98px) {
+    .rd-h { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; grid-template-areas: "x n t" "s s s"; row-gap: var(--sp-1); padding-block: var(--sp-2); white-space: normal; }
+    .rd-h > .ib { grid-area: x; }
+    .rd-n { display: contents; }
+    .rd-nm { grid-area: n; }
+    .rd-sub { grid-area: s; flex-wrap: wrap; row-gap: var(--sp-0); overflow: visible; }
+    .rd-sub .ql-meta { white-space: normal; overflow-wrap: anywhere; }
+    .rd-h .c-sp { display: none; }
+    .rd-h .ql-hint { display: none; }
+    .rd-tools { grid-area: t; margin-left: var(--sp-0); }
+    .rd-tools .rd-ext { justify-content: center; width: var(--size-control); padding: var(--sp-0); }
+    .rd-ext-t { display: none; }
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .rd { animation: ql-in var(--dur-fast) var(--ease-out); }
+  }
+}

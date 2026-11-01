@@ -1,0 +1,134 @@
+{
+  "groups" : [
+    {
+      "anchor_workspace_id" : "3C4A974D-9FB7-48EE-A5DE-C33988D0F81A",
+      "anchor_workspace_is_generated" : true,
+      "anchor_workspace_provenance" : "generated",
+      "anchor_workspace_ref" : "workspace:90",
+      "custom_color" : null,
+      "icon_symbol" : null,
+      "id" : "22504EF3-8850-413D-9792-96ABC327918A",
+      "is_collapsed" : false,
+      "is_empty" : false,
+      "is_pinned" : false,
+      "member_count" : 2,
+      "member_workspace_ids" : [
+        "3C4A974D-9FB7-48EE-A5DE-C33988D0F81A",
+        "3287BB70-3938-44E7-B5FF-F9E24CA4CD12"
+      ],
+      "member_workspace_refs" : [
+        "workspace:90",
+        "workspace:86"
+      ],
+      "name" : "Seedbeds",
+      "ref" : "workspace_group:17"
+    },
+    {
+      "anchor_workspace_id" : "CEAD32A7-A669-4374-913C-09C199419307",
+      "anchor_workspace_is_generated" : true,
+      "anchor_workspace_provenance" : "generated",
+      "anchor_workspace_ref" : "workspace:91",
+      "custom_color" : null,
+      "icon_symbol" : null,
+      "id" : "7BBA1AF3-EC3B-4226-BD15-685D83AAE277",
+      "is_collapsed" : false,
+      "is_empty" : false,
+      "is_pinned" : false,
+      "member_count" : 1,
+      "member_workspace_ids" : [
+        "CEAD32A7-A669-4374-913C-09C199419307"
+      ],
+      "member_workspace_refs" : [
+        "workspace:91"
+      ],
+      "name" : "Garden",
+      "ref" : "workspace_group:18"
+    },
+    {
+      "anchor_workspace_id" : "B7A3B302-FE60-4C94-8168-378295B151F6",
+      "anchor_workspace_is_generated" : true,
+      "anchor_workspace_provenance" : "generated",
+      "anchor_workspace_ref" : "workspace:89",
+      "custom_color" : null,
+      "icon_symbol" : null,
+      "id" : "747443B7-8E3F-48DD-804D-25C8B508EE1A",
+      "is_collapsed" : false,
+      "is_empty" : false,
+      "is_pinned" : false,
+      "member_count" : 1,
+      "member_workspace_ids" : [
+        "B7A3B302-FE60-4C94-8168-378295B151F6"
+      ],
+      "member_workspace_refs" : [
+        "workspace:89"
+      ],
+      "name" : "Studio",
+      "ref" : "workspace_group:16"
+    },
+    {
+      "anchor_workspace_id" : "78631A3C-B53A-4438-B69A-B59E79531087",
+      "anchor_workspace_is_generated" : true,
+      "anchor_workspace_provenance" : "generated",
+      "anchor_workspace_ref" : "workspace:88",
+      "custom_color" : null,
+      "icon_symbol" : null,
+      "id" : "CEF363BE-48FD-4447-A58B-97AB61AE0D87",
+      "is_collapsed" : false,
+      "is_empty" : false,
+      "is_pinned" : false,
+      "member_count" : 1,
+      "member_workspace_ids" : [
+        "78631A3C-B53A-4438-B69A-B59E79531087"
+      ],
+      "member_workspace_refs" : [
+        "workspace:88"
+      ],
+      "name" : "Inbox",
+      "ref" : "workspace_group:15"
+    },
+    {
+      "anchor_workspace_id" : "5A67A945-9EC6-40E3-ADEB-34AC8740F985",
+      "anchor_workspace_is_generated" : true,
+      "anchor_workspace_provenance" : "generated",
+      "anchor_workspace_ref" : "workspace:87",
+      "custom_color" : null,
+      "icon_symbol" : null,
+      "id" : "0E2BA567-1055-4F53-8CA2-2AD2F0D3E0BF",
+      "is_collapsed" : false,
+      "is_empty" : false,
+      "is_pinned" : false,
+      "member_count" : 1,
+      "member_workspace_ids" : [
+        "5A67A945-9EC6-40E3-ADEB-34AC8740F985"
+      ],
+      "member_workspace_refs" : [
+        "workspace:87"
+      ],
+      "name" : "Garden",
+      "ref" : "workspace_group:14"
+    },
+    {
+      "anchor_workspace_id" : "566E3F2F-42E0-4962-95E9-8A26E51B6580",
+      "anchor_workspace_is_generated" : true,
+      "anchor_workspace_provenance" : "generated",
+      "anchor_workspace_ref" : "workspace:82",
+      "custom_color" : null,
+      "icon_symbol" : "moon.zzz",
+      "id" : "4685A51D-37B3-41C0-9103-6389C0EFB2E6",
+      "is_collapsed" : true,
+      "is_empty" : false,
+      "is_pinned" : false,
+      "member_count" : 1,
+      "member_workspace_ids" : [
+        "566E3F2F-42E0-4962-95E9-8A26E51B6580"
+      ],
+      "member_workspace_refs" : [
+        "workspace:82"
+      ],
+      "name" : "PT Folder",
+      "ref" : "workspace_group:12"
+    }
+  ],
+  "window_id" : "B631EA7A-3C44-4F07-94BD-A0E3C69715FD",
+  "window_ref" : "window:4"
+}

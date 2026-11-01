@@ -1,0 +1,13 @@
+Last login: Tue Oct 13 17:12:09 on ttys024
+❯  CLAUDE_CONFIG_DIR=$HOME/.claude-home claude --session-id 29671067-9716-4a7d-a0b1-95abe0764d83 --permission-mode plan
+
+
+Resume this session with:
+claude --resume 29671067-9716-4a7d-a0b1-95abe0764d83
+❯  /usr/bin/env CLAUDE_CONFIG_DIR=$HOME/.claude-home claude --resume 29671067-9716-4a7d-a0b1-95abe0764d83 --permission-mode plan
+
+
+Resume this session with:
+claude --resume 29671067-9716-4a7d-a0b1-95abe0764d83
+
+↻ Entrée = relancer (w1) · a=Alpha b=Beta = relancer sous ce profil · autre touche = quitter 

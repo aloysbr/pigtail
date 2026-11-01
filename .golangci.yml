@@ -1,0 +1,95 @@
+# golangci-lint config — pigtail
+# Philosophy: catch real bugs and sloppy patterns, skip stylistic bikeshedding.
+# Run locally: `make lint` (golangci-lint run ./...)
+
+version: "2"
+
+run:
+  timeout: 5m
+  modules-download-mode: readonly
+
+linters:
+  default: none
+  enable:
+    - govet          # what `go vet` catches (context leaks, struct copy, etc.)
+    - staticcheck    # modern Go best practices (SA*, ST*, S*)
+    - errcheck       # unchecked errors
+    - ineffassign    # assignments that never get read
+    - unused         # dead code
+    - misspell       # typos in comments
+    - gocritic       # opinionated but useful (hugeParam, badIfStmt, …)
+    - revive         # successor to golint, customizable
+    - bodyclose      # forgotten resp.Body.Close()
+    - errorlint      # wraps errors.Is / errors.As correctly
+    - gosec          # security smells
+
+  settings:
+    govet:
+      enable-all: true
+      disable:
+        - fieldalignment   # alignment for memory is rarely worth the churn
+        - shadow           # too noisy on classic `if err := …; err != nil`
+
+    misspell:
+      # French copy: « démarrage » reads as a typo of "marriage" once the
+      # accent splits the word.
+      ignore-rules:
+        - marrage
+
+    gocritic:
+      disabled-checks:
+        - ifElseChain
+
+    revive:
+      rules:
+        # `exported` is intentionally disabled: every public type already
+        # has a doc comment on the surrounding block. Per-const comments
+        # are noise.
+        - name: var-naming
+        - name: package-comments
+        - name: error-return
+        - name: error-strings
+        - name: error-naming
+        - name: indent-error-flow
+
+    errcheck:
+      check-type-assertions: false
+      check-blank: false
+      # Idiomatic Go: ignoring return of fmt.Fprint*, *.Close in defers, etc.
+      exclude-functions:
+        - (io.Closer).Close
+        - (io/fs.File).Close
+        - (*database/sql.Rows).Close
+        - (*database/sql.Tx).Rollback
+        - (*text/tabwriter.Writer).Flush
+        - fmt.Fprint
+        - fmt.Fprintf
+        - fmt.Fprintln
+
+    gosec:
+      excludes:
+        - G104   # already covered by errcheck
+        - G204   # subprocess with variable args — we exec git/tmux with our own controlled args
+        - G304   # file inclusion via variable — pigtail builds paths on purpose
+        - G306   # we choose perms explicitly (0o600 / 0o644)
+        - G703   # path traversal taint — same rationale as G304; request-supplied
+                 # segments are validated at the handler boundary (see rename.go)
+
+  exclusions:
+    rules:
+      # Tests have looser rules
+      - path: _test\.go
+        linters: [errcheck, gosec, revive, gocritic]
+      # cmd/ binaries: relax exported-comment requirement on main
+      - path: cmd/
+        linters: [revive]
+
+issues:
+  max-issues-per-linter: 0
+  max-same-issues: 0
+
+output:
+  formats:
+    text:
+      print-issued-lines: true
+      print-linter-name: true

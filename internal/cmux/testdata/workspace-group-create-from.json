@@ -1,0 +1,28 @@
+{
+  "created" : true,
+  "group" : {
+    "anchor_workspace_id" : "2E5913BD-9CF3-4875-A99C-A8668DCB6361",
+    "anchor_workspace_is_generated" : true,
+    "anchor_workspace_provenance" : "generated",
+    "anchor_workspace_ref" : "workspace:79",
+    "custom_color" : null,
+    "icon_symbol" : null,
+    "id" : "7BE4B61F-B29D-4C91-B449-2843F9CAA02E",
+    "is_collapsed" : false,
+    "is_empty" : false,
+    "is_pinned" : false,
+    "member_count" : 3,
+    "member_workspace_ids" : [
+      "2E5913BD-9CF3-4875-A99C-A8668DCB6361",
+      "4FE73281-A5DF-4F30-8168-9BC55C0297EE",
+      "8B15B3FE-929A-41C5-A54B-6E98F72F91F3"
+    ],
+    "member_workspace_refs" : [
+      "workspace:79",
+      "workspace:76",
+      "workspace:75"
+    ],
+    "name" : "PT Manual",
+    "ref" : "workspace_group:11"
+  }
+}

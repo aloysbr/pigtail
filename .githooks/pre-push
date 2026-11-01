@@ -1,0 +1,68 @@
+#!/bin/sh
+# pre-push — test what the push touches before anything leaves this machine.
+#
+# This repo has no CI gate: there is no branch protection (it is not available on
+# this plan), so a red build never blocked a merge.
+# The checks were only ever informative — which is precisely why they have to
+# run *somewhere*. Here is somewhere.
+#
+# The hook lists the files the push changes and hands them to
+# `make check-affected` (scripts/check-affected.sh): the packages they
+# belong to, their reverse dependencies, vet, lint and the non-Go targets
+# they touch, without -race — or every check but -race on any doubt
+# (`make check-push-steps`). The full `make check` (with -race) before a merge
+# stamps its sha (scripts/check-stamp.sh).
+#
+# It runs through `pigtail admit` (class go-test, two at a time on the
+# machine), waiting up to 30 min for its turn, then refuses the push (exit
+# 75); `PIGTAIL_ADMIT=0 git push` skips the queue.
+#
+# Enable once per clone with `make hooks`. Skip a run with `git push --no-verify`.
+#
+# Git reads GIT_DIR here on purpose: git sets it toward the pushed repo.
+
+zero=$(git hash-object --stdin </dev/null | tr '0-9a-f' '0')
+files=$(mktemp) || exit 1
+trap 'rm -f "$files"' EXIT
+trap 'exit 130' INT TERM
+
+# A delete-only push ("git push origin :branch") has nothing to verify: every
+# local ref it names is the zero sha. Reading stdin also drains it, which the
+# hook protocol expects of a hook that consumes it.
+has_content=0 unknown=0
+while read -r _local_ref local_sha _remote_ref remote_sha; do
+	[ "$local_sha" = "$zero" ] && continue
+	has_content=1
+	# The base: the remote sha when we have it and the push extends it;
+	# otherwise (a new branch, a forced push) where it leaves origin/main.
+	if [ "$remote_sha" != "$zero" ] && git cat-file -e "$remote_sha^{commit}" 2>/dev/null &&
+		git merge-base --is-ancestor "$remote_sha" "$local_sha" 2>/dev/null; then
+		base=$remote_sha
+	else
+		base=$(git merge-base "$local_sha" origin/main 2>/dev/null) || base=
+	fi
+	if [ -z "$base" ] || ! git diff --name-only --no-renames "$base" "$local_sha" >>"$files"; then
+		unknown=1
+	fi
+done
+[ "$has_content" = "1" ] || exit 0
+
+if [ "$unknown" = 1 ]; then
+	echo '*' >"$files" # no diff base: the selector runs every check but -race
+else
+	sort -u -o "$files" "$files"
+fi
+
+echo "pre-push: testing what this push touches (skip with --no-verify)"
+if command -v pigtail >/dev/null 2>&1; then
+	echo "pre-push: two go-test runs at a time on this machine (pigtail admit, up to 30 min in the queue; PIGTAIL_ADMIT=0 skips it)"
+	pigtail admit --class go-test --max-wait 30m --label "pre-push check-affected" -- make check-affected PREPUSH_FILES="$files"
+else
+	make check-affected PREPUSH_FILES="$files"
+fi
+status=$?
+if [ "$status" = 75 ]; then
+	echo "pre-push: push refused — no turn in the go-test queue after 30 min (pigtail slots shows who holds it)." >&2
+	echo "pre-push: push again later, or skip the queue with PIGTAIL_ADMIT=0 git push." >&2
+fi
+exit "$status"

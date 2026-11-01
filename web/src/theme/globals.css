@@ -1,0 +1,62 @@
+/* Atlas web: Tailwind v4 + the DS Hybride tokens. Colours come from palette.css (generated, Terra / Ocean × light / dark), structure from tokens.css. The shadcn colour names are Tailwind theme colours mapped onto those tokens, so a copied shadcn component draws with the same palette in every theme: primary and ring are ink (--btn-fill, --focus); shadcn's "accent" is the hover surface here. */
+@import "tailwindcss";
+@import "./palette.css";
+@import "./tokens.css";
+@import "../list/list.css";
+@import "../panel/panel.css";
+@import "../app/layout.css";
+@import "../ui/toast.css";
+@import "../ui/sheet.css";
+@import "../ui/drag.css";
+@import "../ui/settings.css";
+@import "../ui/preview.css";
+@import "../ui/fields.css";
+@import "../reader/reader.css";
+@import "../sessions/sessions.css";
+@import "../sdk/sdk.css";
+/* last: the one pointer: coarse block wins over every component sheet at equal specificity (pointer.test.ts) */
+@import "./pointer.css";
+
+@theme inline {
+  --color-background: var(--bg);
+  --color-foreground: var(--text);
+  --color-card: var(--surface);
+  --color-card-foreground: var(--text);
+  --color-popover: var(--surface);
+  --color-popover-foreground: var(--text);
+  --color-primary: var(--btn-fill);
+  --color-primary-foreground: var(--btn-on);
+  --color-secondary: var(--bg-2);
+  --color-secondary-foreground: var(--text);
+  --color-muted: var(--bg-2);
+  --color-muted-foreground: var(--text-2);
+  --color-accent: var(--bg-hover);
+  --color-accent-foreground: var(--text);
+  --color-destructive: var(--status-late);
+  --color-border: var(--border);
+  --color-input: var(--border-strong);
+  --color-ring: var(--focus);
+  --radius: var(--radius-2);
+}
+
+@layer base {
+  html,
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-sans);
+    font-size: var(--fs-13);
+    line-height: var(--lh-body);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* The ring shows for the keyboard only: a mouse click leaves no ring (focus.test.ts). */
+  :focus-visible {
+    outline: var(--size-focus) solid var(--focus);
+    outline-offset: 1px;
+  }
+
+  button {
+    cursor: pointer;
+  }
+}

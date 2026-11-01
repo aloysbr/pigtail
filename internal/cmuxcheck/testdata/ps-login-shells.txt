@@ -1,0 +1,26 @@
+98098     1 98098     0 ??       /Applications/cmux.app/Contents/MacOS/cmux
+ 2465 98098  2465  2609 ttys027  /usr/bin/login
+ 2609  2465  2609  2609 ttys027  -/bin/zsh
+ 2700  2609  2700  2609 ttys027  /Users/x/.cache/gitstatus/gitstatusd-darwin-arm64
+ 3882     1  3872  2609 ttys027  -/bin/zsh
+14223     1 14222  2609 ttys027  -/bin/zsh
+14226  3882  3872  2609 ttys027  /Users/x/.cache/gitstatus/gitstatusd-darwin-arm64
+ 2172 14223 14222  2609 ttys027  <defunct>
+ 3100 98098  3100  3200 ttys040  /usr/bin/login
+ 3101  3100  3101  3200 ttys040  -/bin/zsh
+ 3200  3101  3200  3200 ttys040  sleep
+ 4100 55555  4100  4101 ttys041  /usr/bin/login
+ 4101  4100  4101  4101 ttys041  -/bin/zsh
+ 4201     1  4201  4201 ttys042  -/bin/zsh
+ 5100 98098  5100  5101 ttys043  /usr/bin/login
+ 5101  5100  5101  5101 ttys043  -/bin/zsh
+ 5102  5100  5102  5101 ttys043  -/bin/zsh
+ 6100 98098  6100  6101 ttys044  /usr/bin/login
+ 6101  6100  6101  6101 ttys044  -/bin/zsh
+ 6150  6101  6101  6101 ttys044  /Users/x/.cache/gitstatus/gitstatusd-darwin-arm64
+ 7100 98098  7100  7101 ttys045  /usr/bin/script
+ 7101  7100  7101  7101 ttys045  -/bin/zsh
+ 8100 98098  8100  8101 ttys046  /usr/bin/login
+ 8101  8100  8101  8101 ttys046  -/bin/zsh
+ 9100 98098  9100  9101 ttys034  /usr/bin/login
+ 9101  9100  9101  9101 ttys034  -/bin/zsh

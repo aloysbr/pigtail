@@ -1,0 +1,306 @@
+/* Pigtail web lot 2: the t10 list classes (app.css), ported as they are; every value comes from tokens.css. */
+@layer components {
+  html, body, #app { height: 100%; }
+  body { overflow: hidden; font-size: var(--fs-13); line-height: var(--lh-body); -webkit-font-smoothing: antialiased; }
+  ol, ul { list-style: none; margin: 0; padding: 0; }
+  svg { width: var(--size-icon); height: var(--size-icon); flex: none; }
+  .muted { color: var(--text-2); }
+  .sr { position: absolute; width: var(--size-bw); height: var(--size-bw); overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+  .c-sp { flex: 1; }
+  kbd { display: inline-flex; align-items: center; justify-content: center; min-width: var(--size-kbd); height: var(--size-kbd); padding: 0 var(--sp-2); border: var(--size-bw) solid var(--border-strong); border-bottom-width: var(--size-focus); border-radius: var(--radius-1); background: var(--bg); color: var(--text-2); font-family: var(--font-sans); font-size: var(--fs-11); font-weight: var(--fw-medium); line-height: 1; white-space: nowrap; }
+  kbd + kbd { margin-left: var(--sp-1); }
+  .k-then { color: var(--text-2); font-size: var(--fs-11); }
+
+  /* shell: 240 px sidebar, floating under 1 120 px (t8) */
+  .app { display: grid; grid-template-columns: var(--size-sidebar) minmax(0, 1fr); grid-template-rows: minmax(0, 1fr); height: 100%; position: relative; }
+  .app.nodock { grid-template-columns: minmax(0, 1fr); }
+  .side { display: flex; flex-direction: column; gap: var(--sp-4); min-width: 0; min-height: 0; background: var(--surface-side); border-right: var(--size-bw) solid var(--line); padding: var(--sp-5) var(--sp-4); overflow: hidden; }
+  .side.float { position: absolute; z-index: 9; top: 0; bottom: 0; left: 0; width: var(--size-sidebar); box-shadow: var(--shadow-pop); }
+  .side-scrim { position: fixed; inset: 0; z-index: 8; background: var(--overlay-soft); }
+  .brand { display: flex; align-items: center; justify-content: space-between; padding: 0 var(--sp-2); font-size: var(--fs-15); }
+  .brand { flex: none; }
+  .nav { display: flex; flex-direction: column; flex: 1 1 auto; min-height: 0; overflow-y: auto; gap: var(--sp-1); padding: var(--sp-2); margin: calc(-1 * var(--sp-2)); }  /* gutter >= focus ring (2 px + 1 px offset), cancelled so rows keep their place */
+  .nav-i { display: flex; align-items: center; gap: var(--sp-4); width: 100%; min-height: var(--size-row); padding: 0 var(--sp-4); border: none; border-radius: var(--radius-2); background: none; color: var(--text); text-align: left; cursor: pointer; }
+  .nav-i:hover, .side .ghost:hover, .side .ib:hover { background: var(--bg-hover-side); }
+  /* the current item: its own step on the side ground, one past the hover (D17) */
+  .nav-i.cur { background: var(--bg-active-side); font-weight: var(--fw-medium); }
+  .nav-i svg { color: var(--text-2); }
+  .nav-l { flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .nav-g { margin: var(--sp-5) 0 var(--sp-2); padding: 0 var(--sp-4); color: var(--text-2); font-size: var(--fs-11); font-weight: var(--fw-semibold); }
+  /* Hybride (Things structure): areas in bold, their projects under them with a pie; one open count at the right */
+  .nav-area { margin-top: var(--sp-5); font-size: var(--nav-area-fs); font-weight: var(--nav-area-fw); }
+  .nav-g + .nav-area { margin-top: var(--sp-0); }
+  .nav-area .meta { font-weight: var(--fw-regular); }
+  .pie { flex: none; color: var(--text-2); }
+  .gh-pie { width: var(--size-pie-h); height: var(--size-pie-h); }
+  .meta { color: var(--text-2); font-size: var(--fs-12); font-variant-numeric: tabular-nums; }
+  /* .lmain is the named container lmain, which the footer query aims at by name. The name does not shield the anonymous @container
+     queries (they aim at the nearest size container, named or not): they are safe because they all style descendants of .ll6. */
+  .lmain { min-width: 0; min-height: 0; display: flex; flex-direction: column; overflow: hidden; position: relative; container: lmain / inline-size; }
+  /* the list scrolls in its own box; the shortcut footer is its sibling below, never over a row */
+  /* scrollbar-gutter: a classic always-visible scrollbar (WKWebView) takes its room up front instead of squeezing the rows' right padding */
+  .lscroll { flex: 1 1 0; min-height: 0; display: flex; flex-direction: column; overflow-y: auto; scrollbar-gutter: stable; }
+  /* WebKit draws its overlay scrollbar over the rows and scrollbar-gutter does not reserve it: a styled ::-webkit-scrollbar is a classic one, rows end before it */
+  .lscroll::-webkit-scrollbar { width: var(--size-scrollbar-list); }
+  .lscroll::-webkit-scrollbar-track { background: transparent; }
+  .lscroll::-webkit-scrollbar-thumb { background: var(--scroll-thumb); border-radius: var(--radius-pill); }
+  .lscroll::-webkit-scrollbar-thumb:hover { background: var(--text-2); }
+  /* Firefox only: where scrollbar-width is set, Chromium and recent WebKit drop the ::-webkit-scrollbar styling above */
+  @supports not selector(::-webkit-scrollbar) {
+    .lscroll { scrollbar-width: thin; scrollbar-color: var(--scroll-thumb) transparent; }
+  }
+  .lscroll > .ll6 { flex: none; }
+
+  /* header line (t8) */
+  .d-head { position: sticky; top: 0; z-index: 5; flex: none; display: flex; flex-wrap: wrap; align-items: center; gap: var(--sp-2) var(--sp-4); min-height: var(--head-h); padding: var(--sp-2) var(--sp-6); border-bottom: var(--size-bw) solid var(--line); background: var(--bg); }
+  .d-tools { display: inline-flex; flex-wrap: nowrap; align-items: center; gap: var(--sp-4); margin-left: auto; }
+  .d-head h1 { font-family: var(--font-title); font-size: var(--fs-page-title); font-weight: var(--fw-page-title); letter-spacing: var(--ls-title); line-height: var(--lh-tight); white-space: nowrap; }
+  .ib { display: inline-flex; align-items: center; justify-content: center; width: var(--size-control); height: var(--size-control); border: none; background: none; color: var(--text-2); border-radius: var(--radius-2); cursor: pointer; }
+  .ib:hover { background: var(--bg-hover); color: var(--text); }
+  .ghost { display: inline-flex; align-items: center; gap: var(--sp-3); min-height: var(--size-target); padding: 0 var(--sp-4); border: var(--size-bw) solid transparent; border-radius: var(--radius-2); background: none; color: var(--text-2); cursor: pointer; white-space: nowrap; }
+  .ghost:hover { background: var(--bg-hover); color: var(--text); }
+  .ghost.sm { font-size: var(--fs-12); }
+  .ghost[aria-pressed="true"] { background: var(--bg-active); color: var(--text); }
+  .ghost svg { width: var(--size-icon-sm); height: var(--size-icon-sm); }
+  .pills { display: inline-flex; flex-wrap: wrap; gap: var(--sp-2); margin-left: var(--sp-2); }
+  .pill { display: inline-flex; align-items: center; gap: var(--sp-2); min-height: var(--size-target); padding: 0 var(--sp-4) 0 var(--sp-3); border: var(--size-bw) dashed var(--border-strong); border-radius: var(--radius-pill); background: var(--bg); color: var(--text-2); font-size: var(--fs-12); font-weight: var(--fw-medium); white-space: nowrap; cursor: pointer; }
+  .pill:hover { background: var(--bg-hover); color: var(--text); }
+  .pill:active { transform: scale(var(--scale-pop)); }
+  .pill[aria-pressed="true"] { border-style: solid; border-color: var(--pill-on-line); background: var(--pill-on-bg); color: var(--text); }
+  .pill[aria-disabled="true"] { cursor: not-allowed; }
+  .pill[aria-disabled="true"]:active { transform: none; }
+  .pill-c { display: inline-flex; width: var(--size-icon-sm); height: var(--size-icon-sm); color: var(--text); }
+  .pill-c svg { width: var(--size-icon-sm); height: var(--size-icon-sm); }
+  .pill-n { color: var(--text-2); font-weight: var(--fw-regular); font-variant-numeric: tabular-nums; }
+  .fsearch { display: inline-flex; align-items: center; gap: var(--sp-3); min-height: var(--size-target); padding: 0 var(--sp-4); border: var(--size-bw) solid var(--border-strong); border-radius: var(--radius-2); background: var(--bg); color: var(--text-2); }
+  /* one contour on focus: the ring sits over the border (offset = minus its width), never beside it */
+  .fsearch:has(input:focus-visible) { outline: var(--size-focus) solid var(--focus); outline-offset: calc(-1 * var(--size-bw)); border-color: transparent; }
+  .fsearch input:focus-visible { outline: none; }
+  .fsearch input { width: var(--size-search-w); min-width: 0; border: none; outline: none; background: none; color: var(--text); font: inherit; font-size: var(--fs-12); }
+  /* on the one-line header (levels 0 and 1) the field rests at --size-search-c and widens to --size-search-w on focus (t10): the
+     siblings reflow. The wide state is the .wide class held by the component; it ends on a real blur only, and a press on a header
+     button never blurs the field (Topbar's onMouseDown), so a click on a button to the right still lands on the first try.
+     Level 2 is the two-line header below (.h2l); tight drops the counts. */
+  .d-head .fsearch input { width: var(--size-search-c); }
+  .d-head .fsearch.wide input { width: var(--size-search-w); }
+  .d-head.tight .pill-n { display: none; }
+  /* level 2 (D7, Q3 A): two lines of fixed height. Line 1 navigation · title · scopes · tools; line 2 never wraps: the search takes
+     what is left, Filtre and the chips keep their size, and the chips fold from the end into « +n » (app/fitChips.ts). */
+  .d-head.h2l { flex-direction: column; flex-wrap: nowrap; align-items: stretch; gap: var(--sp-2); }
+  .h-l1, .h-l2 { display: flex; flex-wrap: nowrap; align-items: center; gap: var(--sp-2) var(--sp-4); min-height: var(--size-control); min-width: 0; }
+  /* line 1 never wraps either: the Scopes menu alone gives way, its label ellipsized; the title, the buttons and the tools keep their size */
+  .h-l1 > :is(h1, button, .d-tools) { flex: none; }
+  .h-l1 > .gmenu-w { flex: 0 1 auto; min-width: 0; }
+  /* it shrinks no further than the finger width, so the coarse 44 px minimum of .ghost (pointer.css) holds */
+  .h-l1 > .gmenu-w > .ghost { max-width: 100%; min-width: var(--size-touch); }
+  .h-l1 .gm-l { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .h-l2 .fsearch { flex: 1 1 auto; min-width: 0; }
+  .d-head.h2l .h-l2 .fsearch input { flex: 1; width: auto; min-width: 0; }
+  .h-l2 > :not(.fsearch) { flex: none; }
+  .h-chips { display: flex; flex-wrap: nowrap; align-items: center; gap: var(--sp-4); }
+  .h-chips > [hidden] { display: none; }
+  .h-more { color: var(--text-2); font-size: var(--fs-12); font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .fsearch input::-webkit-search-cancel-button { display: none; }
+  .fsearch svg { width: var(--size-icon-sm); height: var(--size-icon-sm); }
+  ::placeholder { color: var(--text-2); opacity: 1; }
+  .fchip { display: inline-flex; align-items: center; gap: var(--sp-3); max-width: var(--size-search-w); min-height: var(--size-target); padding: 0 var(--sp-1) 0 var(--sp-4); border: var(--size-bw) solid var(--border-strong); border-radius: var(--radius-2); box-shadow: var(--shadow-card); background: var(--bg); font-size: var(--fs-12); }
+  .fchip b { font-weight: var(--fw-medium); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .fx { display: inline-flex; align-items: center; justify-content: center; width: var(--size-target); height: var(--size-target); border: none; background: none; color: var(--text-2); border-radius: var(--radius-1); cursor: pointer; }
+  .fx:hover { background: var(--bg-hover); color: var(--text); }
+  .fx svg { width: var(--size-icon-sm); height: var(--size-icon-sm); }
+  .fadd { display: inline-flex; align-items: center; gap: var(--sp-2); min-height: var(--size-target); padding: 0 var(--sp-4); border: var(--size-bw) dashed var(--border-strong); border-radius: var(--radius-2); background: none; color: var(--text-2); font-size: var(--fs-12); cursor: pointer; white-space: nowrap; }
+  .btnl { display: inline-flex; align-items: center; gap: var(--sp-3); min-height: var(--size-target); padding: 0 var(--sp-4); border: var(--size-bw) solid var(--border-strong); border-radius: var(--radius-btn); box-shadow: var(--shadow-card); background: var(--bg); color: var(--text); font: inherit; font-size: var(--fs-12); font-weight: var(--fw-medium); white-space: nowrap; cursor: pointer; }
+  .btnl:hover { background: var(--bg-hover); }
+  /* Lancer (t10 action()): the row's last column, shown on hover, selection or focus, always while it runs; the sheet's too */
+  .btnl[disabled] { color: var(--text-2); cursor: progress; }
+  .btnl svg { width: var(--size-icon-sm); height: var(--size-icon-sm); }
+  .spin { animation: spin var(--dur-spin) linear infinite; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  @media (prefers-reduced-motion: reduce) { .spin { animation: none; } }
+  /* padding-inline-end: the button's focus ring (--size-focus + 1px offset) always has room before the column edge */
+  .lr-l { display: flex; justify-content: flex-end; min-width: 0; padding-inline-end: var(--sp-2); }
+  .lr6 .launch-btn { opacity: 0; }
+  /* One enabled Lancer at a time: the hovered row's when the pointer is on a row, else the selected row's. A keyboard focus on the
+     button reveals it, a focus-within does not (a click or a moved selection leaves the row's li focused: a second button). */
+  .lr6:hover .launch-btn, .lr6.sel .launch-btn, .lr6:has(.launch-btn:focus-visible) .launch-btn, .lr6 .launch-btn[disabled] { opacity: 1; }
+  .ll6:has(.lr6:hover) .lr6.sel:not(:hover) .launch-btn:not([disabled]):not(:focus-visible) { opacity: 0; }
+  .lr6.sel .launch-btn:not([disabled]) { background: var(--btn-fill); color: var(--btn-on); border-color: var(--btn-fill); }
+  .lr6.sel .launch-btn:not([disabled]) kbd { background: transparent; color: inherit; border-color: currentColor; }
+  /* the phone's sheet: a touch target (t10 .mobile .btnl) */
+  .phone .launch-btn { min-height: var(--size-touch); }
+  .phone .lp-acts .launch-btn { width: 100%; justify-content: center; font-size: var(--fs-15); font-weight: var(--fw-semibold); background: var(--btn-fill); color: var(--btn-on); border-color: var(--btn-fill); }
+  .brand-r { display: inline-flex; align-items: center; gap: var(--sp-2); }
+  /* the shortcut shows on hover or keyboard focus only */
+  .brand-r button:not(:hover):not(:focus-visible) kbd { display: none; }
+  .fsearch kbd { flex: none; }
+  .fadd:hover { color: var(--text); background: var(--bg-hover); }
+  .fadd svg { width: var(--size-icon-sm); height: var(--size-icon-sm); }
+  .fcount { color: var(--text-2); font-size: var(--fs-12); font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+  /* menus */
+  .gmenu-w { position: relative; }
+  .gtrig b { font-weight: var(--fw-semibold); color: var(--text); }
+  .gmenu { position: absolute; right: 0; top: calc(100% + var(--sp-2)); z-index: 6; min-width: var(--size-fmenu); padding: var(--sp-2); background: var(--bg); border: var(--size-bw) solid var(--border-strong); border-radius: var(--radius-3); box-shadow: var(--shadow-pop); display: flex; flex-direction: column; max-width: calc(100vw - 2 * var(--sp-6)); box-sizing: border-box; }
+  .gmenu.left { right: auto; left: 0; }
+  .gmenu button { display: flex; align-items: center; justify-content: space-between; gap: var(--sp-5); min-height: var(--size-row); padding: 0 var(--sp-4); border: none; border-radius: var(--radius-2); background: none; font-size: var(--fs-12); text-align: left; cursor: pointer; }
+  .gmenu button:hover { background: var(--bg-hover); }
+  .gmenu button[aria-checked="true"] { background: var(--bg-active); font-weight: var(--fw-semibold); }
+  .gm-sec { padding: var(--sp-3) var(--sp-4) var(--sp-1); color: var(--text-2); font-size: var(--fs-11); font-weight: var(--fw-semibold); }
+  .pal-l { display: inline-flex; align-items: center; gap: var(--sp-4); min-width: 0; white-space: nowrap; }
+  .pal-keys { display: inline-flex; align-items: center; gap: var(--sp-4); margin-left: auto; flex: none; }
+  .gm-n { min-width: 3ch; text-align: right; font-variant-numeric: tabular-nums; }
+  .gm-k { display: inline-flex; align-items: center; justify-content: center; min-width: var(--size-kbd); }
+
+  /* groups */
+  .ll6 { display: flex; flex-direction: column; padding-bottom: var(--sp-6); container-type: inline-size; }
+  .gh { margin: 0; font: inherit; }
+  .gbtn { display: flex; align-items: center; gap: var(--sp-4); width: 100%; min-height: var(--size-row); padding: 0 var(--sp-6); border: none; border-bottom: var(--size-bw) solid var(--line); background: var(--group-bg); color: var(--text); font-size: var(--fs-g1); font-weight: var(--fw-g1); text-align: left; cursor: pointer; }
+  .gbtn:hover { background: var(--bg-hover); }
+  .g2 .gbtn { padding-left: calc(var(--sp-6) + var(--size-group-indent)); border-bottom-color: transparent; background: var(--bg); color: var(--c-g2); font-size: var(--fs-g2); font-weight: var(--fw-g2); }
+  .g2 .gbtn:hover { background: var(--bg-hover); }
+  .gchev { color: var(--text-2); width: var(--size-icon-sm); height: var(--size-icon-sm); transition: transform var(--dur-fast) var(--ease-out); }
+  [aria-expanded="false"] > .gchev { transform: rotate(-90deg); }
+  .gname { flex: 0 1 auto; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .gsub { flex: none; color: var(--text-2); font-weight: var(--fw-regular); white-space: nowrap; }
+  .lg-n { flex: none; color: var(--text-2); font-weight: var(--fw-regular); font-variant-numeric: tabular-nums; }
+  .gsum { flex: none; display: inline-flex; align-items: center; gap: var(--sp-5); font-weight: var(--fw-regular); color: var(--text-2); font-variant-numeric: tabular-nums; }
+  .gs { display: inline-flex; align-items: center; gap: var(--sp-2); }
+  .gs .si { width: var(--size-icon); height: var(--size-icon); }
+  .gsum .si-dropped, .gsum .si-standby { color: var(--text-2); }
+
+  /* statuses: one shape and one colour each */
+  .si { display: inline-flex; flex: none; width: var(--size-icon); height: var(--size-icon); }
+  .si svg { width: 100%; height: 100%; }
+  .si-cours { color: var(--s-cours); }
+  .si-ouvert { color: var(--s-ouvert); }
+  .si-standby { color: var(--s-standby); }
+  .si-done { color: var(--s-done); }
+  .si-done .ck { stroke: var(--bg); }
+  .si-dropped { color: var(--text-disabled); }
+  .si-cap { color: var(--s-capture); }
+
+  /* a project's « Captures · n » (t10 .capl, .cap-row): read only, icon · text · age */
+  .ll6 .lr6.cap-row { grid-template-columns: var(--size-icon) minmax(0, 1fr) var(--size-col-age) var(--size-launch-w); }
+  .cap-t { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--text-2); }
+  .cap-row.sel .cap-t { color: var(--text); }
+
+  /* rows, lot 2: status · rank · title · step · project · age */
+  .lr6 { display: grid; grid-template-columns: var(--size-icon) var(--size-col-rank) minmax(0, 1fr) var(--size-col-step3) var(--size-col-theme) var(--size-col-age) var(--size-launch-w); gap: var(--sp-4); align-items: center; min-height: var(--row-h); padding: 0 var(--sp-6) 0 calc(var(--sp-6) + var(--size-group-indent)); border-bottom: var(--size-bw) solid var(--row-line); cursor: default; position: relative; }
+  .no-theme .lr6 { grid-template-columns: var(--size-icon) var(--size-col-rank) minmax(0, 1fr) var(--size-col-step3) var(--size-col-age) var(--size-launch-w); }
+  .no-theme .lr-th { display: none; }
+  .lr6:hover { background: var(--bg-hover); }
+  .lr6.sel { background: var(--bg-selected); }
+  .lr6:focus-visible { outline-offset: calc(-1 * var(--size-focus)); border-radius: 0; }
+  .rk6 { color: var(--text-2); font-size: var(--fs-12); font-variant-numeric: tabular-nums; text-align: right; }
+  .lr-t { display: flex; gap: var(--sp-4); align-items: baseline; white-space: nowrap; }
+  .lr-t b { font-weight: var(--row-title-fw); flex: 0 0 auto; max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .lr-full { flex: 1 1 0; min-width: 0; color: var(--text-2); overflow: hidden; text-overflow: ellipsis; }
+  .lr6 .lr-st { display: inline-flex; align-items: center; gap: var(--sp-3); color: var(--text-2); font-size: var(--fs-12); white-space: nowrap; overflow: hidden; }
+  .lr-th { min-width: 0; }
+  /* the step and the chip share .lr-m: on a wide list it lays nothing out, its children keep their own columns */
+  .lr-m { display: contents; }
+  .lr6 .chip { justify-self: start; max-width: 100%; overflow: hidden; text-overflow: ellipsis; }
+  .chip { display: inline-flex; align-items: center; min-width: 0; height: var(--size-sdot); line-height: var(--size-sdot); padding: 0 var(--chip-pad); border-radius: var(--radius-pill); background: var(--chip-bg); color: var(--chip-text); font-size: var(--fs-11); font-weight: var(--chip-fw); white-space: nowrap; }
+  .chip-t { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  /* end-aligned: an age wider than its column (« à l'instant ») spills into the gap on its left, never past the row (verify V3) */
+  .lr6 .lr-d { justify-self: end; color: var(--text-2); font-size: var(--fs-12); white-space: nowrap; text-align: right; font-variant-numeric: tabular-nums; }
+  .steps3 { display: inline-flex; gap: var(--size-tick-gap); align-items: center; flex: none; }
+  .steps3 i { width: var(--size-tick); height: var(--size-tick); border-radius: var(--radius-pill); background: var(--bg-3); }
+  .steps3 i.done { background: var(--text-2); }
+  .steps3 i.cur { background: var(--mark); width: var(--size-step-tick); }
+  .more, .sline { display: flex; align-items: center; gap: var(--sp-4); width: 100%; min-height: var(--size-row); padding: 0 var(--sp-6) 0 calc(var(--sp-6) + var(--size-group-indent)); border: none; border-bottom: var(--size-bw) solid var(--row-line); background: none; color: var(--text-2); font-size: var(--fs-12); text-align: left; cursor: pointer; }
+  .more { padding-left: calc(var(--sp-6) + var(--size-group-indent) + var(--size-icon) + var(--sp-4)); }
+  .more:hover, .sline:hover { background: var(--bg-hover); color: var(--text); }
+  /* status grouping: the group icon sits after the chevron, so its rows indent past it */
+  .by-status .lr6, .by-status .sline { padding-left: calc(var(--sp-6) + var(--size-icon-sm) + var(--sp-4) + var(--size-group-indent)); }
+  .by-status .more { padding-left: calc(var(--sp-6) + var(--size-icon-sm) + var(--sp-4) + var(--size-group-indent) + var(--size-icon) + var(--sp-4)); }
+  .sub .lr6, .sub .sline { padding-left: calc(var(--sp-6) + var(--size-group-indent) * 2); }
+  .sub .more { padding-left: calc(var(--sp-6) + var(--size-group-indent) * 2 + var(--size-icon) + var(--sp-4)); }
+  .sub .sub .lr6 { padding-left: calc(var(--sp-6) + var(--size-group-indent) * 3); }
+  /* a narrow list puts its row on two lines (D4, D6): icon · title · rank · age, then step · project chip under the title.
+     640 px is written out because @container takes no var(); it sits between --lw-two and --lw-one (tokens.css). */
+  @container (max-width: 640px) {
+    /* the rank keeps its own column before the age (empty or not), so every age lines up */
+    .lr6, .no-theme .lr6 { grid-template-columns: var(--size-icon) minmax(0, 1fr) var(--size-col-rank) var(--size-col-age); grid-template-areas: "i t k d" ". m m m"; row-gap: var(--row-meta-gap); padding-block: var(--sp-2); }
+    /* nothing to say on the second line: one line, as before */
+    .lr6.no-m { grid-template-areas: "i t k d"; padding-block: var(--sp-0); }
+    .lr6.no-m .lr-m { display: none; }
+    .lr6 > .si { grid-area: i; }
+    .lr6 .lr-t { grid-area: t; }
+    .lr6 .lr-m { grid-area: m; display: flex; align-items: center; gap: var(--sp-4); min-width: 0; color: var(--text-2); font-size: var(--fs-12); }
+    .lr6 .lr-m > :empty { display: none; }
+    .lr6 .lr-st { flex: none; }
+    .lr6 .lr-th { display: inline-flex; flex: 0 1 auto; min-width: 0; }
+    /* a capture row (read only: icon · text · age) has no second line */
+    .ll6 .lr6.cap-row { grid-template-columns: var(--size-icon) minmax(0, 1fr) var(--size-col-age); grid-template-areas: "i t d"; padding-block: var(--sp-0); }
+    .ll6 .lr6.cap-row > :first-child { grid-area: i; }
+    .ll6 .lr6.cap-row .cap-t { grid-area: t; }
+    .lr6, .no-theme .lr6 { padding-left: var(--sp-6); }
+    .by-status .lr6 { padding-left: calc(var(--sp-6) + var(--size-icon-sm) + var(--sp-4) + var(--size-group-indent)); }
+    /* rows keep their indent under their project (t10 .mobile .sub .lr6) */
+    .sub .lr6 { padding-left: calc(var(--sp-6) + var(--size-group-indent) * 2); }
+    .sub .sub .lr6 { padding-left: calc(var(--sp-6) + var(--size-group-indent) * 3); }
+    .gsub { display: none; }
+    .lr-full { display: none; }
+    .lr6 .rk6 { order: 8; grid-area: k; }
+    .lr6 .lr-d { order: 9; grid-area: d; }
+    /* a narrow list keeps Lancer on the selected (or launching) row only, as a touch target; the sheet carries it too */
+    /* laid over the rank (and the title's tail), left of the age column so the age stays whole, inset by the focus ring so the ring stays continuous, on the row's own background: no column of its own, so every rank and age stays aligned */
+    .lr6 .lr-l { display: none; position: absolute; top: var(--size-focus); bottom: var(--size-focus); right: calc(var(--sp-6) + var(--size-col-age) + var(--sp-4)); align-items: center; padding-left: var(--sp-4); background: var(--bg); }
+    .lr6.sel .lr-l, .lr6 .lr-l:has([aria-busy]) { display: flex; }
+    .lr6.sel .lr-l { background: inherit; }
+    /* hover shows no button here: the selected row keeps its own while the pointer is on another row */
+    .ll6:has(.lr6:hover) .lr6.sel:not(:hover) .launch-btn:not([disabled]):not(:focus-visible) { opacity: 1; }
+  }
+  /* the group name keeps its room: the status summary goes first on a narrow list */
+  @container (max-width: 480px) {
+    .gsum { display: none; }
+  }
+
+  /* empty states and loading */
+  .empty6 { margin: var(--sp-10) auto; max-width: var(--size-sheet); display: flex; flex-direction: column; align-items: center; gap: var(--sp-4); text-align: center; padding: var(--sp-8); }
+  .empty6 h2 { font-size: var(--fs-15); font-weight: var(--fw-semibold); }
+  .empty6 p { color: var(--text-2); }
+  .empty6 .hint { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--sp-4); }
+  .empty-ic { display: inline-flex; align-items: center; justify-content: center; width: var(--size-row-2); height: var(--size-row-2); border-radius: var(--radius-pill); background: var(--bg-2); color: var(--text-2); }
+  /* loading: the list's silhouette. Group header and row take the real heights (--size-row, --row-h) and separators (--row-line); bars share one shimmer */
+  .skel-g { display: flex; align-items: center; gap: var(--sp-4); min-height: var(--size-row); padding: 0 var(--sp-6); border-bottom: var(--size-bw) solid var(--line); background: var(--group-bg); }
+  .skel { display: flex; align-items: center; gap: var(--sp-4); min-height: var(--row-h); margin: 0 var(--sp-6); border-bottom: var(--size-bw) solid var(--row-line); }
+  .skel-b, .skel-dot { display: block; flex: none; height: var(--sp-4); border-radius: var(--radius-pill); background: linear-gradient(90deg, var(--bg-2), var(--bg-3), var(--bg-2)); background-size: 200% 100%; animation: skel 1.4s ease-in-out infinite; }
+  .skel-dot { width: var(--size-icon); height: var(--size-icon); }
+  .skel-name { width: var(--w); }
+  .skel-n { width: var(--w); min-width: var(--sp-6); }
+  .skel-t { width: var(--w); margin-right: auto; }
+  .skel-age { width: var(--size-col-age); }
+  @keyframes skel { to { background-position: -200% 0; } }
+
+  /* shortcut footer (t4) */
+  /* One line at every width: .kb-items is one line high (--size-target, which each .kb fills) and clips what wraps, whole items; the toggle beside it never wraps away */
+  .kbdbar { display: flex; flex: none; flex-wrap: nowrap; align-items: center; gap: var(--sp-6); min-height: var(--size-kbdbar); padding: var(--sp-2) var(--sp-6); border-top: var(--size-bw) solid var(--border); color: var(--text-2); font-size: var(--fs-11); background: var(--bg); }
+  .kb-items { flex: 1 1 0; min-width: 0; display: flex; flex-wrap: wrap; align-content: flex-start; align-items: center; column-gap: var(--sp-6); row-gap: var(--sp-0); height: var(--size-target); overflow: hidden; }
+  .kb { display: inline-flex; align-items: center; gap: var(--sp-3); white-space: nowrap; min-height: var(--size-target); }
+  button.kb { flex: none; border: none; background: none; color: inherit; font: inherit; cursor: pointer; min-height: var(--size-target); padding: 0 var(--sp-3); border-radius: var(--radius-2); }
+  button.kb:hover { color: var(--text); background: var(--bg-hover); }
+  .kbhint { flex: none; align-self: flex-end; margin: var(--sp-2) var(--sp-6); display: inline-flex; align-items: center; gap: var(--sp-3); min-height: var(--size-target); padding: 0 var(--sp-4); border: none; border-radius: var(--radius-2); background: none; color: var(--text-2); font: inherit; font-size: var(--fs-11); cursor: pointer; }
+  .kbhint:hover { color: var(--text); background: var(--bg-hover); }
+  /* under 720 px of list the footer tightens its gaps to keep more shortcuts on its one line (--size-kbdbar); 720 is written out (@container takes no var()).
+     At 640 and under, the toggle prints its key alone (.kbdbar-n, D16 of the web actions). */
+  @container lmain (max-width: 720px) {
+    .kbdbar { gap: var(--sp-4); }
+    .kb-items { column-gap: var(--sp-4); }
+    .kb { gap: var(--sp-2); }
+  }
+  /* under 520 px of list (verify t1: line 1 wrapped at 440, held at 540) line 1 drops its printed keys (⌘B, v): the buttons keep
+     their names (Navigation keeps its title « Navigation (⌘B) »), and the keys still work */
+  @container lmain (max-width: 520px) {
+    .h-l1 kbd { display: none; }
+  }
+
+  /* phone: no keyboard hints (t10 .mobile kbd) */
+  .phone kbd, .phone .kbdbar, .phone .kbhint { display: none; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .gchev { transition: none; }
+    .skel-b, .skel-dot { animation: none; }
+  }
+}

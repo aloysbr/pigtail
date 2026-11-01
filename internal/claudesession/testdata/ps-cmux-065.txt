@@ -1,0 +1,6 @@
+61096 61082 /Users/x/.nvm/versions/node/v22.16.0/bin/claude --session-id ea07ce7f-a011-4b42-8e80-ad9c06d8a41c --settings /Users/x/.cmuxterm/claude-settings/8d4b80bf18a1a1e563950badc72c42e5
+61270 61096 /Applications/cmux NIGHTLY.app/Contents/Resources/bin/cmux hooks claude spool-forwarder
+61403 61096 /Applications/cmux NIGHTLY.app/Contents/Resources/bin/cmux hooks claude inbox-wait
+71731 71191 /Users/x/.nvm/versions/node/v22.16.0/bin/claude --session-id b543326a-34ad-415b-88fc-26d9dd23ced2 --settings /Users/x/.cmuxterm/claude-settings/8d4b80bf18a1a1e563950badc72c42e5
+71960 71731 /Applications/cmux NIGHTLY.app/Contents/Resources/bin/cmux hooks claude spool-forwarder
+72178 71731 /Applications/cmux NIGHTLY.app/Contents/Resources/bin/cmux hooks claude inbox-wait

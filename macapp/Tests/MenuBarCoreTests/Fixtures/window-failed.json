@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "state": "failed",
+  "started": 1792663200,
+  "updated": 1792664400,
+  "until": null,
+  "serving": null,
+  "queue": [],
+  "served": [
+    {"label": "Re-index the project", "need_min": 42, "took_s": 1140, "interrupted": true}
+  ],
+  "total_min": 42,
+  "passage": null,
+  "ended": null,
+  "ended_by": null,
+  "warnings": [],
+  "failure": "la fenêtre ne répond plus (son processus s'est arrêté)",
+  "prior": {"lid": "off", "lid_until": null, "autoraise": true}
+}

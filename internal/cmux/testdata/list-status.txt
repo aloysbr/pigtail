@@ -1,0 +1,3 @@
+pigtail-attn=⏳ en attente de toi icon=bell.fill color=#FF9500 priority=90
+pigtail-srv=▶ dev :5173 up icon=play.fill color=#34C759 priority=60
+other_tool=Running

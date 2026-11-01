@@ -1,0 +1,27 @@
+# Built-in scope table: what pigtail uses when <config dir>/scopes.yaml does
+# not exist. One scope, personal: it sees everything, it is the scope of a
+# caller that names none, and it owns every vault link (no vault_roots).
+#
+# To split your work into several scopes (say, one per client), copy this
+# file to <config dir>/scopes.yaml and edit it, then restart the daemon.
+# Rules: names [a-z][a-z0-9-]{0,31} (not all/any); exactly one scope has
+# sees_all (the master). With one scope, it is the default and may declare no
+# vault_roots. With two or more, every scope owns >= 1 vault root ending in
+# "/", roots never overlap, and default (the scope of a caller that names
+# none) must not be the master. aliases are read-only spellings, never
+# written; launch_dir (optional) is where pigtaild launches a session of the
+# scope whose subject has no live worktree — absolute or starting with ~/,
+# no "..", its existence checked at launch.
+#
+# Example, two scopes:
+#   default: work
+#   scopes:
+#     home: {vault_roots: [Home/], sees_all: true}
+#     work: {vault_roots: [Work/], aliases: [w], launch_dir: ~/code/work}
+#
+# An invalid scopes.yaml is never replaced by this table: the daemon refuses
+# to start until the file is fixed.
+default: personal
+scopes:
+  personal:
+    sees_all: true

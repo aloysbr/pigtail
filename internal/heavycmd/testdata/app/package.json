@@ -1,0 +1,30 @@
+{
+  "name": "fixture-app",
+  "scripts": {
+    "dev": "vite",
+    "type-check": "tsc --noEmit",
+    "lint": "eslint src",
+    "lint:fix": "eslint src --fix",
+    "biome": "biome check .",
+    "check": "npm run biome && npm run type-check && npm run test",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test-storybook": "NODE_OPTIONS='--max-old-space-size=4096' node scripts/with-test-lock.js vitest",
+    "test-storybook:ui": "node scripts/with-test-lock.js vitest --ui",
+    "test-storybook:run": "npm run test-storybook -- --run",
+    "test-storybook:structure": "node scripts/with-test-lock.js vitest src/modules/structure",
+    "test-storybook:watch": "node scripts/with-test-lock.js vitest --watch",
+    "test-storybook:runner": "test-storybook --url http://127.0.0.1:6006",
+    "build": "tsc --noEmit && vite build",
+    "build:lib": "bunchee",
+    "build:next": "NODE_OPTIONS='--max-old-space-size=7168' next build",
+    "build:watch": "vite build --watch",
+    "build:go": "go build ./...",
+    "build-storybook": "storybook build",
+    "storybook": "storybook dev -p 6006",
+    "all": "run-s lint:* type-check",
+    "sb-all": "run-s test-storybook:structure",
+    "par": "concurrently \"npm:type-check\" \"eslint src\"",
+    "guarded": "pigtail admit -- tsc --noEmit"
+  }
+}

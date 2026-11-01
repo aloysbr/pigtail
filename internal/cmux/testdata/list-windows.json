@@ -1,0 +1,16 @@
+[
+  {
+    "id" : "6A73C8EF-1392-4C1C-9EFD-0C91EAD493E5",
+    "index" : 0,
+    "key" : true,
+    "selected_workspace_id" : "D9733B18-531F-4A5E-81E1-ABB7536E3CBF",
+    "workspace_count" : 44
+  },
+  {
+    "id" : "2D7A4724-6273-4254-ABD3-1DA3AB4FAF3C",
+    "index" : 1,
+    "key" : false,
+    "selected_workspace_id" : "FA706FC3-D5E3-49FB-A623-5AF8229F4D74",
+    "workspace_count" : 2
+  }
+]

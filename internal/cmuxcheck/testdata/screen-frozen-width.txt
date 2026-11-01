@@ -1,0 +1,15 @@
+  ---
+  Summary
+
+  The rain gauge driver is merged and enabled. Open the station dashboard to see the new tip
+  counter and its 20 samples to check.
+
+  → Read the bench log (or say « show the log ») — everything is merged and enabled; the log lists each sample and ❯ /example-skill                             Example skill, a sample entry of the
+s for the second gauge.
+le❯ /station-setup                         
+✻fWorked for 2m 54s · done 9:14 PM
+nts …example-skill (example-skill)         
+nt                                         for a sample menu entry, b fore any reading
+──
+  /
+                                       · ← for agents

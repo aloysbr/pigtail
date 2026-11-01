@@ -1,0 +1,89 @@
+name: CI
+
+# Run by hand only: the proof before a merge is the local `make check` (vet,
+# race tests, lint, vuln, linux build, node and swift tests); this workflow
+# covers the key Linux checks when they are worth the runner minutes:
+#   gh workflow run CI --ref <branch>
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  go-test:
+    name: Go test (-race)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: "stable"
+          cache: true
+      # lsof is in none of the runner image's apt lists (vital / common /
+      # cmd, checked 2026-09-21 against actions/runner-images toolset-2404
+      # and toolset-2204), so its presence here was never guaranteed. The
+      # lsof-backed tests in internal/devserver skipped when it was missing,
+      # and `go test` without -v does not print skips -- so nothing in this
+      # log could ever distinguish "the lsof output format is validated on
+      # Linux" from "those tests have been sitting out every run". Install
+      # it, then assert it, and let requireLsof() fail rather than skip when
+      # CI is set.
+      - name: Install lsof
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y lsof
+      - name: Assert lsof is usable
+        run: |
+          command -v lsof
+          lsof -v 2>&1 | head -3
+          # 0 = listeners found, 1 = none on this machine. Anything else is
+          # a broken lsof, and every test below would read it as an empty
+          # machine.
+          #
+          # `|| rc=$?` rather than `; rc=$?`: this step runs under `bash -e`,
+          # which aborts on the first failing simple command — so exit 1,
+          # the very case this guard means to allow, killed the step before
+          # `rc` was ever read. A fresh runner has no TCP listener at all,
+          # so that was every run.
+          rc=0
+          lsof -nP -iTCP -sTCP:LISTEN -FpPn >/dev/null || rc=$?
+          if [ "$rc" -gt 1 ]; then echo "lsof exited $rc"; exit 1; fi
+      - run: go vet ./...
+      - run: go test -race -count=1 ./...
+
+  go-lint:
+    name: Go lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: "stable"
+          cache: true
+      - uses: golangci/golangci-lint-action@v7
+        with:
+          version: v2.13.1
+
+  govulncheck:
+    name: Vulnerability scan
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: "stable"
+          cache: true
+      - run: go install golang.org/x/vuln/cmd/govulncheck@latest
+      - run: govulncheck ./...
+
+  node-test:
+    name: Node client test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: make test-node

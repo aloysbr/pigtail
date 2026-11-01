@@ -1,0 +1,18 @@
+{"type":"user","timestamp":"2026-10-23T10:00:01Z","origin":{"kind":"human"},"promptId":"p1","message":{"role":"user","content":"before"}}
+{"type":"user","timestamp":"2026-10-23T10:00:03Z","message":{"role":"user","content":[{"type":"tool_result","tool_use_id":"t1","content":"ok"}]}}
+{"type":"user","timestamp":"2026-10-23T10:00:04Z","origin":{"kind":"task-notification","producer":"session-task"},"promptId":"p2","message":{"role":"user","content":"<task-notification>\n<task-id>b1</task-id>\n<status>completed</status>"}}
+{"type":"user","timestamp":"2026-10-23T10:00:05Z","origin":{"kind":"peer"},"isMeta":true,"message":{"role":"user","content":"peer says hi"}}
+{"type":"user","timestamp":"2026-10-23T10:00:06Z","origin":{"kind":"auto-continuation"},"message":{"role":"user","content":"continue"}}
+{"type":"user","timestamp":"2026-10-23T10:00:07Z","message":{"role":"user","content":"/compact"}}
+{"type":"user","timestamp":"2026-10-23T10:00:08Z","message":{"role":"user","content":"<command-name>/compact</command-name>"}}
+{"type":"user","timestamp":"2026-10-23T10:00:09Z","message":{"role":"user","content":"<local-command-stdout>done</local-command-stdout>"}}
+{"type":"user","timestamp":"2026-10-23T10:00:10Z","isCompactSummary":true,"message":{"role":"user","content":"summary of the session"}}
+{"type":"user","timestamp":"2026-10-23T10:00:11Z","origin":{"kind":"human"},"message":{"role":"user","content":[{"type":"image","source":{"type":"base64","data":"AAAA"}},{"type":"text","text":"look"}]}}
+{"type":"user","timestamp":"2026-10-23T10:00:12Z","origin":{"kind":"human"},"message":{"role":"user","content":[{"type":"image","source":{"type":"base64","data":"AAAA"}}]}}
+{"type":"user","timestamp":"2026-10-23T10:00:13Z","origin":{"kind":"human"},"message":{"role":"user","content":"go on"}}
+{"type":"attachment","timestamp":"2026-10-23T10:00:14Z","attachment":{"type":"queued_command","prompt":"queued one","origin":{"kind":"human"}}}
+{"type":"attachment","timestamp":"2026-10-23T10:00:15Z","attachment":{"type":"queued_command","prompt":[{"type":"text","text":"queued two"}],"origin":{"kind":"human"}}}
+{"type":"attachment","timestamp":"2026-10-23T10:00:16Z","attachment":{"type":"queued_command","prompt":"bg done","origin":{"kind":"task-notification"}}}
+{"type":"user","timestamp":"2026-10-23T10:00:17Z","origin":{"kind":"human"},"message":{"role":"user","content":"<command-message>open</command-message>\n<command-name>/open</command-name>\n<command-args>2</command-args>"}}
+{"type":"user","timestamp":"2026-10-23T10:00:18Z","origin":{"kind":"human"},"isMeta":true,"message":{"role":"user","content":"meta human"}}
+{"type":"assistant","timestamp":"2026-10-23T10:00:19Z","message":{"role":"assistant","content":[{"type":"text","text":"ok"}]}}

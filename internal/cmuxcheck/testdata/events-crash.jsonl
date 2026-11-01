@@ -1,0 +1,5 @@
+{"boot_id":"B1","occurred_at":"2026-10-08T10:00:00Z","name":"surface.selected","payload":{"big":"x"}}
+{"boot_id":"B1","occurred_at":"2026-10-08T10:29:50Z","name":"agent.hook.PreToolUse"}
+{"boot_id":"B1","occ
+{"boot_id":"B2","occurred_at":"2026-10-08T10:31:00Z","name":"surface.selected"}
+{"boot_id":"B2","occurred_at":"2026-10-08T10:31:05Z","name":"sidebar.metadata.updated"}

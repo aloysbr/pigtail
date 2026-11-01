@@ -1,0 +1,45 @@
+{
+  "data": {
+    "events": [
+      {
+        "seq": 1,
+        "at": "2026-10-29T10:00:01Z",
+        "kind": "init",
+        "data": {
+          "session_id": "csid-p"
+        }
+      },
+      {
+        "seq": 2,
+        "at": "2026-10-29T10:00:02Z",
+        "kind": "state",
+        "data": {
+          "state": "running"
+        }
+      },
+      {
+        "seq": 3,
+        "at": "2026-10-29T10:00:05Z",
+        "kind": "request_opened",
+        "data": {
+          "rid": "r1",
+          "kind": "question",
+          "tool": "AskUserQuestion"
+        }
+      },
+      {
+        "seq": 4,
+        "at": "2026-10-29T10:00:05Z",
+        "kind": "state",
+        "data": {
+          "state": "waiting"
+        }
+      }
+    ],
+    "last_seq": 4
+  },
+  "meta": {
+    "request_id": "req_fixture"
+  }
+}
+

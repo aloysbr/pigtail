@@ -1,0 +1,10 @@
+{
+  "error": {
+    "code": "SDK_OFF",
+    "message": "sdk sessions are off (pigtaild runs without -sdk-host and -sdk-node)"
+  },
+  "meta": {
+    "request_id": "req_fixture"
+  }
+}
+

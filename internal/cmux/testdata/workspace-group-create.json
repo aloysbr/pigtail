@@ -1,0 +1,24 @@
+{
+  "created" : true,
+  "group" : {
+    "anchor_workspace_id" : "DE245ED7-CC65-458F-83C2-B7EA6BF20E63",
+    "anchor_workspace_is_generated" : true,
+    "anchor_workspace_provenance" : "generated",
+    "anchor_workspace_ref" : "workspace:74",
+    "custom_color" : null,
+    "icon_symbol" : null,
+    "id" : "7BEDD748-2839-4634-9D2A-D85E66D3D64F",
+    "is_collapsed" : false,
+    "is_empty" : false,
+    "is_pinned" : false,
+    "member_count" : 1,
+    "member_workspace_ids" : [
+      "DE245ED7-CC65-458F-83C2-B7EA6BF20E63"
+    ],
+    "member_workspace_refs" : [
+      "workspace:74"
+    ],
+    "name" : "PT Folder",
+    "ref" : "workspace_group:10"
+  }
+}

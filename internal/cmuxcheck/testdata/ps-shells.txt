@@ -1,0 +1,8 @@
+  501   500   501   502 ttys001  /usr/bin/login
+  502   501   502   502 ttys001  -zsh
+  610   600   502   502 ttys001  /Users/x/.cache/gitstatus/gitstatusd-darwin-arm64
+  801   500   801   900 ttys002  /usr/bin/login
+  802   801   802   900 ttys002  -zsh
+  900   802   900   900 ttys002  node
+  950     1   950   950 ttys003  -zsh
+  960     1   960   960 ttys004  -zsh

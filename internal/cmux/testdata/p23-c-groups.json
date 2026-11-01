@@ -1,0 +1,23 @@
+{
+  "groups" : [
+    {
+      "anchor_workspace_ref" : "workspace:29",
+      "custom_color" : null,
+      "icon_symbol" : null,
+      "is_collapsed" : false,
+      "is_pinned" : false,
+      "member_count" : 6,
+      "member_workspace_refs" : [
+        "workspace:29",
+        "workspace:26",
+        "workspace:30",
+        "workspace:27",
+        "workspace:31",
+        "workspace:28"
+      ],
+      "name" : "pt-G",
+      "ref" : "workspace_group:7"
+    }
+  ],
+  "window_ref" : "window:12"
+}

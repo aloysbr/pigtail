@@ -1,0 +1,24 @@
+{"windows":[{"tabManager":{"workspaces":[
+ {"workspaceId":"W1","customTitle":"alpha","panels":[
+  {"id":"S-A","title":"✳ alpha","ttyName":"ttys001","terminal":{
+    "agent":{"sessionId":"sid-a","permissionMode":"auto"},
+    "resumeBinding":{"kind":"claude","autoResume":true,"checkpointId":"sid-a","cwd":"/w/a",
+      "command":"cd -- '/w/a' 2>/dev/null || [ ! -d '/w/a' ] && /bin/sh -c '\"$([ -x \"${CMUX_CLAUDE_WRAPPER_SHIM:-}\" ] && printf '\\''%s'\\'' \"$CMUX_CLAUDE_WRAPPER_SHIM\" || printf claude)\" '\\''--resume'\\'' '\\''sid-a'\\'' '\\''--permission-mode'\\'' '\\''auto'\\'''",
+      "environment":{"CLAUDE_CONFIG_DIR":"/cfg/a","CMUX_PRESERVE_CLAUDE_AUTH_SELECTION_ENV":"1"},
+      "launchCommand":{"arguments":["/bin/claude","--permission-mode","auto"]}}}},
+  {"id":"S-B","title":"beta","ttyName":"ttys002","terminal":{
+    "agent":{"sessionId":"sid-b"},
+    "resumeBinding":{"kind":"claude","autoResume":true,"checkpointId":"sid-b","cwd":"/w/b",
+      "command":"cd -- '/w/b' 2>/dev/null || [ ! -d '/w/b' ] && /bin/sh -c '\"$([ -x \"${CMUX_CLAUDE_WRAPPER_SHIM:-}\" ] && printf '\\''%s'\\'' \"$CMUX_CLAUDE_WRAPPER_SHIM\" || printf claude)\" '\\''--resume'\\'' '\\''sid-b'\\'''",
+      "environment":{"CLAUDE_CONFIG_DIR":"/cfg/b"},
+      "launchCommand":{"arguments":["/bin/claude"]}}}}]},
+ {"workspaceId":"W2","customTitle":"","panels":[
+  {"id":"S-C","title":"gamma","ttyName":"ttys003","terminal":{
+    "resumeBinding":{"kind":"claude","autoResume":false,"checkpointId":"sid-c","cwd":"/w/c","command":"x","environment":{"CLAUDE_CONFIG_DIR":"/cfg/a"},"launchCommand":{"arguments":[]}}}},
+  {"id":"S-D","title":"shell","ttyName":"ttys004","terminal":{}}]},
+ {"workspaceId":"W3","customTitle":"epsilon","panels":[
+  {"id":"S-E","title":"e","ttyName":"ttys005","terminal":{
+    "resumeBinding":{"kind":"claude","autoResume":true,"checkpointId":"sid-e","cwd":"/w/e",
+      "command":"cd -- '/w/e' && /bin/sh -c '\"claude\" '\\''--resume'\\'' '\\''sid-e'\\'' '\\''--permission-mode'\\'' '\\''acceptEdits'\\'''",
+      "environment":{"CLAUDE_CONFIG_DIR":"/cfg/a"},"launchCommand":{"arguments":["/bin/claude"]}}}}]}
+]}}]}

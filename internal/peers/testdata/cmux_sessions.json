@@ -1,0 +1,30 @@
+{
+  "default_codex_home" : "/Users/u/.codex",
+  "limit" : 100,
+  "sessions" : [
+    {
+      "agent" : "claude",
+      "agent_lifecycle" : "running",
+      "cwd" : "/Users/u/code/globex",
+      "pid" : 32855,
+      "session_dir" : "/Users/u/.claude-globex-max",
+      "session_id" : "a1171c31-d62c-4ffa-a997-5f8dc548a2da",
+      "surface_id" : "569C05B9-98D3-459C-A0C0-543634909D8C",
+      "workspace_id" : "29664DF9-67B9-4AAF-9419-B1FD8E3A8994"
+    },
+    {
+      "agent" : "claude",
+      "agent_lifecycle" : "idle",
+      "cwd" : "/Users/u/code/globex/monorepo/feat-x",
+      "pid" : 40001,
+      "session_dir" : "/Users/u/.claude-globex-ai",
+      "session_id" : "6e14eda6-d6d0-4b8c-8a8b-de2d2155f274",
+      "surface_id" : "11111111-98D3-459C-A0C0-543634909D8C",
+      "workspace_id" : "F8290864-F5B5-4B3F-9B93-0B027295DECC"
+    },
+    {
+      "agent" : "codex",
+      "session_id" : "codex-1"
+    }
+  ]
+}
